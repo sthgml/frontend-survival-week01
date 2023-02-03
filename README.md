@@ -1,4 +1,4 @@
-# React + TypeScript + Parcel 개발환경 설정하기
+# React + TypeScript + Jest + ESLint + Parcel 개발환경 설정하기
 
 ## JavaScript 개발 환경(Node.js) 세팅하기
 
@@ -83,7 +83,7 @@ touch .gitignore
 
 생성된 `.gitignore` 파일에 이 튜토리얼만을 위한 간략 버전 / 또는 full 버전을 선택하여 적용한다.  
 
-1. 간략 버전
+- 간략 버전
 
 ```bash
 /node_modules/
@@ -91,7 +91,7 @@ touch .gitignore
 /dist/
 ```
 
-2. full 버전
+- full 버전
 
 ```bash
 # Logs
@@ -237,7 +237,7 @@ npm i -D typescript
 npx tsc --init
 ```
 
-`package.json` 파일에 의존성이 추가된 것을 확인할 수 있다. 
+`package.json` 파일에 의존성이 추가된 것을 확인할 수 있다.
 
 ```json
 {
@@ -333,7 +333,7 @@ module.exports = {
 }
 ```
 
-`package.json` 파일에 `lint` 명령을 추가해준다. 
+`package.json` 파일에 `lint` 명령을 추가해준다.
 
 ```json
 {
@@ -366,6 +366,8 @@ npm run lint
 
 ### TIP. VS Code 세팅
 
+[VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)을 설치해준다.  
+  
 `.vscode` 폴더 생성 후 하위에 `settings.json` 파일 생성
 
 ```bash
@@ -378,12 +380,15 @@ touch .vscode/settings.json
 
 ```json
 {
+    // 80 column에서 줄 그어주기
     "editor.rulers": [
         80
     ],
+    // 저장할 때마다 자동으로 fix
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
+    // save 할 때마다 필요없는 spaces 줄여주기
     "trailing-spaces.trimOnSave": true
 }
 ```
@@ -401,11 +406,11 @@ npm i -D @types/react @types/react-dom
 이후 eslint, jest를 원활히 사용하기 위해 `.eslintrc.js`의 `extends`를 아래와 같이 설정해준다.
 
 ```javascript
-extends: [
-    'xo',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-	],
+  extends: [
+      'plugin:react/recommended',
+      'plugin:react/jsx-runtime',
+      'xo',
+    ],
 ```
 
 ## 테스팅 도구 세팅하기(Jest)
@@ -485,8 +490,9 @@ npm i -D parcel
 
 설치 후 build 및 정상적인 실행을 위해 `package.json` 파일에서 몇 가지 수정을 해준다.
 
-1. `main`을 `source`로 바꾼 뒤 적용할 파일명 기재하기
+- `main`을 `source`로 바꾼 뒤 적용할 파일명 기재하기
 Node의 경우 실행할 것을 `"main"`으로 잡아주게 되어있으나, 웹 서버를 띄울 것이기 때문에 아래와 같이 적용해준다.
+
 ```json
 // 기존
 "main": "index.js"
@@ -495,7 +501,7 @@ Node의 경우 실행할 것을 `"main"`으로 잡아주게 되어있으나, 웹
 "source": "index.html"
 ```
 
-2. `scripts` 수정하기
+- `scripts` 수정하기
 
 ```json
 "scripts": {
@@ -524,13 +530,49 @@ Node의 경우 실행할 것을 `"main"`으로 잡아주게 되어있으나, 웹
 </html>
 ```
 
-서버를 실행해고 웹 브라우저에서 'Hello, world!' 문구를 확인한다.(http://localhost:8080/)
+서버를 실행해고 웹 브라우저에서 'Hello, world!' 문구를 확인한다.  
+<http://localhost:8080/>
 
 ```bash
 npm start
 ```
 
-<br>
+또는 빌드 + 정적 서버 실행을 아래와 같이 할 수도 있다.
+
+```bash
+npx parcel build
+
+npx servor ./dist
+```
+
+### TIP. parcel 세팅할 때 같이 하면 좋은 두 가지 작업
+
+1. package.json 파일에 source 속성 추가(위에서 언급)
+`"source": "./index.html"`
+
+2. static 폴더의 파일을 정적 파일로 serving할 수 있도록 하기
+아래와 같이 parcel-reporter-static-files-copy를 설치한다.
+
+```bash
+npm i -D parcel-reporter-static-files-copy
+```
+
+`.parcelrc` 파일을 생성하고 아래와 같이 작성한다
+
+```json
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+이제 루트폴더에서 static 폴더를 만든 후 하위에 images, assets 등 추가로 폴더를 만든 후 이미지 파일을 저장하여 사용할 수 있다.
+
+```bash
+mkdir static
+```
+
+</br>
 
 ## 추가. React 기본 코드 작성 및 test 실행해보기
 
@@ -554,8 +596,58 @@ npm start
 </html>
 ```
 
-그리고 `src/main.tsx` 파일을 아래와 같이 작성하자.
+`src/main.tsx` 파일을 아래와 같이 작성하자.
 
-```typescript
+```javascript
+import ReactDOM from 'react-dom/client';
 
+import App from './App';
+
+export default function main() {
+ const element = document.getElementById('root');
+
+ if (!element) {
+  return;
+ }
+
+ const root = ReactDOM.createRoot(element);
+
+ root.render(<App />);
+}
+
+main();
+```
+
+`src/App.tsx`와 `src/App.test.tsx` 파일을 각각 아래와 같이 작성하자.
+
+```javascript
+// src/App.tsx
+
+export default function App() {
+ return (
+  <p>
+   Hello, world!
+  </p>
+ );
+}
+```
+
+```javascript
+// src/App.test.tsx
+
+import {render, screen} from '@testing-library/react';
+
+import App from './App';
+
+test('App', () => {
+ render(<App />);
+
+ expect(screen.getByText('Hello, world!'));
+});
+```
+
+이제 테스트를 실행하여 결과를 확인해보자.
+
+```bash
+npm run watch:test
 ```

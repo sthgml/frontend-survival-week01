@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom/client';
+
 import App from './App';
 
-function main() {
+export default function main() {
 	const element = document.getElementById('root');
 
 	if (!element) {
@@ -10,7 +11,7 @@ function main() {
 
 	const root = ReactDOM.createRoot(element);
 
-	root.render(<App name='world'/>);
+	root.render(<App />);
 }
 
 main();

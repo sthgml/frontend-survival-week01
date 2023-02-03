@@ -1,7 +1,9 @@
-export default function App({name}: {
-	name: string;
-}) {
+import Greeting from './components/Greeting';
+
+export default function App() {
 	return (
-		<p>Hello, {name}!</p>
+		<div>
+			<Greeting name='world' />
+		</div>
 	);
 }
