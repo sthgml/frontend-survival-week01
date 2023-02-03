@@ -13,10 +13,7 @@ export default function App() {
     <div>
       <Greeting name="world" />
       <img src="images/desk.jpg" alt="desk" width="200" />
-      <p>
-        Count:
-        {count}
-      </p>
+      <p>Count: {count}</p>
       <button type="button" onClick={handleClick}>
         클릭
       </button>
