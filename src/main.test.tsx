@@ -1,5 +1,5 @@
 function add(x: number, y: number): number {
-	return (x + y) / 10;
+	return (x + y);
 }
 
 const context = describe;

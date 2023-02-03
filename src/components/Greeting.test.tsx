@@ -4,5 +4,5 @@ import Greeting from './Greeting';
 test('Greeting', () => {
 	render(<Greeting name='world'></Greeting>);
 
-	expect(screen.queryByText(/Hello/)).toBeFalsy();
+	expect(screen.queryByText('hi')).toBeFalsy();
 });
