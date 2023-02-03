@@ -72,8 +72,12 @@ code .
 
 ## .gitignore 파일 설정하기
 
-`.gitignore` 파일을 사전에 작성해서 `node_modules`와 같이 용량이 크거나 커밋하지 않아도 되는(또는 하지 말아야 할) 것들이 커밋되는 일을 방지하도록 하자.  
-'github gitignore node'라고만 검색 해도 바로 [예시](https://github.com/github/gitignore/blob/main/Node.gitignore) 확인이 가능한데, 적어도 `node_modules`, `.parcel-cache`, `dist`는 꼭 포함되도록 신경써야 한다.
+`.gitignore` 파일을 사전에 작성해서 `node_modules`와 같이  
+용량이 크거나 커밋하지 않아도 되는(또는 하지 말아야 할) 것들이 커밋되는 일을 방지하도록 하자.
+
+'github gitignore node'라고만 검색 해도 바로 예시를 볼 수 있다.  
+<https://github.com/github/gitignore/blob/main/Node.gitignore>  
+적어도 `node_modules`, `.parcel-cache`, `dist`는 꼭 포함되도록 신경써야 한다.  
 
 먼저 `.gitignore` 파일이 없다면 생성하자.
 
@@ -366,7 +370,12 @@ npm run lint
 
 ### TIP. VS Code 세팅
 
-[VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)을 설치해준다.  
+VS Code ESLint extension을 설치해준다.
+
+```bash
+https://marketplace.visualstudio.com/items\
+?itemName=dbaeumer.vscode-eslint
+```
   
 `.vscode` 폴더 생성 후 하위에 `settings.json` 파일 생성
 
