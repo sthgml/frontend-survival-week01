@@ -4,17 +4,13 @@
 
 ## 프로젝트 생성
 
----
-
-```
+```bash
  npm init -y
 ```
 
-<br/>
 ## ignore 파일 생성
-***
 
-```
+```bash
  touch .eslintignore
 
  touch .gitignore
@@ -157,13 +153,11 @@
 
 `.eslintignore` 설정
 
-```
+```json
   /dist/
   /node_modules/
   .parcel_cache
 ```
-
-<br/>
 
 ## 🐱 Typescript 설치 및 설정
 
@@ -171,7 +165,7 @@
 
 설치 & 설정
 
-```
+```bash
   npm i -D typescript
 
   npx tsc --init
@@ -187,13 +181,11 @@
   "jsx":"react-jsx"
 ```
 
-<br/>
-
 ## 🐱 React 설치 및 설정
 
 ---
 
-```
+```bash
   npm i react react-dom
 
   npm i -D @types/react @types/react-dom
@@ -216,19 +208,17 @@ if (element) {
 }
 ```
 
-<br/>
-
 ## 🐱 EsLint 설치 및 설정
 
 ---
 
-```
+```bash
   npm i -D eslint
 
   npx eslint --init
 ```
 
-```
+```bash
   ? How would you like to use ESLint? ...
     To check syntax only
     To check syntax and find problems
@@ -266,7 +256,7 @@ if (element) {
 
 설정에 대한 설치
 
-```
+```bash
   eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.43.0 @typescript-eslint/parser@>=5.43.0 typescript@>=4.4
   ? Would you like to install them now? » No / Yes<YES>
 
@@ -276,13 +266,11 @@ if (element) {
     pnpm
 ```
 
-<br/>
-
 ## 🐱 Parcel 설치 및 설정
 
 ---
 
-```
+```bash
   npm i -D parcel
 ```
 
@@ -300,13 +288,16 @@ if (element) {
     "watch:test": "jest --watchAll"
   },
 ```
+
 parcel 에서 static file을 사용하기 위해서
 `static / images등`
-```
+
+```bash
   npm i -D parcel-reporter-static-files-copy
 ```
 
 `.parcelrc`
+
 ```json
 {
   "extends": ["@parcel/config-default"],
@@ -332,17 +323,15 @@ parcel 에서 static file을 사용하기 위해서
 </html>
 ```
 
-<br/>
-
 ## 🐱 Jest 설치 및 설정
 
 ---
 
-```
+```bash
   npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 ```
 
-```
+```bash
   touch jest.config.js
 ```
 
