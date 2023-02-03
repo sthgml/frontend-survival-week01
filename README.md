@@ -13,8 +13,6 @@ cd my-app
 
 ### 2. 본인이 사용하는 편집기를 실행합니다
 
-- `code .` 가 동작하지 않는다면? [stackoverflow](https://stackoverflow.com/questions/29955500/code-is-not-working-in-on-the-command-line-for-visual-studio-code-on-os-x-ma)
-
 ```bash
 # VSCode
 code .
@@ -31,7 +29,8 @@ npm init -y
 
 ### 4. gitignore 파일을 작성한다
 
-VSCode를 사용하고 있다면, command(alt) + shift + p를 누르고 `add gitignore`를 검색하면 언어에 맞는 .gitignore 파일을 생성할 수 있다.
+VSCode를 사용하고 있다면, command(alt) + shift + p를 누르고 `add gitignore`를  
+검색하면 언어에 맞는 .gitignore 파일을 생성할 수 있다.
 
 직접 세팅하려면 아래와 같이 파일을 생성하고 파일 및 폴더를 추가한다.
 
@@ -56,7 +55,8 @@ TypeScript를 컴파일하는데 필요한 tsconfig.json파일을 생성합니�
 npx tsc --init
 ```
 
-기본적으로 세팅된 tsconfig.json 옵션을 사용하고, .tsx 파일을 사용하기 위해 jsx 옵션만 설정해줍니다.
+기본적으로 세팅된 tsconfig.json 옵션을 사용하고,  
+.tsx 파일을 사용하기 위해 jsx 옵션만 설정해줍니다.
 
 ```ts
   "jsx": "react-jsx" /* Specify what JSX code is generated. */,
@@ -96,7 +96,8 @@ You can also run this command directly using 'npm init @eslint/config'.
 # yes 선택
 ? Does your project use TypeScript? › No / Yes
 
-? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Where does your code run? …  (Press <space> to select,
+<a> to toggle all, <i> to invert selection)
 ✔ Browser
   Node
 
@@ -120,7 +121,10 @@ You can also run this command directly using 'npm init @eslint/config'.
 Checking peerDependencies of eslint-config-airbnb@latest
 The config that you have selected requires the following dependencies:
 
-eslint-plugin-react@^7.28.0 @typescript-eslint/eslint-plugin@latest eslint-config-airbnb@latest eslint@^7.32.0 || ^8.2.0 eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1 eslint-plugin-react-hooks@^4.3.0 @typescript-eslint/parser@latest
+eslint-plugin-react@^7.28.0 @typescript-eslint/eslint-plugin@latest
+eslint-config-airbnb@latest eslint@^7.32.0 || ^8.2.0
+eslint-plugin-import@^2.25.3 eslint-plugin-jsx-a11y@^6.5.1
+eslint-plugin-react-hooks@^4.3.0 @typescript-eslint/parser@latest
 
 # Yes 선택
 ? Would you like to install them now with npm? › No / Yes
@@ -405,7 +409,8 @@ if (element) {
 
 브라우저를 확인하면 `Hello, World`라는 텍스트를 확인할 수 있습니다.
 
-마지막으로 이미지와 같은 정적 파일을 제공하기 위해 parcel-reporter-static-files-copy 패키지를 설치합니다.
+마지막으로 이미지와 같은 정적 파일을 제공하기 위해  
+parcel-reporter-static-files-copy 패키지를 설치합니다.
 
 ```bash
 npm i -D parcel-reporter-static-files-copy
@@ -434,7 +439,8 @@ mv ~/Downloads/desk.png static/images/desk.png
 <img src="images/desk.jpg" alt="desk" width="200" />
 ```
 
-마지막으로 .vscode/settings.json 파일을 추가해 JS/TS 파일을 저장할 때마다 ESLint를 실행하고 문제점을 고치게 설정합니다.
+마지막으로 .vscode/settings.json 파일을 추가해 JS/TS 파일을 저장할 때마다  
+ESLint를 실행하고 문제점을 고치게 설정합니다.
 
 ```json
 {
