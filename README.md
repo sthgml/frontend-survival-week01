@@ -392,19 +392,28 @@ index.html 파일에 script를 추가하여 main.tsx 파일을 불러와줍니�
 main.tsx 파일을 아래와 같이 작성합니다.
 
 ```tsx
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
-function App() {
-  return <p>Hello, World</p>;
-}
+import App from './App';
 
-const element = document.getElementById('root');
+function main() {
+  const element = document.getElementById('root');
 
-if (element) {
+  if (!element) {
+    return;
+  }
+
   const root = ReactDOM.createRoot(element);
 
-  root.render(<App />);
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  );
 }
+
+main();
 ```
 
 브라우저를 확인하면 `Hello, World`라는 텍스트를 확인할 수 있습니다.
