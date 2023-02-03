@@ -107,7 +107,7 @@ tsconfig.json 파일에서 다음을 찾아 주석을 제거한다.
 
 ESLint 설치
 
-- eslint-config-airbnb-base : Airbnb의 style guide를 eslint의 설정 파일인 .eslintrc.json에 확장해 주는 플러그인(React 관련 플러그인 미포함)
+- eslint-config-airbnb-base : Airbnb의 style guide를 eslint의 설정 파일인 .eslintrc.json에 확장해주는 플러그인(React 관련 플러그인 미포함)
 - eslint-plugin-import : ES6+ import/export 지원 플러그인
 - eslint-plugin-html : HTML 파일에 포함된 인라인 자바스크립트 지원 플러그인
 
