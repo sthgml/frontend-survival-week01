@@ -1,5 +1,5 @@
 import Greeting from './components/Greeting';
 
 export default function App() {
-	return <Greeting name={'kim'} />;
+	return <Greeting name={'harry'} />;
 }
