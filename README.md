@@ -236,7 +236,8 @@ if (element) {
 
   ? Does your project use TypeScript? » No / Yes<YES>
 
-  ? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+  ? Where does your code run? ...  (Press <space> to select, 
+  <a> to toggle all, <i> to invert selection)
   √ Browser
   √ Node
 
@@ -257,7 +258,9 @@ if (element) {
 설정에 대한 설치
 
 ```bash
-  eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.43.0 @typescript-eslint/parser@>=5.43.0 typescript@>=4.4
+  eslint-plugin-react@latest eslint-config-xo@latest 
+  eslint@>=8.0.0 eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.43.0 
+  @typescript-eslint/parser@>=5.43.0 typescript@>=4.4
   ? Would you like to install them now? » No / Yes<YES>
 
   ? Which package manager do you want to use? ...
@@ -325,10 +328,11 @@ parcel 에서 static file을 사용하기 위해서
 
 ## 🐱 Jest 설치 및 설정
 
----
 
 ```bash
-  npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+  npm i -D jest @types/jest @swc/core 
+  @swc/jest jest-environment-jsdom 
+  @testing-library/react @testing-library/jest-dom
 ```
 
 ```bash
