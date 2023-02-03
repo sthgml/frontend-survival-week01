@@ -230,50 +230,43 @@ npx eslint --init
 
 ESLint 세팅가이드
 
-```.
-You can also run this command directly using 'npm init @eslint/config'.
-
-? How would you like to use ESLint? …
-  To check syntax only
-  To check syntax and find problems
-**❯ To check syntax, find problems, and enforce code style**
-
-? What type of modules does your project use? …
-**❯ JavaScript modules (import/export)**
-  CommonJS (require/exports)
-  None of these
-
-? Which framework does your project use? …
-**❯ React**
-  Vue.js
-  None of these
-
-? Does your project use TypeScript? › ****No **/ Yes**
-
-? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
-**✔ Browser**
-✔ Node
-
-? How would you like to define a style for your project? …
-**❯ Use a popular style guide**
-  Answer questions about your style
-
-? Which style guide do you want to follow? …
-  Standard: <https://github.com/standard/eslint-config-standard-with-typescript>
-**❯ XO: <https://github.com/xojs/eslint-config-xo-typescript**>
-
-? What format do you want your config file to be in? …
-**❯ JavaScript**
-  YAML
-  JSON
-
-? Would you like to install them now? › No / **Yes
-
-? Which package manager do you want to use? …
-❯ npm
-  yarn
-  pnpm**
-
+```bash
+  ? How would you like to use ESLint? ...
+    To check syntax only
+    To check syntax and find problems
+  > To check syntax, find problems, and enforce code style
+  ? What type of modules does your project use? ...
+  > JavaScript modules (import/export)
+    CommonJS (require/exports)
+    None of these
+  ? Which framework does your project use? ...
+  > React
+    Vue.js
+    None of these
+  ? Does your project use TypeScript? » No / Yes<YES>
+  ? Where does your code run? ...  (Press <space> to select,
+  <a> to toggle all, <i> to invert selection)
+  √ Browser
+  √ Node
+  ? How would you like to define a style for your project? ...
+  > Use a popular style guide
+    Answer questions about your style
+  ? Which style guide do you want to follow? ...
+    Standard: https://github.com/standard/eslint-config-standard-with-typescript
+  > XO: https://github.com/xojs/eslint-config-xo-typescript
+  ? What format do you want your config file to be in? ...
+  > JavaScript
+    YAML
+    JSON
+  eslint-plugin-react@latest eslint-config-xo@latest
+  eslint@>=8.0.0 eslint-config-xo-typescript@latest
+  @typescript-eslint/eslint-plugin@>=5.43.0
+  @typescript-eslint/parser@>=5.43.0 typescript@>=4.4
+  ? Would you like to install them now? » No / Yes<YES>
+  ? Which package manager do you want to use? ...
+  > npm
+    yarn
+    pnpm
 ```
 
 </br>
@@ -409,7 +402,7 @@ npm i -D parcel
 ```
 
 - web / dev 서버를 띄우는 도구
-- Parcel 은 파일 변화를 자동으로 다시 빌드(rebuild) 하고 빠른 모듈 교체를 지원하는 내장 개발용 서버가 있어 빠른 개발이 가능하기에 사용.
+- Parcel 은 파일 변화를 자동으로 다시 빌드(rebuild)함.
 - 진입 파일을 지정하자.
 
 </br>
