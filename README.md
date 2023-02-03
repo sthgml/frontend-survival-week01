@@ -300,6 +300,19 @@ if (element) {
     "watch:test": "jest --watchAll"
   },
 ```
+parcel 에서 static file을 사용하기 위해서
+`static / images등`
+```
+  npm i -D parcel-reporter-static-files-copy
+```
+
+`.parcelrc`
+```json
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
 
 `index.html`
 
