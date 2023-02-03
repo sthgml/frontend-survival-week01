@@ -26,6 +26,24 @@ fnm install --lts
 
 사용 버전 변경 및 기본값 설정
 
+fnm env 설정
+
+```bash
+vim ~/.zshrc
+```
+
+i 입력 후 다음을 삽입 후 esc -> :wq 입력 하면 저장
+
+```bash
+eval "$(fnm env --use-on-cd)"
+```
+
+프로파일을 새로 로드
+
+```bash
+source ~/.zshrc
+```
+
 ```bash
 fnm use lts-latest
 fnm default $(fnm current)
@@ -65,7 +83,7 @@ touch .gitignore
 타입스크립트 설치
 
 ```bash
-npm i -D typecsript
+npm i -D typescript
 ```
 
 타입스크립트 셋팅 실행
@@ -79,6 +97,9 @@ npx tsc --init
 tsconfig.json 파일에서 다음을 찾아 주석을 제거한다.
 
 ```json
+// 위에껄 찾아서
+"jsx": "preserve"
+// 아래껄로 변경
 "jsx": "react-jsx"
 ```
 
