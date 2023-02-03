@@ -107,7 +107,8 @@ tsconfig.json 파일에서 다음을 찾아 주석을 제거한다.
 
 ESLint 설치
 
-- eslint-config-airbnb-base : Airbnb의 style guide를 eslint의 설정 파일인 .eslintrc.json에 확장해주는 플러그인(React 관련 플러그인 미포함)
+- eslint-config-airbnb-base : Airbnb의 style guide를 eslint의 설정 파일인 .eslintrc.json
+  에 확장해주는 플러그인(React 관련 플러그인 미포함)
 - eslint-plugin-import : ES6+ import/export 지원 플러그인
 - eslint-plugin-html : HTML 파일에 포함된 인라인 자바스크립트 지원 플러그인
 
@@ -115,7 +116,8 @@ ESLint 설치
 npm install --save-dev eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-html
 ```
 
-[ESLint VSCode extention](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 설치
+[ESLint VSCode extention][2] 설치
+[2]:(https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 메뉴의 Code > 기본 설정 > 설정으로 이동하여 setting.json에 아래 설정을 추가한다.
 
@@ -164,7 +166,8 @@ touch .eslintrc.json
     "no-nested-ternary": "off",
     "max-classes-per-file": "off",
     "consistent-return": "off",
-    "no-restricted-syntax": ["off", "ForOfStatement"], // disallow specified syntax(ex. WithStatement)
+    // disallow specified syntax(ex. WithStatement)
+    "no-restricted-syntax": ["off", "ForOfStatement"],
     "prefer-arrow-callback": "error", // Require using arrow functions for callbacks
     "require-await": "error",
     "arrow-parens": ["error", "as-needed"], // a => {}
@@ -191,7 +194,9 @@ touch .eslintrc.json
 }
 ```
 
-[Prettier extention](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 설치
+[Prettier extention][1] 설치
+
+[1]: (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 메뉴의 Code > 기본 설정 > 설정으로 이동하여 setting.json에 아래 설정을 추가한다.
 
