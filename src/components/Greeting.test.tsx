@@ -13,7 +13,5 @@ test('Greeting', () => {
 
 	expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
 
-	expect(screen.queryByText(/Hi/)).not.toBeVisible();
-
 	expect(screen.queryByText(/Hi/)).toBeFalsy();
 });
