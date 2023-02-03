@@ -160,7 +160,7 @@
 ```
   /dist/
   /node_modules/
-  .parce_cache
+  .parcel_cache
 ```
 
 <br/>
