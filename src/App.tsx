@@ -6,9 +6,9 @@ export default function App() {
 
   return (
     <div>
-      <Greeting name='world' />
+      <Greeting name="world" />
       <p>countL {count}</p>
-      <button type='button' onClick={() => setCount(count + 1)}>
+      <button type="button" onClick={() => setCount(count + 1)}>
         클릭
       </button>
     </div>
