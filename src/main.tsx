@@ -1,9 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-function App() {
-  return <p>개발 환경 만들기</p>;
+export default function main() {
+  const element = document.getElementById('root');
+
+  if (!element) {
+    return;
+  }
+
+  const root = ReactDOM.createRoot(element);
+
+  root.render(<App />);
 }
 
-const container = document.getElementById('root');
-ReactDOM.render(<App />, container);
+main();

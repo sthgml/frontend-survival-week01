@@ -44,11 +44,15 @@ webstorm .
 npm init -y
 ```
 
-gitignor 파일 생성([.gitignore](https://github.com/toptal/gitignore.io))
+gitignore 파일 생성
 
 ```
 touch .gitignore
 ```
+`.gitignore`파일에 코드 추가
+([.gitignore](https://github.com/toptal/gitignore.io/blob/master/.gitignore))
+
+
 
 ### 3. 타입스크립트 설정
 
@@ -58,16 +62,38 @@ touch .gitignore
 npm i -D typescript
 ```
 
-tsconfig 생성([tsconfig.json](https://github.com/ahastudio/CodingLife/blob/main/20230113/react/tsconfig.json))
+tsconfig 생성
 
 ```
 npx tsc --init
 ```
+`tsconfig.json`파일에 코드 추가
+([tsconfig.json](https://github.com/ahastudio/CodingLife/blob/main/20230113/react/tsconfig.json))
 
-주석 제거
+
+JSX를 사용하기 위해 tsconfig.json 파일을 열어 옵션 수정
 
 ```
-"jsx": "react-jsx
+{
+  "compilerOptions": {
+    // ...(전략)...
+    "jsx": "react-jsx",
+    // ...(후략)...
+  }
+}
+
+```
+TypeScript 컴파일을 통해 문법 오류를 확인하는 <br />check 명령을 package.json 파일에 추가
+```
+{
+  "scripts": {
+    "check": "tsc --noEmit"
+  }
+}
+```
+실행 방법
+```
+npm run check
 ```
 
 ### 4. ESLint 설정
@@ -78,14 +104,56 @@ npx tsc --init
 npm i -D eslint
 ```
 
-evn 파일 생성 ([.eslintrc.js](https://github.com/rara-record/react-settings/blob/main/.eslintrc.js))
-
+eslint env 파일 생성
 ```
 npx eslint --init
 ```
+```
+? How would you like to use ESLint? …
+❯ To check syntax, find problems, and enforce code style
 
-elintignore 생성([.eslintignore](https://github.com/rara-record/react-settings/blob/main/.eslintignore))
+? What type of modules does your project use? …
+❯ JavaScript modules (import/export)
 
+? Which framework does your project use? …
+❯ React
+
+? Does your project use TypeScript?
+› Yes
+
+? Where does your code run? …
+✔ Browser
+
+? How would you like to define a style for your project? …
+❯ Use a popular style guide
+
+? Which style guide do you want to follow? …
+❯ Airbnb: https://github.com/airbnb/javascript
+
+? What format do you want your config file to be in? …
+❯ JavaScript
+
+? Would you like to install them now with npm?
+› Yes
+```
+`.eslintrc`파일에 추가 <br />[.eslintrc.js](https://github.com/rara-record/react-settings/blob/main/.eslintrc.js)
+
+`.eslintignore` 파일에 추가 <br />
+([.eslintignore](https://github.com/rara-record/react-settings/blob/main/.eslintignore))
+
+`package.json` 파일에 script 추가
+```
+{
+  "scripts": {
+    // ...(전략)...
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx ."
+  }
+}
+```
+실행하기
+```
+npm run lint
+```
 ### 5. React 설치
 
 설치
@@ -94,7 +162,11 @@ elintignore 생성([.eslintignore](https://github.com/rara-record/react-settings
 npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
-
+기본 파일 작성
+```
+mkdir src
+touch main.tsx
+```
 ### 6. Jest 설정
 
 테스팅 도구 설치
