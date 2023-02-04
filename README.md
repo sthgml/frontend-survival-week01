@@ -81,7 +81,8 @@ JSX를 사용하기 위해 tsconfig.json 파일을 열어 옵션 수정
 
 ```
 
-TypeScript 컴파일을 통해 문법 오류를 확인하는 <br />check 명령을 package.json 파일에 추가
+TypeScript 컴파일을 통해 문법 오류를 확인하는
+check 명령을 package.json 파일에 추가
 
 ```json
 {
@@ -140,11 +141,12 @@ npx eslint --init
 › Yes
 ```
 
-`.eslintrc`파일에
-추가 <br />[.eslintrc.js](https://github.com/rara-record/frontend-survival-week01/blob/rara-record/.eslintrc.js)
+`.eslintrc`파일에 추가
 
-`.eslintignore` 파일에 추가 <br />
-([.eslintignore](https://github.com/rara-record/react-settings/blob/main/.eslintignore))
+[.eslintrc.js](https://github.com/rara-record/frontend-survival-week01/blob/rara-record/.eslintrc.js)
+
+`.eslintignore` 파일에 추가
+[.eslintignore](https://github.com/rara-record/react-settings/blob/main/.eslintignore)
 
 `package.json` 파일에 script 추가
 
