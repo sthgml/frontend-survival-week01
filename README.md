@@ -49,10 +49,9 @@ gitignore 파일 생성
 ```
 touch .gitignore
 ```
+
 `.gitignore`파일에 코드 추가
 ([.gitignore](https://github.com/toptal/gitignore.io/blob/master/.gitignore))
-
-
 
 ### 3. 타입스크립트 설정
 
@@ -67,9 +66,9 @@ tsconfig 생성
 ```
 npx tsc --init
 ```
+
 `tsconfig.json`파일에 코드 추가
 ([tsconfig.json](https://github.com/ahastudio/CodingLife/blob/main/20230113/react/tsconfig.json))
-
 
 JSX를 사용하기 위해 tsconfig.json 파일을 열어 옵션 수정
 
@@ -83,7 +82,9 @@ JSX를 사용하기 위해 tsconfig.json 파일을 열어 옵션 수정
 }
 
 ```
+
 TypeScript 컴파일을 통해 문법 오류를 확인하는 <br />check 명령을 package.json 파일에 추가
+
 ```
 {
   "scripts": {
@@ -91,7 +92,9 @@ TypeScript 컴파일을 통해 문법 오류를 확인하는 <br />check 명령�
   }
 }
 ```
+
 실행 방법
+
 ```
 npm run check
 ```
@@ -105,9 +108,11 @@ npm i -D eslint
 ```
 
 eslint env 파일 생성
+
 ```
 npx eslint --init
 ```
+
 ```
 ? How would you like to use ESLint? …
 ❯ To check syntax, find problems, and enforce code style
@@ -136,12 +141,15 @@ npx eslint --init
 ? Would you like to install them now with npm?
 › Yes
 ```
-`.eslintrc`파일에 추가 <br />[.eslintrc.js](https://github.com/rara-record/react-settings/blob/main/.eslintrc.js)
+
+`.eslintrc`파일에
+추가 <br />[.eslintrc.js](https://github.com/rara-record/frontend-survival-week01/blob/rara-record/.eslintrc.js)
 
 `.eslintignore` 파일에 추가 <br />
 ([.eslintignore](https://github.com/rara-record/react-settings/blob/main/.eslintignore))
 
 `package.json` 파일에 script 추가
+
 ```
 {
   "scripts": {
@@ -150,10 +158,13 @@ npx eslint --init
   }
 }
 ```
+
 실행하기
+
 ```
 npm run lint
 ```
+
 ### 5. React 설치
 
 설치
@@ -162,11 +173,14 @@ npm run lint
 npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
+
 기본 파일 작성
+
 ```
 mkdir src
 touch main.tsx
 ```
+
 ### 6. Jest 설정
 
 테스팅 도구 설치
@@ -177,15 +191,39 @@ jest-environment-jsdom
 @testing-library/react @testing-library/jest-dom
 ```
 
-config 작성 ([jest.config.js](https://github.com/rara-record/react-settings/blob/main/jest.config.js))
+config 작성 ([jest.config.js](https://github.com/rara-record/frontend-survival-week01/blob/rara-record/jest.config.js))
 
 ### 7. Parcel 설치
+
+설치
 
 ```
 npm i -D parcel
 ```
 
-### package.json scripts 수정
+package.json 파일에 `source` 속성 추가
+
+```
+{
+ "source": "./index.html"
+}
+```
+
+`.parcelrc` 파일을 작성
+
+```
+npm i -D parcel-reporter-static-files-copy
+touch .parcelrc
+```
+
+```
+{
+"extends": ["@parcel/config-default"],
+"reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+### package.json scripts 최종
 
 ```
  "scripts": {
