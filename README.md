@@ -132,6 +132,14 @@ module.exports = {
 
 ```shell
 npm i -D parcel
+touch .parcelrc.json
+```
+
+```json
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
 ```
 
 package.json
