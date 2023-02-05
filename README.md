@@ -94,7 +94,8 @@ npm i -D @types/react @types/react-dom
 ### 테스트 도구 설치
 
 ```shell
-npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom  
+npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom 
+npm i -D @testing-library/react @testing-library/jest-dom  
 touch jest.config.js
 ```
 
@@ -156,7 +157,7 @@ package.json
   },
 ```
 
-### vscode 세팅 
+### vscode 세팅
 
 ```shell
 mkdir .vscode  
