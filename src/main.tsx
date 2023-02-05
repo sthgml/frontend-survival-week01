@@ -1,15 +1,10 @@
 import ReactDOM from 'react-dom/client';
-
-function App() {
-	return (
-		<p>Hello, world!</p>
-	);
-}
+import App from './App';
 
 const element = document.getElementById('root');
 
 if (element) {
 	const root = ReactDOM.createRoot(element);
 
-	root.render(<App/>);
+	root.render(<App name='이태성' />);
 }
