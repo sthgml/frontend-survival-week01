@@ -11,7 +11,7 @@ export default function App() {
 	return (
 		<div>
 			<Greeting name='world' />
-  			<p>Count: {count}</p>
+			<p>Count: {count}</p>
 			<button type='button' onClick={handleClick}>
 				클릭!
 			</button>
