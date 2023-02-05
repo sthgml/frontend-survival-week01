@@ -55,7 +55,8 @@ touch .gitignore
     # nyc test coverage
     .nyc_output
     
-    # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+    # Grunt intermediate storage (https://gruntjs.com/creating-plugins
+    #storing-task-files)
     .grunt
     
     # Bower dependency directory (https://bower.io/)
@@ -236,7 +237,8 @@ You can also run this command directly using 'npm init @eslint/config'.
 
 ? Does your project use TypeScript? › ****No **/ Yes**
 
-? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Where does your code run? …  (Press <space> to select, <a> to toggle all,
+ <i> to invert selection)
 **✔ Browser**
 ✔ Node
 
@@ -245,7 +247,8 @@ You can also run this command directly using 'npm init @eslint/config'.
   Answer questions about your style
 
 ? Which style guide do you want to follow? … 
-  Standard: <https://github.com/standard/eslint-config-standard-with-typescript>
+  Standard: <https://github.com/standard/eslint-config-standard-with
+  -typescript>
 **❯ XO: <https://github.com/xojs/eslint-config-xo-typescript**>
 
 ? What format do you want your config file to be in? … 
@@ -438,7 +441,3 @@ mkdir .vscode & touch settings.json
         "source.fixAll.eslint": true
     }
 }
-
-#### 참고 자료
-
-[1. TypeScript, React 훑어보기](https://www.notion.so/1-TypeScript-React-8c90f7cf27e94941b604be227b5eafd0)
