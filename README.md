@@ -1,7 +1,6 @@
 # 🐣 **개발 환경 세팅**
 
-
-### node modules 설치
+## node modules 설치
 
 ```tsx
 mkdir my-app
@@ -22,8 +21,8 @@ touch .gitignore
 ```
 
 - gitignore 세팅
-    
-    ```
+
+    ```plaintext
     # Created by https://www.toptal.com/developers/gitignore/api/node
     # Edit at https://www.toptal.com/developers/gitignore?templates=node
     
@@ -170,7 +169,6 @@ touch .gitignore
     # End of https://www.toptal.com/developers/gitignore/api/node
     
     ```
-    
 
 - 참고 자료
 
@@ -268,11 +266,12 @@ You can also run this command directly using 'npm init @eslint/config'.
 
 ```json
 module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-		jest: true,
-	},
+env: {
+ browser: true,
+ es2021: true,
+ jest: true,
+ },
+}
 ```
 
 #### .eslintignore 생성
@@ -283,7 +282,7 @@ touch .eslintignore
 
 아래 문구 추가
 
-```
+```plaintext
 /node_modules/
 /dist/
 /.parcel-cache/
@@ -295,7 +294,7 @@ touch .eslintignore
 npm i react react-dom
 ```
 
-* 주의할 점
+- 주의할 점
 
 설치중에 packae.json 건드리면 충돌이 일어날 수 있으므로 주의해주어야한다.
 
@@ -315,30 +314,30 @@ touch jest.config.js
 
 ```json
 module.exports = {
-	testEnvironment: 'jsdom',
-	setupFilesAfterEnv: [
-		'@testing-library/jest-dom/extend-expect',
-	],
-	transform: {
-		'^.+\\\\.(t|j)sx?$': ['@swc/jest', {
-			jsc: {
-				parser: {
-					syntax: 'typescript',
-					jsx: true,
-					decorators: true,
-				},
-				transform: {
-					react: {
-						runtime: 'automatic',
-					},
-				},
-			},
-		}],
-	},
-	testPathIgnorePatterns: [
-		'<rootDir>/node_modules/',
-		'<rootDir>/dist/',
-	],
+ testEnvironment: 'jsdom',
+ setupFilesAfterEnv: [
+  '@testing-library/jest-dom/extend-expect',
+ ],
+ transform: {
+ '^.+\\\\.(t|j)sx?$': ['@swc/jest', {
+ jsc: {
+  parser: {
+   syntax: 'typescript',
+   jsx: true,
+   decorators: true,
+ },
+ transform: {
+ react: {
+ runtime: 'automatic',
+  },
+ },
+  },
+ }],
+ },
+ testPathIgnorePatterns: [
+  '<rootDir>/node_modules/',
+'<rootDir>/dist/',
+ ],
 };
 ```
 
@@ -348,12 +347,10 @@ module.exports = {
 npm i -D parcel
 ```
 
-
-
 ### Package.json 스크립트 세팅
 
 ```json
-		**"start": "parcel --port 8080",
+    "start": "parcel --port 8080",
     "build": "parcel build",
     "check": "tsc --noEmit",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
@@ -374,7 +371,7 @@ Package.json 에서
 
 ### 기본 코드 작성하기
 
-* `index.html`
+- `index.html`
 
 ```html
 <!DOCTYPE html>
@@ -384,13 +381,13 @@ Package.json 에서
         <title>React Demo App</title>
     </head>
     <body>
-	<div id="root"></div>
-	<script type="module" src="./src/main.tsx"></script>
+  <div id="root"></div>
+  <script type="module" src="./src/main.tsx"></script>
     </body>
 </html>
 ```
 
-* `src/main.tsx`
+- `src/main.tsx`
 
 ```bash
 mkdir src && touch src/main.tsx
@@ -400,10 +397,10 @@ mkdir src && touch src/main.tsx
 
 ```jsx
 extends: [
-		'plugin:react/recommended',
-		'plugin:react/jsx-runtime',
-		'xo',
-	],
+   'plugin:react/recommended',
+   'plugin:react/jsx-runtime',
+   'xo',
+  ],
 ```
 
 ```tsx
@@ -413,28 +410,29 @@ import App from './App';
 const element = document.getElementById('root');
 
 if (element) {
-	const root = ReactDom.createRoot(element);
-	root.render(<App />);
+ const root = ReactDom.createRoot(element);
+ root.render(<App />);
 }
 ```
 
-* `src/App.tsx`
+- `src/App.tsx`
 
 ```tsx
 export default function App() {
-	return (
-		<div>Hello, world!</div>
-	);
+ return (
+  <div>Hello, world!</div>
+ );
 }
 ```
 
-* `src/App.test.tsx`
-* `src/components/Greeting.test.tsx`
-* `src/components/Greeting.tsx`
+- `src/App.test.tsx`
+- `src/components/Greeting.test.tsx`
+- `src/components/Greeting.tsx`
 
 ```Bash
 mkdir .vscode & touch settings.json
 ```
+
 {
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
