@@ -166,6 +166,7 @@ touch .vscode/settings.json
     "trailing-spaces.trimOnSave": true
 }
 ```
+
 ### html, js 기본환경세팅
 
 ```shell
