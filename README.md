@@ -100,7 +100,11 @@ npx eslint --init
 › Yes
 ```
 
-`eslint 의존성 패키지 설치`
+<!-- `aidbnb 의존성 패키지 설치`
+
+```bash
+npm info 'eslint-config-airbnb@latest' peerDependencies
+```
 
 - eslint-plugin-import: ES2015+의 import/export 구문을 지원
 - eslint-plugin-jsx-a11y: 접근성 지원
@@ -108,7 +112,7 @@ npx eslint --init
 
 ```bash
 npm i -D eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-react-hooks
-```
+``` -->
 
 `.eslintrc.js 설정 추가`
 
@@ -132,7 +136,7 @@ module.exports = {
   // ...(중략)...
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
     "import/resolver": {
       node: {
@@ -161,22 +165,22 @@ module.exports = {
     "object-curly-spacing": ["error", "always"],
     "key-spacing": ["error", { mode: "strict" }],
     "arrow-spacing": ["error", { before: true, after: true }],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        devDependencies: ["**/*.test.js", "**/*.test.jsx", "**/*.test.ts", "**/*.test.tsx"],
-      },
-    ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        js: "never",
-        jsx: "never",
-        ts: "never",
-        tsx: "never",
-      },
-    ],
+    // "import/no-extraneous-dependencies": [
+    //   "error",
+    //   {
+    //     devDependencies: ["**/*.test.js", "**/*.test.jsx", "**/*.test.ts", "**/*.test.tsx"],
+    //   },
+    // ],
+    // "import/extensions": [
+    //   "error",
+    //   "ignorePackages",
+    //   {
+    //     js: "never",
+    //     jsx: "never",
+    //     ts: "never",
+    //     tsx: "never",
+    //   },
+    // ],
     "react/jsx-filename-extension": [
       2,
       {
@@ -247,7 +251,7 @@ touch jest.config.js
 ```javascript
 module.exports = {
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect", "./jest.setup"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   transform: {
     "^.+\\.(t|j)sx?$": [
       "@swc/jest",
@@ -384,7 +388,7 @@ export default function App({ name }: { name: string }) {
 
 ```tsx
 function add(x: number, y: number): number {
-  return (x + y) / 10;
+  return (x + y);
 }
 
 const context = describe;
@@ -425,7 +429,7 @@ import Greeting from "./Greeting";
 test("Greeting", () => {
   render(<Greeting name="world"></Greeting>);
 
-  expect(screen.queryByText(/Hello/)).toBeFalsy();
+  expect(screen.queryByText(/hi/)).toBeFalsy();
 });
 ```
 
