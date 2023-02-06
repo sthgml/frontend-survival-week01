@@ -182,6 +182,16 @@ touch .vscode/settings.json
 
 ### html, js 기본환경세팅
 
+package.json
+
+```json
+{
+  // ...(전략)...
+  "source": "index.html",
+  // ...(후략)...
+}
+```
+
 ```shell
 touch index.html
 ```
