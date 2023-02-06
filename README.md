@@ -99,6 +99,10 @@ npm i -D @testing-library/react @testing-library/jest-dom
 touch jest.config.js
 ```
 
+
+jest.config.js
+
+
 ```js
 module.exports = {
   testEnvironment: 'jsdom',
@@ -192,4 +196,37 @@ touch index.html
 ```shell
 mkdir src
 touch src/main.tsx
+```
+
+main.tsx
+
+```js
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const element = document.getElementById('root');
+
+if (element) {
+	const root = ReactDOM.createRoot(element);
+
+	root.render(<App name='이태성' />);
+}
+```
+
+App.tsx
+
+```js
+import Greeting from './components/Greeting';
+
+type AppProps = {
+	name: string;
+};
+
+export default function App({name}: AppProps) {
+	return (
+		<div>
+			<Greeting name={name} />
+		</div>
+	);
+}
 ```
