@@ -5,6 +5,7 @@ name: string;
     <div>
       <p>
         Hello,
+        {' '}
         {name}
         !
       </p>

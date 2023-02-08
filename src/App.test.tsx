@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
+
+import '@testing-library/jest-dom';
+
 import App from './App';
 
 test('App', () => {
   render(<App />);
 
-  expect(screen.getByText('Hello, world!'));
+  screen.getByText('Hello, world!');
+
+  expect(screen.queryByText(/Hello, world!/)).toBeInTheDocument();
 });
