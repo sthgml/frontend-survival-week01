@@ -1,5 +1,5 @@
 export default function Greeting({ name }: {
-	name: string;
+name: string;
 }) {
   return (
     <div>
