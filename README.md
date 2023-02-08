@@ -1,5 +1,9 @@
 # React + TypeScript + Jest + ESLint + Parcel 개발환경 설정하기
 
+## 참고
+
+- [ahastudio til](https://github.com/ahastudio/til/blob/main/react/20230205-setup-react-project.md)
+
 ## JavaScript 개발 환경(Node.js) 세팅하기
 
 현재일 기준 LTS 최신 버전과 설치되어 있는 모든 Node.js 버전 리스트를 확인한다.
@@ -324,17 +328,91 @@ TypeScript의 `tsconfig.json` 파일 생성 때와는 다르게 몇 가지 질�
 }
 ```
 
-jest를 설치하고 해도 되지만, 미리 `.eslintrc.js` 파일 내 `env` 설정에 아래 내용과 같이 `jest: true,`를 추가해준다.
+XO 관련 의존성을 제거하고 air-bnb 의존성을 설치하자.
+
+```bash
+npm uninstall eslint-config-xo \
+    eslint-config-xo-typescript
+
+npm i -D eslint-config-airbnb \
+    eslint-plugin-import \
+    eslint-plugin-react \
+    eslint-plugin-react-hooks \
+    eslint-plugin-jsx-a11y
+```
+
+`.eslintrc.js` 파일을 아래 내용을 참고하여 수정한다.
 
 ```javascript
 module.exports = {
-    env: {
-        browser: true,
-        es2021: true,
-        jest: true,
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
+  },
+  extends: [
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    '@typescript-eslint',
+  ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
-    // ...(후략)...
-}
+  },
+  rules: {
+    indent: ['error', 2],
+    'no-trailing-spaces': 'error',
+    curly: 'error',
+    'brace-style': 'error',
+    'no-multi-spaces': 'error',
+    'space-infix-ops': 'error',
+    'space-unary-ops': 'error',
+    'no-whitespace-before-property': 'error',
+    'func-call-spacing': 'error',
+    'space-before-blocks': 'error',
+    'keyword-spacing': ['error', { before: true, after: true }],
+    'comma-spacing': ['error', { before: false, after: true }],
+    'comma-style': ['error', 'last'],
+    'comma-dangle': ['error', 'always-multiline'],
+    'space-in-parens': ['error', 'never'],
+    'block-spacing': 'error',
+    'array-bracket-spacing': ['error', 'never'],
+    'object-curly-spacing': ['error', 'always'],
+    'key-spacing': ['error', { mode: 'strict' }],
+    'arrow-spacing': ['error', { before: true, after: true }],
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: [
+        '**/*.test.js',
+        '**/*.test.jsx',
+        '**/*.test.ts',
+        '**/*.test.tsx',
+      ],
+    }],
+    'import/extensions': ['error', 'ignorePackages', {
+      js: 'never',
+      jsx: 'never',
+      ts: 'never',
+      tsx: 'never',
+    }],
+    'react/jsx-filename-extension': [2, {
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    }],
+    'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
+  },
+};
 ```
 
 `package.json` 파일에 `lint` 명령을 추가해준다.
@@ -443,30 +521,27 @@ touch jest.config.js
 ```javascript
 module.exports = {
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: [
-    '@testing-library/jest-dom/extend-expect',
-    // './jest.setup',
-  ],
+  // setupFilesAfterEnv: [
+  //   '<rootDir>/src/setupTests.ts',
+  // ],
   transform: {
     '^.+\\.(t|j)sx?$': ['@swc/jest', {
       jsc: {
         parser: {
           syntax: 'typescript',
           jsx: true,
-          decorators: true,
+          // decorators: true,
         },
         transform: {
           react: {
             runtime: 'automatic',
           },
+          // legacyDecorator: true,
+          // decoratorMetadata: true,
         },
       },
     }],
   },
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules/',
-    '<rootDir>/dist/',
-  ],
 };
 ```
 
