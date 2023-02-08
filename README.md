@@ -35,8 +35,6 @@ fnm list
 fnm current
 ```
 
-<br/><br/><br/><br/>
-
 ### npm 프로젝트 만들기
 
 ![Node](https://img.shields.io/badge/nodejs-339933.svg?style=for-the-badge&logo=Node.js&logoColor=white)
@@ -45,8 +43,6 @@ fnm current
 ![Typescript](https://img.shields.io/badge/typescript-3178c6.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Jest](https://img.shields.io/badge/jest-C21325.svg?style=for-the-badge&logo=jest&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLINT-4B32C3.svg?style=for-the-badge&logo=ESLint&logoColor=white)
-
-<br/><br/>
 
 #### 프로젝트 폴더 생성
 
@@ -65,16 +61,12 @@ fmn use를 통해 프로젝트에서 사용하는 Node버전을 사용할 수 �
 cat .nvmrc
 ```
 
-<br/><br/>
-
 ### gitignore 파일 만들기
 
 node_modules나 dist는 용량이 크기때문에 적어도 이 둘은 꼭 넣어준다.
 
 구글 gitignore 검색해서 만들어주는 사이트 가서 node로 검색 후 설정을 가져오거나
 GitHub gitinore node 검색해서 넣어준다.
-
-<br/><br/>
 
 ### 프로젝트 초기화
 
@@ -84,11 +76,7 @@ GitHub gitinore node 검색해서 넣어준다.
 npm init
 ```
 
-<br/><br/>
-
 ### package.json
-
-<br/><br/>
 
 ### ESLint 설치
 
@@ -287,7 +275,7 @@ npm i -D @types/react @types/react-dom
 npm i -D parcel
 ```
 
-설치 후 package.json 에 "source": "index.html"를 추가해준다.
+설치 후 package.json 에 `source: "index.html"`를 추가해준다.
 
 정적 폴더를 위해 parcel-reporter-static-files-copy 패키지를 설치한다.
 
