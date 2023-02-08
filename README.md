@@ -118,7 +118,9 @@ Installing eslint-plugin-react@latest, @typescript-eslint/eslint-plugin@latest, 
 
 ```
 
-.eslintrc.js 파일을 열어 rules를 수정, 추가한다. Airbnb JavaScript Style Guide 같은 널리 알려진 스타일 가이드를 사용하고 싶다면 간단히 eslint-config-airbnb 확장을 설치해서 사용하면 된다.
+.eslintrc.js 파일을 열어 rules를 수정, 추가한다.
+Airbnb JavaScript Style Guide 같은 널리 알려진 스타일 가이드를 사용하고 싶다면
+간단히 eslint-config-airbnb 확장을 설치해서 사용하면 된다.
 
 ```javascript
     // 공백 4칸에서 공백 2칸으로 변경.
