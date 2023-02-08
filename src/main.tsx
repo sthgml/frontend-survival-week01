@@ -1,13 +1,14 @@
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-const element = document.getElementById('root');
-
 function main() {
-	if (element) {
-		const root = ReactDOM.createRoot(element);
-		root.render(<App />);
-	}
+  const container = document.getElementById('root');
+  if (!container) {
+    return;
+  }
+
+  const root = ReactDOM.createRoot(container);
+  root.render(<App />);
 }
 
 main();

@@ -196,16 +196,19 @@
 ```typescript
 import ReactDOM from "react-dom/client";
 
-const element = document.getElementById("root");
+import App from "./App";
 
-function App() {
-  return <p>Hello, world!</p>;
-}
+function main() {
+  const container = document.getElementById("root");
+  if (!container) {
+    return;
+  }
 
-if (element) {
-  const root = ReactDOM.createRoot(element);
+  const root = ReactDOM.createRoot(container);
   root.render(<App />);
 }
+
+main();
 ```
 
 ## 🐱 EsLint 설치 및 설정
@@ -236,7 +239,7 @@ if (element) {
 
   ? Does your project use TypeScript? » No / Yes<YES>
 
-  ? Where does your code run? ...  (Press <space> to select, 
+  ? Where does your code run? ...  (Press <space> to select,
   <a> to toggle all, <i> to invert selection)
   √ Browser
   √ Node
@@ -255,12 +258,106 @@ if (element) {
     JSON
 ```
 
+본래 airbnb 를 사용하였다. 기존 위에서 설치한 XO 삭제 후 airbnb 설치
+
+```bash
+  npm uninstall eslint-config-xo
+      eslint-config-xo-typescript
+
+  npm i -D eslint-config-airbnb
+      eslint-plugin-import
+      eslint-plugin-react
+      eslint-plugin-react-hooks
+      eslint-plugin-jsx-a11y
+```
+
+그에 맞게 `eslintrc.js` 수정
+
+```javascript
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
+  },
+  extends: [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "@typescript-eslint"],
+  settings: {
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+  },
+  rules: {
+    indent: ["error", 2],
+    "no-trailing-spaces": "error",
+    curly: "error",
+    "brace-style": "error",
+    "no-multi-spaces": "error",
+    "space-infix-ops": "error",
+    "space-unary-ops": "error",
+    "no-whitespace-before-property": "error",
+    "func-call-spacing": "error",
+    "space-before-blocks": "error",
+    "keyword-spacing": ["error", { before: true, after: true }],
+    "comma-spacing": ["error", { before: false, after: true }],
+    "comma-style": ["error", "last"],
+    "comma-dangle": ["error", "always-multiline"],
+    "space-in-parens": ["error", "never"],
+    "block-spacing": "error",
+    "array-bracket-spacing": ["error", "never"],
+    "object-curly-spacing": ["error", "always"],
+    "key-spacing": ["error", { mode: "strict" }],
+    "arrow-spacing": ["error", { before: true, after: true }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: [
+          "**/*.test.js",
+          "**/*.test.jsx",
+          "**/*.test.ts",
+          "**/*.test.tsx",
+        ],
+      },
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    ],
+    "jsx-a11y/label-has-associated-control": ["error", { assert: "either" }],
+  },
+};
+```
+
 설정에 대한 설치
 
 ```bash
   eslint-plugin-react@latest eslint-config-xo@latest
   eslint@>=8.0.0 eslint-config-xo-typescript@latest
-  @typescript-eslint/eslint-plugin@>=5.43.0 
+  @typescript-eslint/eslint-plugin@>=5.43.0
   @typescript-eslint/parser@>=5.43.0 typescript@>=4.4
   ? Would you like to install them now? » No / Yes<YES>
 
@@ -305,7 +402,7 @@ parcel 에서 static file을 사용하기 위해서
 ```json
 {
   "extends": ["@parcel/config-default"],
-  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+  "reporters": ["...", "parcel-reporter-static-files-copy"]
 }
 ```
 
@@ -330,8 +427,8 @@ parcel 에서 static file을 사용하기 위해서
 ## 🐱 Jest 설치 및 설정
 
 ```bash
-  npm i -D jest @types/jest @swc/core 
-  @swc/jest jest-environment-jsdom 
+  npm i -D jest @types/jest @swc/core
+  @swc/jest jest-environment-jsdom
   @testing-library/react @testing-library/jest-dom
 ```
 
@@ -393,4 +490,26 @@ module.exports = {
   plugins: ["react"],
   rules: {},
 };
+```
+
+`src/App.tsx`
+
+```javascript
+export default function App() {
+  return <p>Hello, world!</p>;
+}
+```
+
+`src/App.test.tsx`
+
+```javascript
+import { render, screen } from "@testing-library/react";
+
+import App from "./App";
+
+test("App", () => {
+  render(<App />);
+
+  screen.getByText(/Hello, world/);
+});
 ```
