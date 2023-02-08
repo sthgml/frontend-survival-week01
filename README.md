@@ -490,17 +490,7 @@ npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
-이후 eslint, jest를 원활히 사용하기 위해 `.eslintrc.js`의 `extends`를 아래와 같이 설정해준다.
-
-```javascript
-  extends: [
-      'plugin:react/recommended',
-      'plugin:react/jsx-runtime',
-      'xo',
-    ],
-```
-
-## 테스팅 도구 세팅하기(Jest)
+## 테스팅 도구 세팅하기(Jest, React-Testing-Library)
 
 아래와 같이 테스팅 도구를 설치한다.
 
@@ -509,6 +499,22 @@ npm i -D jest @types/jest @swc/core @swc/jest \
     jest-environment-jsdom \
     @testing-library/react @testing-library/jest-dom
 ```
+
+엄밀히 말하면 위 테스팅 도구 설치는 아래와 같이 나뉘는 것이니 참고로 알아두자.
+
+- Jest 및 SWC 지원 패키지 설치
+
+```bash
+npm i -D jest @types/jest @swc/core @swc/jest
+```
+
+- React Teseting Library 세팅
+
+```bash
+npm i -D @testing-library/react jest-environment-jsdom
+```
+
+</br>
 
 `jest.config.js` 파일을 생성
 
