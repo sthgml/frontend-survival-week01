@@ -8,6 +8,8 @@ TypeScript + ESLint + React + Jest + Parcel 개발 환경 세팅
 
 빠르게 코드블럭 안의 내용만 보고 따라하면 환경 셋팅 가능
 
+[참고](https://github.com/ahastudio/til/blob/main/react/20230205-setup-react-project.md)
+
 ## 0. npm 프로젝트 생성 및 .gitignore
 
 `빈폴더 생성`
@@ -100,7 +102,11 @@ npx eslint --init
 › Yes
 ```
 
-<!-- `aidbnb 의존성 패키지 설치`
+XO 관련 의존성 제거 및 `aidbnb 의존성 패키지 설치`
+
+```bash
+npm uninstall eslint-config-xo eslint-config-xo-typescript
+```
 
 ```bash
 npm info 'eslint-config-airbnb@latest' peerDependencies
@@ -111,33 +117,34 @@ npm info 'eslint-config-airbnb@latest' peerDependencies
 - eslint-plugin-react-hooks: 리액트 hooks 지원
 
 ```bash
-npm i -D eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-react-hooks
-``` -->
+npm i -D eslint-config-airbnb \
+    eslint-plugin-import \
+    eslint-plugin-react \
+    eslint-plugin-react-hooks \
+    eslint-plugin-jsx-a11y
+```
 
 `.eslintrc.js 설정 추가`
 
 jest: true 추가, rule, plugin:react/jsx-runtime 등
 
-extends는 XO와 airbnb 중 취향껏
-
 [airbnb eslint](https://github.com/iamturns/eslint-config-airbnb-typescript#setup)
 
 ```javascript
 module.exports = {
-  // ...(전략)...
   env: {
+    browser: true,
+    es2021: true,
     jest: true,
   },
-  extends: [
-    "plugin:react/recommended",
-    "xo", // 또는 'airbnb'
-    "plugin:react/jsx-runtime",
-  ],
-  // ...(중략)...
+  extends: ["airbnb", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "@typescript-eslint"],
   settings: {
-    react: {
-      version: "detect",
-    },
     "import/resolver": {
       node: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -165,28 +172,29 @@ module.exports = {
     "object-curly-spacing": ["error", "always"],
     "key-spacing": ["error", { mode: "strict" }],
     "arrow-spacing": ["error", { before: true, after: true }],
-    // "import/no-extraneous-dependencies": [
-    //   "error",
-    //   {
-    //     devDependencies: ["**/*.test.js", "**/*.test.jsx", "**/*.test.ts", "**/*.test.tsx"],
-    //   },
-    // ],
-    // "import/extensions": [
-    //   "error",
-    //   "ignorePackages",
-    //   {
-    //     js: "never",
-    //     jsx: "never",
-    //     ts: "never",
-    //     tsx: "never",
-    //   },
-    // ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: ["**/*.test.js", "**/*.test.jsx", "**/*.test.ts", "**/*.test.tsx"],
+      },
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
     "react/jsx-filename-extension": [
       2,
       {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
       },
     ],
+    "jsx-a11y/label-has-associated-control": ["error", { assert: "either" }],
   },
 };
 ```
@@ -232,7 +240,7 @@ npm i -D @types/react @types/react-dom
 
 ## 4. jest 세팅
 
-`jest 및 swc 설치`
+`jest 및 swc 지원 패키지 설치`
 
 ```bash
 npm i -D jest @types/jest @swc/core @swc/jest \
@@ -251,7 +259,9 @@ touch jest.config.js
 ```javascript
 module.exports = {
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  // setupFilesAfterEnv: [
+  //   '<rootDir>/src/setupTests.ts',
+  // ],
   transform: {
     "^.+\\.(t|j)sx?$": [
       "@swc/jest",
@@ -260,18 +270,19 @@ module.exports = {
           parser: {
             syntax: "typescript",
             jsx: true,
-            decorators: true,
+            // decorators: true,
           },
           transform: {
             react: {
               runtime: "automatic",
             },
+            // legacyDecorator: true,
+            // decoratorMetadata: true,
           },
         },
       },
     ],
   },
-  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
 };
 ```
 
@@ -286,7 +297,7 @@ npm i -D parcel
 `package.json에 source 추가 및 명령어 셋팅`
 
 ```package.json
- "source": "./index.html",
+ "source": "index.html",
  "scripts": {
     "start": "parcel --port 8080",
     "build": "parcel build",
@@ -355,13 +366,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 function main() {
-  const element = document.getElementById("root");
+  const container = document.getElementById("root");
 
-  if (!element) {
+  if (!container) {
     return;
   }
 
-  const root = ReactDOM.createRoot(element);
+  const root = ReactDOM.createRoot(container);
 
   root.render(<App name="react" />);
 }
@@ -388,7 +399,7 @@ export default function App({ name }: { name: string }) {
 
 ```tsx
 function add(x: number, y: number): number {
-  return (x + y);
+  return x + y;
 }
 
 const context = describe;

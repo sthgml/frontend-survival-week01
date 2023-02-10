@@ -1,6 +1,9 @@
 module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  // setupFilesAfterEnv: [
+  //   '<rootDir>/src/setupTests.ts',
+  // ],
   transform: {
     '^.+\\.(t|j)sx?$': [
       '@swc/jest',
@@ -9,16 +12,17 @@ module.exports = {
           parser: {
             syntax: 'typescript',
             jsx: true,
-            decorators: true,
+            // decorators: true,
           },
           transform: {
             react: {
               runtime: 'automatic',
             },
+            // legacyDecorator: true,
+            // decoratorMetadata: true,
           },
         },
       },
     ],
   },
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
 };
