@@ -63,7 +63,7 @@ npx tsc --init
 }
 ```
 
-## 2. ESLint 세팅
+## 2. ESLint 및 prettier 추가
 
 `ESLint 패키지 설치`
 
@@ -124,9 +124,37 @@ npm i -D eslint-config-airbnb \
     eslint-plugin-jsx-a11y
 ```
 
+`prettier 및 eslint와의 충돌 방지`
+
+```bash
+npm i -D prettier
+npm i -D eslint-config-prettier
+```
+
+```bash
+touch .prettierrc.js
+```
+
+```js
+module.exports = {
+  "singleQuote": false,
+  "semi": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "printWidth": 80
+}
+```
+
+eslint와 prettier의 충돌 방지
+
+eslint-config-prettier : eslint에서 prettier와 충돌할 수 있는 rule을 꺼버림
+
+코드 오류를 잡는데는 eslint, 코드 포맷팅에는 prettier를 사용하는 방법으로 가장 빠름.
+
 `.eslintrc.js 설정 추가`
 
-jest: true 추가, rule, plugin:react/jsx-runtime 등
+jest: true 추가, rule, plugin:react/jsx-runtime, eslint-config-prettier 등
 
 [airbnb eslint](https://github.com/iamturns/eslint-config-airbnb-typescript#setup)
 
@@ -142,6 +170,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "eslint-config-prettier",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -157,6 +186,9 @@ module.exports = {
     },
   },
   rules: {
+    // "max-lines": ["warn", 150],
+    // "prefer-const": ["warn"],
+    // "prefer-destructuring": ["error", { "object": true, "array": false }],
     indent: ["error", 2],
     "no-trailing-spaces": "error",
     curly: "error",
@@ -235,6 +267,7 @@ touch .vscode/settings.json
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "editor.formatOnSave": true,
   "trailing-spaces.trimOnSave": true
 }
 ```
