@@ -4,7 +4,7 @@
   "description": "프론트엔드 생존코스 1주차 과제",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/sonsurim/frontend-survival-week01/issues"
   },
-  "homepage": "https://github.com/sonsurim/frontend-survival-week01#readme"
+  "homepage": "https://github.com/sonsurim/frontend-survival-week01#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }
