@@ -16,7 +16,7 @@ npm install
 npm test
 ```
 
-## Package Summary 🔍
+## Environment 🔍
 
 - React.js
 - TypeScript
