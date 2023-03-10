@@ -1,25 +1,4 @@
 # 개발 환경 만들기
-- [개발 환경 만들기](#개발-환경-만들기)
-  * [절차 및 의도](#절차-및-의도)
-  * [패키지 초기 설정](#패키지-초기-설정)
-    + [npm 초기화 명령어 실행](#npm-초기화-명령어-실행)
-    + [package.json 수정](#packagejson-수정)
-    + [.gitignore 작성](#gitignore-작성)
-  * [메인 라이브러리 선택](#메인-라이브러리-선택)
-    + [react 설치](#react-설치)
-  * [빌드 도구 선택](#빌드-도구-선택)
-    + [파셀 설치 및 설정](#파셀-설치-및-설정)
-    + [진입점 만들기](#진입점-만들기)
-    + [.gitignore 빌드 관련 경로 추가](#gitignore-빌드-관련-경로-추가)
-    + [빌드 명령어 추가](#빌드-명령어-추가)
-  * [코드 컨벤션 잡기](#코드-컨벤션-잡기)
-    + [타입스크립트 설치 및 설정](#타입스크립트-설치-및-설정)
-    + [린트 설치 및 설정](#린트-설치-및-설정)
-  * [테스팅 라이브러리 선택](#테스팅-라이브러리-선택)
-    + [jest 설치 및 설정](#jest-설치-및-설정)
-
----
-
 
 ## 절차 및 의도
 1. 패키지 초기 설정: 필요한 도구를 설치하기 위해 가장 먼저 수행
@@ -39,12 +18,12 @@
 ## 패키지 초기 설정
 
 ### npm 초기화 명령어 실행
-```shell
+```
 npm init -y
 ```
 
 ### package.json 수정
-```json
+```
 /* package.json */
 
 {
@@ -65,10 +44,12 @@ npm init -y
 ## 메인 라이브러리 선택
 
 ### react 설치
-```shell
+
+```
 npm i react react-dom
 ```
-```shell
+
+```
 npm i -D @types/react @types/react-dom
 ```
 
@@ -79,11 +60,11 @@ ___
 
 ### 파셀 설치 및 설정
 
-```shell
+```
 npm i -D parcel
 ```
 
-```json
+```
 /* package.json */
 
 {
@@ -96,7 +77,7 @@ npm i -D parcel
 
 ### 진입점 만들기
 
-```html
+```
 <!-- index.html -->
 
 <!DOCTYPE html>
@@ -114,7 +95,7 @@ npm i -D parcel
 </html>
 ```
 
-```ts
+```
 /* main.tsx */
 
 import ReactDOM from 'react-dom/client';
@@ -135,7 +116,7 @@ function main() {
 main();
 ```
 
-```ts
+```
 /* App.tsx */
 
 import React from 'react';
@@ -151,13 +132,13 @@ export default App;
 ```
 
 ### .gitignore 빌드 관련 경로 추가
-```text
+```
 dist
 .parcel-cache
 ```
 
 ### 빌드 명령어 추가
-```json
+```
 /* package.json */
 
 "scripts": {
@@ -172,13 +153,15 @@ dist
 ## 코드 컨벤션 잡기
 
 ### 타입스크립트 설치 및 설정
-```shell
+```
 npm i -D typescript
 ```
-```shell
+
+```
 npx tsc --init
 ```
-```json
+
+```
 /* tsconfig.json */
 
 {
@@ -195,13 +178,15 @@ npx tsc --init
 
 
 ### 린트 설치 및 설정
-```shell
-npm i -D eslint 
 ```
-```shell
+npm i -D eslint
+```
+
+```
 npx eslint --init
 ```
-```js
+
+```
 /* .eslintrc.js */
 
 module.exports = {
@@ -245,13 +230,13 @@ module.exports = {
 
 ### jest 설치 및 설정
 
-```shell
+```
 npm i -D jest @types/jest @swc/core @swc/jest \
     jest-environment-jsdom \
     @testing-library/react @testing-library/jest-dom
 ```
 
-```json
+```
 /* package.json */
 
 {
@@ -263,7 +248,7 @@ npm i -D jest @types/jest @swc/core @swc/jest \
 }
 ```
 
-```js
+```
 /* jest.config.js */
 
 module.exports = {
@@ -294,7 +279,7 @@ module.exports = {
 };
 ```
 
-```js
+```
 /* .eslintrc.js */
 
 env: {
