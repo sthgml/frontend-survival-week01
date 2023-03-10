@@ -93,8 +93,9 @@ XO 관련 의존성 제거하고, 에어비앤비 관련 의존성 설치.
 
 ```jsx
 npm uninstall eslint-config-xo eslint-config-xo-typescript
-
-npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
+npm i -D eslint-config-airbnb eslint-plugin-import /
+         eslint-plugin-react eslint-plugin-react-hooks/
+         eslint-plugin-jsx-a11y
 ```
 
 .eslintrc.js 파일 수정:
@@ -106,7 +107,8 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime'],
+  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', /
+   'plugin:react/recommended', 'plugin:react/jsx-runtime'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -377,5 +379,5 @@ package.json script 수정
   "test": "jest",
   "coverage": "jest --coverage --coverage-reporters html",
   "watch:test": "jest --watchAll"
-},
+}
 ```
