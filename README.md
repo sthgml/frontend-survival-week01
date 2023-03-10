@@ -250,9 +250,9 @@ ReactDOM.render(<App />, container);
 ### 6. Jest & React Testing Library 설치
 
 ```jsx
-npm install --save-dev jest ts-jest @types/jest \
-    @testing-library/react @testing-library/jest-dom \
-    jest-environment-jsdom
+npm i -D jest @types/jest @swc/core @swc/jest \
+    jest-environment-jsdom \
+    @testing-library/react @testing-library/jest-dom
 ```
 
 jest.config.js 파일 작성:
