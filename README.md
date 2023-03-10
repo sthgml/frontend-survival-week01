@@ -59,7 +59,7 @@ npm i -D eslint
 npx eslint --init
 ```
 
-```
+```jsx
 
 ? How would you like to use ESLint? …
 ❯ To check syntax, find problems, and enforce code style
@@ -92,18 +92,9 @@ npx eslint --init
 XO 관련 의존성 제거하고, 에어비앤비 관련 의존성 설치.
 
 ```jsx
-npm uninstall eslint-config-xo \
-    eslint-config-xo-typescript
+npm uninstall eslint-config-xo eslint-config-xo-typescript
 
-npm i -D eslint-config-airbnb \
-    eslint-plugin-import \
-    eslint-plugin-react \
-    eslint-plugin-react-hooks \
-    eslint-plugin-jsx-a11y
-
-// eslint-config-airbnb -> Airbnb의 style guide를 eslint의 설정 파일인 .eslintrc.json에 확장해 주는 플러그인
-// eslint-plugin-import -> ES6+ import/export 지원 플러그인
-// eslint-plugin-jsx-a11y
+npm i -D eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y
 ```
 
 .eslintrc.js 파일 수정:
