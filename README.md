@@ -7,6 +7,8 @@
     + [.gitignore 작성](#gitignore-작성)
   * [메인 라이브러리 선택](#메인-라이브러리-선택)
     + [react 설치](#react-설치)
+  * [코드 컨벤션 잡기](#코드-컨벤션-잡기)
+    + [타입스크립트 설치 및 설정](#타입스크립트-설치-및-설정)
 
 
 ---
@@ -66,4 +68,30 @@ npm i react react-dom
 ```
 ```shell
 npm i -D @types/react @types/react-dom
+```
+
+
+---
+
+
+## 코드 컨벤션 잡기
+
+### 타입스크립트 설치 및 설정
+```shell
+npm i -D typescript
+```
+```shell
+npx tsc --init
+```
+```json
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "jsx": "react-jsx", /* https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html */
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
 ```
