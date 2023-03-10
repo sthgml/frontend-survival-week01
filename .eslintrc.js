@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime'],
+  extends: ['airbnb', 'plugin:react/recommended', 'plugin:react/jsx-runtime'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -55,6 +55,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'react/jsx-one-expression-per-line': 'off',
     'react/jsx-filename-extension': [
       2,
       {
