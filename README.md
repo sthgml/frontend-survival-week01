@@ -19,7 +19,8 @@ Node.js 버전 확인 (LTS 최신버전 권장)
 node -v
 ```
 
-[fnm](https://github.com/Schniz/fnm) (Fast Node Manager)로 여러 버전의 Node.js를 사용하는 것도 가능하니, 필요 시 사용하자.
+[fnm](https://github.com/Schniz/fnm) (Fast Node Manager)로 여러 버전의 Node.js를
+사용하는 것도 가능하니, 필요 시 사용하자.
 
 아래는 LTS 최신버전을 기본으로 사용하게 해주는 커맨드다.
 
@@ -128,7 +129,8 @@ npx eslint --init
 
 `.eslintrc`에서 추가 설정을 해주자.
 
-jest를 사용할 거라면 `jest : true`, JSX를 사용할 거라면 `'plugin:react/jsx-runtime'`를 추가하자.
+Jest를 사용할 거라면 `jest : true`,
+JSX를 사용할 거라면 `'plugin:react/jsx-runtime'`를 추가하자.
 
 ```js
 env: {
@@ -144,9 +146,10 @@ extends: [
 // ...
 ```
 
-`.eslintrc` 의 `rules`에서 더 많은 옵션을 추가할 수 있다. 필요한 규칙이 있다면 구글링해서 추가하자.
+`.eslintrc`의 `rules`에서 더 많은 옵션을 추가할 수 있다. 필요한 규칙이 있다면 구글링해서 추가하자.
 
-또한, 위에서 `.eslintignore`를 만들지 않았다면 지금이라도 생성하자. `.gitignore`와 동일하게 작성하면 된다.
+또한, 위에서 `.eslintignore`를 만들지 않았다면 지금이라도 생성하자.
+`.gitignore`와 동일하게 작성하면 된다.
 
 #### React와 React Type 정보 설치
 
@@ -203,7 +206,8 @@ module.exports = {
 npm i -D parcel
 ```
 
-`package.json`에 `"main"` 대신 `"source": "./index.html"` 추가하여 메인 페이지로 설정할 수 있다.
+`package.json`에 `"main"` 대신 `"source": "./index.html"` 추가하여 메인 페이지로
+설정할 수 있다.
 
 ```json
 {
@@ -215,7 +219,8 @@ npm i -D parcel
 }
 ```
 
-`parcel-reporter-static-files-copy` 설치하고 정적 파일 업로드 할 `static` 폴더를 root에 만들어주자.
+`parcel-reporter-static-files-copy` 설치하고,
+정적 파일을 업로드 할 `static` 폴더를 root에 만들어주자.
 
 ```terminal
 npm install -D parcel-reporter-static-files-copy
@@ -243,7 +248,8 @@ npm install -D parcel-reporter-static-files-copy
 
 #### 스크립트 실행하기
 
-npm에 기본적으로 설정된 `start`, `stop`, `restart`, `test` 외에 스크립트를 추가한 경우, 실행할 때 `run`을 붙여야 한다.
+npm에 기본적으로 설정된 `start`, `stop`, `restart`, `test` 외에 스크립트를 추가한 경우,
+실행할 때 `run`을 붙여야 한다.
 
 ```terminal
 npm start
