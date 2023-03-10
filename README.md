@@ -5,6 +5,8 @@
     + [npm 초기화 명령어 실행](#npm-초기화-명령어-실행)
     + [package.json 수정](#packagejson-수정)
     + [.gitignore 작성](#gitignore-작성)
+  * [메인 라이브러리 선택](#메인-라이브러리-선택)
+    + [react 설치](#react-설치)
 
 
 ---
@@ -50,4 +52,18 @@ npm init -y
 ### .gitignore 작성
 ```text
 node_modules/
+```
+
+
+---
+
+
+## 메인 라이브러리 선택
+
+### react 설치
+```shell
+npm i react react-dom
+```
+```shell
+npm i -D @types/react @types/react-dom
 ```
