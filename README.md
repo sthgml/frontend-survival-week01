@@ -15,7 +15,8 @@
   * [코드 컨벤션 잡기](#코드-컨벤션-잡기)
     + [타입스크립트 설치 및 설정](#타입스크립트-설치-및-설정)
     + [린트 설치 및 설정](#린트-설치-및-설정)
-
+  * [테스팅 라이브러리 선택](#테스팅-라이브러리-선택)
+    + [jest 설치 및 설정](#jest-설치-및-설정)
 
 ---
 
@@ -240,3 +241,63 @@ module.exports = {
 };
 ```
 
+## 테스팅 라이브러리 선택
+
+### jest 설치 및 설정
+
+```shell
+npm i -D jest @types/jest @swc/core @swc/jest \
+    jest-environment-jsdom \
+    @testing-library/react @testing-library/jest-dom
+```
+
+```json
+/* package.json */
+
+{
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "coverage": "jest --coverage --coverage-reporters html"
+  }
+}
+```
+
+```js
+/* jest.config.js */
+
+module.exports = {
+	testEnvironment: 'jsdom',
+	setupFilesAfterEnv: [
+		'@testing-library/jest-dom/extend-expect',
+	],
+	transform: {
+		'^.+\\.(t|j)sx?$': ['@swc/jest', {
+			jsc: {
+				parser: {
+					syntax: 'typescript',
+					jsx: true,
+					decorators: true,
+				},
+				transform: {
+					react: {
+						runtime: 'automatic',
+					},
+				},
+			},
+		}],
+	},
+	testPathIgnorePatterns: [
+		'<rootDir>/node_modules/',
+		'<rootDir>/dist/',
+	],
+};
+```
+
+```js
+/* .eslintrc.js */
+
+env: {
+  jest: true,
+},
+```
