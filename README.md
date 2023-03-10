@@ -4,7 +4,8 @@
 
 1. 패키지 초기 설정: 필요한 도구를 설치하기 위해 가장 먼저 수행
 
-2. 메인 라이브러리/프레임워크 선택: 각기 다른 생태계를 가지며, 예속된 다른 도구의 선택에 영향을 주기 때문에 목적에 맞게 선택
+2. 메인 라이브러리/프레임워크 선택: 각기 다른 생태계를 가지며, 예속된 다른 도구의 선택에 영향을 주기
+때문에 목적에 맞게 선택
 
 3. 빌드 도구 선택: 번들링, 트랜스파일링, 개발 서버 등 필요한 기능을 목적에 맞게 제공하는 도구 선택
 
@@ -167,7 +168,7 @@ npx tsc --init
 {
   "compilerOptions": {
     "target": "es2016",
-    "jsx": "react-jsx", /* https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html */
+    "jsx": "react-jsx",
     "module": "commonjs",
     "esModuleInterop": true,
     "strict": true,
