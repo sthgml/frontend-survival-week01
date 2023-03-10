@@ -9,6 +9,7 @@
     + [react 설치](#react-설치)
   * [코드 컨벤션 잡기](#코드-컨벤션-잡기)
     + [타입스크립트 설치 및 설정](#타입스크립트-설치-및-설정)
+    + [린트 설치 및 설정](#린트-설치-및-설정)
 
 
 ---
@@ -84,6 +85,8 @@ npm i -D typescript
 npx tsc --init
 ```
 ```json
+/* tsconfig.json */
+
 {
   "compilerOptions": {
     "target": "es2016",
@@ -94,4 +97,47 @@ npx tsc --init
     "skipLibCheck": true
   }
 }
+```
+
+
+### 린트 설치 및 설정
+```shell
+npm i -D eslint 
+```
+```shell
+npx eslint --init
+```
+```js
+/* .eslintrc.js */
+
+module.exports = {
+	env: {
+		browser: true,
+		es2021: true,
+	},
+	extends: [
+		'plugin:react/recommended',
+		'xo',
+	],
+	overrides: [
+		{
+			extends: [
+				'xo-typescript',
+			],
+			files: [
+				'*.ts',
+				'*.tsx',
+			],
+		},
+	],
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
+	},
+	plugins: [
+		'react',
+	],
+	rules: {
+	},
+};
 ```
