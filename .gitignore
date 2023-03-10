@@ -1,2 +1,6 @@
 # Dependency management
-node_modules/
+node_modules
+
+# parcel (https://parceljs.org/)
+dist
+.parcel-cache

@@ -9,6 +9,9 @@
     + [react 설치](#react-설치)
   * [빌드 도구 선택](#빌드-도구-선택)
     + [파셀 설치 및 설정](#파셀-설치-및-설정)
+    + [진입점 만들기](#진입점-만들기)
+    + [.gitignore 빌드 관련 경로 추가](#gitignore-빌드-관련-경로-추가)
+    + [빌드 명령어 추가](#빌드-명령어-추가)
   * [코드 컨벤션 잡기](#코드-컨벤션-잡기)
     + [타입스크립트 설치 및 설정](#타입스크립트-설치-및-설정)
     + [린트 설치 및 설정](#린트-설치-및-설정)
@@ -54,11 +57,6 @@ npm init -y
 }
 ```
 
-### .gitignore 작성
-```text
-node_modules/
-```
-
 
 ---
 
@@ -73,6 +71,99 @@ npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
+
+___
+
+## 빌드 도구 선택
+
+### 파셀 설치 및 설정
+
+```shell
+npm i -D parcel
+```
+
+```json
+/* package.json */
+
+{
+  "scripts": {
+    "start": "parcel --port 8080",
+    "build": "parcel build",
+  }
+}
+```
+
+### 진입점 만들기
+
+```html
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원하는 사이트 제목으로 수정</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="./src/main.tsx"></script>
+</body>
+</html>
+```
+
+```ts
+/* main.tsx */
+
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+function main() {
+	const element = document.getElementById('root');
+
+	if (!element) {
+		return;
+	}
+
+	const root = ReactDOM.createRoot(element);
+
+	root.render(<App />);
+}
+
+main();
+```
+
+```ts
+/* App.tsx */
+
+import React from 'react';
+
+function App() {
+
+	return (
+		<p>Hello World!</p>
+	);
+}
+
+export default App;
+```
+
+### .gitignore 빌드 관련 경로 추가
+```text
+dist
+.parcel-cache
+```
+
+### 빌드 명령어 추가
+```json
+/* package.json */
+
+"scripts": {
+  "start": "parcel --port 8080",
+  "build": "parcel build"
+}
+```
 
 ---
 
@@ -142,15 +233,5 @@ module.exports = {
 	rules: {
 	},
 };
-```
-
-___
-
-## 빌드 도구 선택
-
-### 파셀 설치 및 설정
-
-```shell
-npm i -D parcel
 ```
 

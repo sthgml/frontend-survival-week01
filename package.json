@@ -2,9 +2,10 @@
   "name": "frontend-survival-week01",
   "version": "0.0.1",
   "description": "개발 환경 설정 예시",
-  "main": "index.js",
+  "source": "./index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel --port 8080",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "eslint-config-xo-typescript": "^0.56.0",
     "eslint-plugin-react": "^7.32.2",
     "parcel": "^2.8.3",
+    "process": "^0.11.10",
     "typescript": "^4.9.5"
   }
 }
