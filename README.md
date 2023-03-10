@@ -353,3 +353,38 @@ package.json 파일에 source 항목 추가.
 ```jsx
 "source": "index.html",
 ```
+
+parcel-reporter-static-files-copy 패키지 설치
+
+```jsx
+npm i -D parcel-reporter-static-files-copy
+```
+
+.parcelrc 파일 작성:
+
+```jsx
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+static 폴더 생성
+
+```jsx
+mkdir static
+```
+
+package.json script 수정
+
+```jsx
+"scripts": {
+  "start": "parcel --port 8080",
+  "build": "parcel build",
+  "check": "tsc --noEmit",
+  "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+  "test": "jest",
+  "coverage": "jest --coverage --coverage-reporters html",
+  "watch:test": "jest --watchAll"
+},
+```
