@@ -1,8 +1,9 @@
 import React from 'react';
+import Greeting from './components/Greeting';
 
 function App() {
 	return (
-		<p>Hello World!</p>
+		<Greeting name='World' />
 	);
 }
 
