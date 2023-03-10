@@ -64,6 +64,8 @@ npm init -y
 
 일일이 적기 귀찮다면 *gitignore* 또는 *node gitignore* 검색해서 가져오도록 하자.
 
+만드는 김에 `.eslintignore`도 같은 내용으로 만들어두자.
+
 ### 3. 사용할 개발 프로그램 및 도구 설치, 세팅
 
 프로그램, 도구 설치 후 설치가 잘 되었는지 `package.json`에서 꼭 확인하자.
@@ -144,6 +146,8 @@ extends: [
 
 `.eslintrc` 의 `rules`에서 더 많은 옵션을 추가할 수 있다. 필요한 규칙이 있다면 구글링해서 추가하자.
 
+또한, 위에서 `.eslintignore`를 만들지 않았다면 지금이라도 생성하자. `.gitignore`와 동일하게 작성하면 된다.
+
 #### React와 React Type 정보 설치
 
 ```terminal
@@ -216,6 +220,8 @@ npm i -D parcel
 ```terminal
 npm install -D parcel-reporter-static-files-copy
 ```
+
+필요 시 Parcel 설정파일인 `.parcelrc`도 만들어주자.
 
 ### 4. 스크립트 설정
 
@@ -301,6 +307,14 @@ export default function Greeting() {
 ```
 
 #### 테스트 기본 파일 작성
+
+- `src/main.test.tsx`
+
+```ts
+test('test 설명', () => {
+    expect(1).toBe(1);
+});
+```
 
 - `src/App.test.tsx`
 
