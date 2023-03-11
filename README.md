@@ -6,13 +6,13 @@
 
 ### 1. `package.json` 파일 생성
 
-```
+```bash
 npm init -y
 ```
 
 * -y : npm init에 무조건 yes로 대답한다는 옵션
 
-<br />
+
 
 ### 2. `.gitignore` 파일 작성
 
@@ -20,11 +20,11 @@ npm init -y
 
 * [github에서 기본 제공하는 gitignore - Node Ver.](https://github.com/github/gitignore/blob/main/Node.gitignore)
 
-<br />
+
 
 ### 3. 타입스크립트 설정
 
-```
+```bash
 // 타입스크립트 설치
 npm i -D typescript
 
@@ -32,7 +32,7 @@ npm i -D typescript
 npx tsc --init
 ```
 
-<br />
+
 
 ### 4. `tsconfig.json` 파일의 jsx 속성을 변경
 
@@ -41,11 +41,11 @@ npx tsc --init
 [tsconfig 설정 참고 사이트](https://www.typescriptlang.org/tsconfig)  
 [jsx 설정](https://www.typescriptlang.org/ko/docs/handbook/jsx.html)
 
-<br />
+
 
 ### 5. ESLint 설정
 
-```
+```bash
 // ESLint 설치
 npm i -D eslint
 
@@ -54,7 +54,7 @@ npm i -D eslint
 npx eslint --init
 ```
 
-```
+```md
 ? How would you like to use ESLint? …
 ❯ To check syntax, find problems, and enforce code style
 
@@ -86,7 +86,7 @@ npx eslint --init
 ❯ npm
 ```
 
-<br />
+
 
 ### 6. `.eslintrc.js` 파일 수정
 
@@ -95,14 +95,14 @@ npx eslint --init
 1. env에 `jest: true` 추가
 2. extends에 `'plugin:react/jsx-runtime',` 추가
 
-<br />
+
 
 ### 7. `.eslintignore` 파일 작성
 
-eslint를 적용시키지 않을 파일을 추가   
+eslint를 적용시키지 않을 파일을 추가  
 gitignore를 복사해서 .eslintignore에 넣어줘도 됨
 
-<br />
+
 
 ### 8. `.vscode` 폴더 생성 후 `settings.json` 파일 추가
 
@@ -118,7 +118,7 @@ gitignore를 복사해서 .eslintignore에 넣어줘도 됨
 }
 ```
 
-<br />
+
 
 ### 9. 리액트 설치
 
@@ -132,11 +132,11 @@ npm i -D @types/react @types/react-dom
 
 @types : 실제 배포될 때 사용되는 것이 아니라, 개발 환경에서 도구처럼 쓰이기 때문에 -D로 devdependencies에 추가
 
-<br />
+
 
 ### 10. 테스팅 도구 설치
 
-```
+```bash
 npm i -D jest @types/jest @swc/core @swc/jest \
     jest-environment-jsdom \
     @testing-library/react @testing-library/jest-dom
@@ -145,7 +145,7 @@ npm i -D jest @types/jest @swc/core @swc/jest \
 * swc 혹은 테스팅 라이브러리 쓰는 방법이 바뀌면 설치 명령이 조율될 수 있음
 * jest와 swc를 같이 사용하는 것이 핵심
 
-<br />
+
 
 ### 11. `jest.config.js` 파일을 생성해 테스트에서 SWC를 사용
 
@@ -178,19 +178,19 @@ module.exports = {
 };
 ```
 
-<br />
+
 
 ### 12. Parcel 설치
 
-```
+```bash
 npm i -D parcel
 ```
 
-<br />
+
 
 ### 13. `package.json` 파일의 scripts 수정
 
-```
+```bash
 "scripts": {
     "start": "parcel --port 8080",
     "build": "parcel build",
@@ -202,10 +202,10 @@ npm i -D parcel
   },
 ```
 
-> ⚠️ `"source": "index.html",`를 추가해야 웹 서버가 실행됨   
+> ⚠️ `"source": "index.html",`를 추가해야 웹 서버가 실행됨  
 > node의 경우 `"main": "index.js"`으로 되어있음
 
-<br />
+
 
 ### 14. 기본 코드 작성
 
@@ -216,19 +216,19 @@ npm i -D parcel
 * `src/components/Greeting.test.tsx`
 * `src/components/Greeting.tsx`
 
-<br />
 
-### 15. parcel-reporter-static-files-copy 설치 
 
-```
+### 15. parcel-reporter-static-files-copy 설치
+
+```bash
 npm i -D parcel-reporter-static-files-copy
 ```
 
-<br />
+
 
 ### 16. .parcelrc 파일 작성
 
-```
+```json
 {
   "extends": ["@parcel/config-default"],
   "reporters":  ["...", "parcel-reporter-static-files-copy"]
