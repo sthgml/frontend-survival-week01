@@ -1,16 +1,15 @@
 import ReactDOM from 'react-dom/client';
 
-function App() {
-	return (
-		<p>Hello world</p>
-	);
+import App from './App';
+
+function main() {
+	const element = document.getElementById('root');
+
+	if (element) {
+		const root = ReactDOM.createRoot(element);
+
+		root.render(<App/>);
+	}
 }
 
-const element = document.getElementById('root');
-
-if (element) {
-	const root = ReactDOM.createRoot(element);
-
-	root.render(<App/>);
-}
-
+main();
