@@ -89,7 +89,7 @@ You can also run this command directly using 'npm init @eslint/config'.
 ❯ Use a popular style guide
   Answer questions about your style
 
-# Airbnb 가이드 선택
+# XO 가이드 선택
 ? Which style guide do you want to follow? …
   Standard: https://github.com/standard/standard
 ❯ XO: https://github.com/xojs/eslint-config-xo
