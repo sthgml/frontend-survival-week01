@@ -103,8 +103,6 @@ gitignore를 복사해서 .eslintignore에 넣어줘도 됨
 }
 ```
 
-
-
 ### 9. 리액트 설치
 
 ```bash
