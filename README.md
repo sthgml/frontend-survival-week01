@@ -212,6 +212,25 @@ npm i -D parcel
 * `index.html`
 * `src/main.tsx`
 * `src/App.tsx`
-* `src/App.test.tsx`
+* `src/main.test.tsx`
 * `src/components/Greeting.test.tsx`
 * `src/components/Greeting.tsx`
+
+<br />
+
+### 15. parcel-reporter-static-files-copy 설치 
+
+```
+npm i -D parcel-reporter-static-files-copy
+```
+
+<br />
+
+### 16. .parcelrc 파일 작성
+
+```
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
