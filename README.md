@@ -178,7 +178,8 @@ module.exports = {
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/function-component-definition": ["error", { "namedComponents": "arrow-function" }],
+    "react/function-component-definition": ["error",
+    { "namedComponents": "arrow-function" }],
     "react/jsx-props-no-spreading": ["off"],
     "react/react-in-jsx-scope": ["off"],
     "react/require-default-props": ["off"],
@@ -218,8 +219,12 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-shadow": "warn",
     "@typescript-eslint/no-throw-literal": "warn",
-    "@typescript-eslint/no-empty-function": ["error", { "allow": ["constructors"] }],
-    "jsx-a11y/no-noninteractive-element-interactions": ["error",{ "handlers": ["onClick"] }],
+    "@typescript-eslint/no-empty-function": ["error",
+      { "allow": ["constructors"] }
+     ],
+    "jsx-a11y/no-noninteractive-element-interactions": ["error",
+      { "handlers": ["onClick"] }
+     ],
     "jsx-a11y/no-noninteractive-tabindex": ["error", {
         "tags": ["label"],
         "roles": ["tabpanel"],
@@ -380,7 +385,7 @@ npm i -D parcel
 }
 ```
 
-`parcel-reporter-static-files-copy` 모듈을 설치하면 static 폴더의 파일을 정적 파일로 serving 할 수 있다
+해당 모듈을 설치하면 static 폴더의 파일을 정적 파일로 serving 할 수 있다
 
 ```bash
 npm i -D parcel-reporter-static-files-copy
