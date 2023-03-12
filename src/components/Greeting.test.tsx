@@ -1,13 +1,13 @@
-import {render, screen} from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
-import Greeting from './Greeting';
+import Greeting from "./Greeting";
 
-test('Greeting', () => {
-	render(<Greeting name='World' />);
+test("Greeting", () => {
+  render(<Greeting name="World" />);
 
-	screen.getByText('Hello, World!');
+  screen.getByText("Hello, World!");
 
-	screen.getByText(/Hello/);
+  screen.getByText(/Hello/);
 
-	expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
 });

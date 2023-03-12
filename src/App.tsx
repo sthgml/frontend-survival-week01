@@ -1,21 +1,21 @@
-import {useState} from 'react';
-import Greeting from './components/Greeting';
+import { useState } from "react";
+import Greeting from "./components/Greeting";
 
 export default function App() {
-	const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-	const handleClick = () => {
-		setCount(count + 1);
-	};
+  const handleClick = () => {
+    setCount(count + 1);
+  };
 
-	return (
-		<div>
-			<Greeting name='world' />
-			<img src='/images/blackcat.jpeg' alt='black cat' width='200' />
-			<p>Count: {count}</p>
-			<button type='button' onClick={handleClick}>
+  return (
+    <div>
+      <Greeting name="world" />
+      <img src="/images/blackcat.jpeg" alt="black cat" width="200" />
+      <p>Count: {count}</p>
+      <button type="button" onClick={handleClick}>
         클릭!
-			</button>
-		</div>
-	);
+      </button>
+    </div>
+  );
 }
