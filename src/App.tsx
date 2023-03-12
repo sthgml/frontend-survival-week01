@@ -10,8 +10,11 @@ export default function App() {
   return (
     <div>
       <Greeting name='world' />
-      <img src='/images/test.jpg' alt='Test Image' width='200' />
-      <p>Count: {count}</p>
+      <img src='/images/test.jpg' alt='Test' width='200' />
+      <p>
+        Count:
+        {count}
+      </p>
       <button type='button' onClick={handleClick}>
         클릭!
       </button>
