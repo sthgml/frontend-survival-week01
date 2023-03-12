@@ -4,13 +4,6 @@
 
 ## TypeScript + React + Jest + Parcel 개발환경 세팅
 
-작업 폴더 만들기
-
-```bash
-mkdir my-app
-cd my-app
-```
-
 ### npm 패키지 세팅
 
 `npm init -y` : 전부 yes로 하기
