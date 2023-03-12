@@ -77,6 +77,29 @@ npx eslint --init
 
 `ESLint` 세팅 시 나오는 질문 및 답변은 다음과 같습니다.
 
+```
+How would you like to use ESLint?
+❯ To check syntax, find problems, and enforce code style
+What type of modules does your project use?
+❯ JavaScript modules (import/export)
+Which framework does your project use?
+❯ React
+Does your project use TypeScript?
+❯ Yes
+Where does your code run?
+❯ Browser
+How would you like to define a style for your project?
+❯ Use a popular style guide
+Which style guide do you want to follow?
+❯ XO: https://github.com/xojs/eslint-config-xo-typescript
+What format do you want your config file to be in?
+❯ JavaScript
+Would you like to install them now?
+❯ Yes
+Which package manager do you want to use?
+❯ npm
+```
+
 style guide는 현재 가장 많이 사용하는 `airbnb` style guide를 적용하고자 합니다.
 
 ```bash
