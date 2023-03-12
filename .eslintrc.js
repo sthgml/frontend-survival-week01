@@ -11,6 +11,15 @@ module.exports = {
         "xo"
     ],
     "overrides": [
+        {
+            extends: [
+                'xo-typescript',
+            ],
+            files: [
+                '*.ts',
+                '*.tsx',
+            ],
+        },
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
