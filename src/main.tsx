@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 
 function main() {
-  const container = document.getElementById('root');
-  if (!container) {
+  const element = document.getElementById('root');
+  if (!element) {
     return;
   }
 
-  const root = ReactDOM.createRoot(container);
+  const root = ReactDOM.createRoot(element);
   root.render(<App />);
 }
 
