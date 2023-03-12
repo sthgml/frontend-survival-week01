@@ -18,6 +18,7 @@ npm 패키지를 준비
 ```npm init -y```
 .gitignore 파일 꼭 셋팅해주기
 .eslintignore파일도 셋팅. 아래 명령어들을 파일에 작성해준다.
+
 ```/node_modules/
 /dist/
 /.parcel-cache/
@@ -42,6 +43,7 @@ React 설치
 
 ```npm i -D @types/react @types/react-dom```
 테스팅 도구 설치
+
 ```npm i -D jest @types/jest @swc/core @swc/jest \\
     jest-environment-jsdom \\
     @testing-library/react @testing-library/jest-dom```
@@ -75,6 +77,7 @@ module.exports = {
     ],
 };
 ```
+
 Parcel 설치
 npm i -D parcel
 package.json 파일의 scripts를 적절히 수정한다.
