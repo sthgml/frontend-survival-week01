@@ -1,6 +1,4 @@
-# frontend-survival-week01
-
-# 개발 환경 세팅
+# 프론트엔드 개발 환경 세팅하기
 
 ## JavaScript 개발 환경 세팅
 
@@ -27,7 +25,7 @@ fnm default $(fnm current)
 
 ## TypeScript + React + Jest + Parcel 개발 환경 세팅
 
-### 1. 작업 폴더를 생성 한 후 해당 폴더로 이동합니다.
+### 1. 작업 폴더를 생성한 후 해당 폴더로 이동합니다.
 
 ```bash
 mkdir my-app
@@ -96,7 +94,7 @@ npm i -D eslint-config-airbnb \
 
 - `.eslintrc.js` 파일을 적절히 수정합니다.
 
-```json
+```
 module.exports = {
   env: {
     browser: true,
@@ -181,7 +179,7 @@ mkdir .vscode
 touch .vscode/settings.json
 ```
 
-- 아래 내용을 세팅해서 파일 저장시 자동으로 lint 실행 및 fix를 수행하도록 합니다.
+- 아래 내용을 세팅해서 파일 저장시 자동으로 lint 실행 및 fix 하도록 합니다.
 
 ```json
 {
@@ -233,7 +231,7 @@ npm i -D jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 
   > SWC can be used for both compilation and bundling. For compilation, it takes JavaScript / TypeScript files using modern JavaScript features and outputs valid code that is supported by all major browsers.
 
-```json
+```
 module.exports = {
   testEnvironment: 'jsdom',
 
@@ -274,10 +272,13 @@ npm i -D parcel
 ```
 
 - 추천하는 설정 작업
+
   - `package.json` 파일에 source 속성 추가
+
   ```json
   "source" : "./index.html"
   ```
+
   - [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후 `.parcelrc` 파일 작성 아래 설정을 통해서 static 폴더의 파일을 정적 파일로 Serving할 수 있습니다.(이미지 등 Assets)
 
 ```json
