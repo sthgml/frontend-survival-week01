@@ -44,6 +44,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     'key-spacing': ['error', { mode: 'strict' }],
     'arrow-spacing': ['error', { before: true, after: true }],
+    'jsx-quotes': ['error', 'prefer-single'],
     'import/no-extraneous-dependencies': [
       'error',
       {
