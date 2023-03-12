@@ -1,13 +1,34 @@
 import ReactDOM from 'react-dom/client';
 
-function App() {
+import App from './App';
+
+function Demo({count}: {
+	count: number;
+}) {
 	return (
-		<p>HELLO WORLD</p>
+		<p>DEMO: {count}</p>
 	);
 }
 
-const element = document.getElementById('root');
-if (element) {
+function main() {
+	const element = document.getElementById('root');
+	const element2 = document.getElementById('demo');
+
+	if (!element || !element2) {
+		return;
+	}
+
 	const root = ReactDOM.createRoot(element);
-	root.render(<App/>);
+	const root2 = ReactDOM.createRoot(element2);
+
+	root.render(<App />);
+
+	let count = 0;
+
+	setInterval(() => {
+		count += 1;
+		root2.render(<Demo count={count} />);
+	}, 1_000);
 }
+
+main();

@@ -221,3 +221,31 @@ extends: [
 ```
 
 `npm start`로 parcel에서 정상 작동 확인
+
+static 이미지 사용을 위한 설정
+
+parcel-reporter-static-files-copy 패키지 설치
+
+```bash
+npm i -D parcel-reporter-static-files-copy
+```
+
+.parcelrc 파일 만들어 작성
+
+```json
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+static 폴더 안에 이미지를 넣어 사용할 수 있음
+
+배포시에는 dist 폴더 밑으로 들어가 배포됨
+
+빌드 + 정적 서버 실행
+
+```bash
+npm run build #npx parcel build
+npx servor ./dist
+```
