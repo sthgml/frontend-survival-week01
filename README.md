@@ -1,5 +1,7 @@
 # frontend-survival-week01
 
+프론트엔드 생존코스 1주차 과제
+
 ## React + TypeScript + Jest + Eslint + Parcel 개발 환경 세팅
 
 ### 1. npm 패키지를 준비
