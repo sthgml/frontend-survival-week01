@@ -33,7 +33,8 @@ package.json이 생김
 
 `.gitignore` 만들어서 내용작성
 
-[github gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)의 node 추천
+[github](https://github.com/github/gitignore/blob/main/Node.gitignore)의
+node 추천
 
 ### 타입스크립트 설치
 
@@ -43,7 +44,8 @@ npm i -D typescript
 
 D 옵션으로 타입스크립트를 설치하면 package.json에 devDependencies으로 타입스크립트가 들어옴
 
-dependencies와 devDependecies의 차이 : dependency는 프로그램에서 직접 사용할 것, devDependencies는 환경에서 사용할 것(툴, 도구로서 사용하는 것).
+dependencies와 devDependecies의 차이 : dependency는 프로그램에서 직접 사용할 것,
+ devDependencies는 환경에서 사용할 것(툴, 도구로서 사용하는 것).
 
 배포시에는 devDependencies는 생략가능
 
@@ -109,7 +111,8 @@ npm i -D @types/react @types/react-dom
 ### 테스팅 도구(jest, swc) 설치
 
 ``` bash
-npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom
+ @testing-library/react @testing-library/jest-dom
 ```
 
 jest.config.js 파일 생성
