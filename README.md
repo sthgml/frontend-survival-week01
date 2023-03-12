@@ -13,7 +13,7 @@ cd my-app
 
 ### 2. npm 패키지를 설치한다
 
-```bash 
+```bash
 npm init -y
 ```
 
@@ -115,7 +115,7 @@ npm i -D jest @types/jest @swc/core @swc/jest \
 
 #### 8-1. 설정 파일 생성
 
-```bash 
+```bash
 touch jest.config.js
 ```
 
