@@ -2,7 +2,9 @@
 
 ## JavaScript 개발 환경 세팅
 
-기존 설치된 Node.js version을 확인한 후 [FNM(Fast Node Manager)](https://github.com/Schniz/fnm#using-a-script)를 사용해서 현재 기준으로 **Node.js LTS(Long Term Support) version**을 설치합니다.
+기존 설치된 Node.js version을 확인한 후
+[FNM(Fast Node Manager)](https://github.com/Schniz/fnm#using-a-script)를 사용해서
+현재 기준으로 **Node.js LTS(Long Term Support) version**을 설치합니다.
 
 ```bash
 // Node.js version 확인
@@ -25,23 +27,23 @@ fnm default $(fnm current)
 
 ## TypeScript + React + Jest + Parcel 개발 환경 세팅
 
-### 1. 작업 폴더를 생성한 후 해당 폴더로 이동합니다.
+### 1. 작업 폴더를 생성한 후 해당 폴더로 이동합니다
 
 ```bash
 mkdir my-app
 cd my-app
 ```
 
-### 2. npm 패키지를 생성합니다.
+### 2. npm 패키지를 생성합니다
 
 ```bash
 // -y를 통해서 기본 설정값으로 생성
 npm init -y
 ```
 
-### 3. `.gitignore` 파일을 추가합니다.
+### 3. `.gitignore` 파일을 추가합니다
 
-`node_modules`와 같은 파일들을 commit 하지 않도록 `.gitignore` 파일을 통해 방지할 수 있습니다.
+**node_modules** 와 같은 파일들을 commit 하지 않도록 **.gitignore** 파일을 통해 방지할 수 있습니다.
 
 ```
 /node_modules/
@@ -49,17 +51,23 @@ npm init -y
 /.parcel-cache/
 ```
 
-위 3개의 파일은 반드시 `.gitignore` 파일에 넣어줘야하고, github에서 기본으로 제공하는 [.gitignore 파일](https://github.com/github/gitignore/blob/main/Node.gitignore)을 주로 사용합니다.
+위 3개의 파일은 반드시 `.gitignore` 파일에 넣어줘야하고, github에서 기본으로 제공하는
+[.gitignore 파일](https://github.com/github/gitignore/blob/main/Node.gitignore)를
+주로 사용합니다.
 
-### 4. TypeScript를 세팅합니다.
+### 4. TypeScript를 세팅합니다
 
 ```bash
 npm i -D typescript
 npx tsc --init
 ```
 
-`tsconfig.json` 파일에서 `"jsx": "preserve"` 주석을 해제하고, `"jsx": "react-jsx"` 설정을 변경했습니다. 참고로 TypeScript는 [여러 가지의 JSX 모드](https://www.typescriptlang.org/ko/docs/handbook/jsx.html)를 제공하고 있습니다.\
-`npm i -D`는 `npm install --save-dev`의 약어로 **개발 환경**에서 사용하는 도구를 설치할 때 사용하는 명령어 입니다. 서버 배포 시 `devDependencies`를 제외할 수 있어서 배포 크기를 줄일 수 있습니다.
+`tsconfig.json` 파일에서 `"jsx": "preserve"` 주석을 해제하고,
+`"jsx": "react-jsx"` 설정을 변경했습니다.
+[여러 가지의 JSX 모드](https://www.typescriptlang.org/ko/docs/handbook/jsx.html)를 참고했습니다.
+`npm i -D`는 `npm install --save-dev`의 약어로서
+**개발 환경**에서 사용하는 도구를 설치할 때 사용하는 명령어 입니다.
+서버 배포 시 `devDependencies`를 제외할 수 있어서 배포 크기를 줄일 수 있습니다.
 
 ```json
 // package.json의 devDependencies key는 개발할 때만 사용하는 확장 모듈을 관리합니다.
@@ -68,7 +76,7 @@ npx tsc --init
   }
 ```
 
-### 5. ESLint를 세팅합니다.
+### 5. ESLint를 세팅합니다
 
 ```bash
 npm i -D eslint
@@ -189,11 +197,11 @@ module.exports = {
 };
 ```
 
-### 6. `.eslintignore` 파일을 추가합니다.
+### 6. `.eslintignore` 파일을 추가합니다
 
 `.eslintignore` 파일 내용은 `.gitignore` 파일과 동일하게 작성해줍니다.
 
-### 7. `VS Code 설정 파일`을 생성합니다.
+### 7. `VS Code 설정 파일`을 생성합니다
 
 - `.vscode` 폴더 생성 후 하위에 `setting.json` 파일을 생성합니다.
 
@@ -217,14 +225,14 @@ touch .vscode/settings.json
 }
 ```
 
-### 8. `React`를 설치합니다.
+### 8. `React`를 설치합니다
 
 ```bash
 npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
-### 9. `테스팅 도구`를 설치합니다.
+### 9. `테스팅 도구`를 설치합니다
 
 ```bash
 npm i -D jest @types/jest @swc/core @swc/jest \
@@ -246,9 +254,10 @@ npm i -D jest @types/jest @swc/core @swc/jest
 npm i -D jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 ```
 
-### 10. `jest.config.js` 파일을 작성합니다.
+### 10. `jest.config.js` 파일을 작성합니다
 
-[jest.config.js 파일](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js)을 작성해서 테스트 시 `SWC`를 사용할 수 있게 합니다. `setupFilesAfterEnv`의 내용 중 `./jest.setup`은 삭제합니다.
+[jest.config.js 파일](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js)을 작성해서 테스트 시 `SWC`를 사용할 수 있게 합니다.
+`setupFilesAfterEnv`의 내용 중 `./jest.setup`은 삭제합니다.
 
 - [SWC(Speedy Web Compiler)](https://swc.rs/)란?
 
@@ -288,7 +297,7 @@ module.exports = {
 };
 ```
 
-### 11. `Parcel`을 설치합니다.
+### 11. `Parcel`을 설치합니다
 
 ```bash
 npm i -D parcel
@@ -302,7 +311,8 @@ npm i -D parcel
   "source" : "./index.html"
   ```
 
-  - [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후 `.parcelrc` 파일 작성 아래 설정을 통해서 static 폴더의 파일을 정적 파일로 Serving할 수 있습니다.(이미지 등 Assets)
+  - [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후`.parcelrc` 파일을 작성합니다.
+    아래 설정을 통해서 static 폴더의 파일을 정적 파일로 Serving할 수 있습니다.(이미지 등 Assets)
 
 ```json
 {
@@ -311,7 +321,7 @@ npm i -D parcel
 }
 ```
 
-### 12. `package.json` 파일의 scripts 내용을 수정합니다.
+### 12. `package.json` 파일의 scripts 내용을 수정합니다
 
 아래의 [scripts](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json) 내용을 참고하여 수정합니다.
 
@@ -329,10 +339,11 @@ npm i -D parcel
   },
 ```
 
-또한 위 상태에서 `npm run start`를 하면 에러가 발생하는데, \
-현재 `packsge.json`의 `"main" : "index.js"`를 `"source" : "index.html"`로 수정하면 에러를 해결할 수 있습니다. 원래 node의 경우 실행 파일을 `"main"` 으로 잡아주는데, 해당 파일에서는 웹 서버를 띄울 것이기 때문에 `"source"`로 변경했습니다.
+현재 `packsge.json`의 `"main" : "index.js"`를 `"source" : "index.html"`로 수정합니다.
+원래 node의 경우 실행 파일을 `"main"` 으로 잡아주는데,
+해당 파일에서는 웹 서버를 띄울 것이기 때문에 `"source"`로 변경했습니다.
 
-### 13. React 기본 코드를 작성합니다.
+### 13. React 기본 코드를 작성합니다
 
 1. `index.html` 파일 작성
 
@@ -350,7 +361,7 @@ npm i -D parcel
 </html>
 ```
 
-2. `src/main.tsx` 파일 작성
+2.`src/main.tsx` 파일 작성
 
 ```typescript
 import ReactDOM from 'react-dom/client';
@@ -370,7 +381,7 @@ function main() {
 main();
 ```
 
-3. `src/App.tsx` 파일 작성
+3.`src/App.tsx` 파일 작성
 
 ```typescript
 export default function App() {
