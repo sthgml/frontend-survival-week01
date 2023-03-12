@@ -32,6 +32,7 @@ npx tsc --init
 ```
 
 ### 4. tsconfig.json 파일의 jsx 속성 변경
+
 기본적으로 세팅된 tsconfig.json 옵션을 사용
 .tsx 파일을 사용하기 위해 jsx 옵션만 설정 추가
 
@@ -104,6 +105,7 @@ eslint-plugin-react-hooks@^4.3.0 @typescript-eslint/parser@latest
 ```
 
 ### 6. .eslintrc.js 파일 수정
+
 추후에 Jest를 설치할 것이기 때문에 미리 .eslintrc.js 파일에 jest 관련 설정을 추가
 
 ```js
@@ -121,6 +123,7 @@ module.exports = {
 ```
 
 ### 7. .eslintignore 파일 작성
+
 해당 파일에 작성된 파일은 린트룰을 무시
 
 ```text
@@ -241,7 +244,6 @@ index.html 파일을 아래와 같이 작성
 </html>
 ```
 
-
 ```js
 module.exports = {
   env: {
@@ -342,7 +344,6 @@ index.html 파일에 script를 추가하여 main.tsx 파일을 실행
 </html>
 ```
 
-
 이미지와 같은 정적 파일을 제공하기 위해  
 parcel-reporter-static-files-copy 패키지를 설치
 
@@ -383,4 +384,3 @@ ESLint를 실행하고 문제점을 고치게 설정
   }
 }
 ```
-
