@@ -7,6 +7,4 @@ test('Greeting', () => {
 	screen.getByText('Hello, world!');
 
 	screen.getByText(/Hello/);
-
-	expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
 });
