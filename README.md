@@ -2,8 +2,8 @@
 
 ## JavaScript 개발 환경 세팅
 
-기존 설치된 Node.js version을 확인한 후
-[FNM(Fast Node Manager)](https://github.com/Schniz/fnm#using-a-script)를 사용해서
+기존 설치된 Node.js version을 확인한 후 \
+[FNM(Fast Node Manager)](https://github.com/Schniz/fnm#using-a-script)를 사용해서 \
 현재 기준으로 **Node.js LTS(Long Term Support) version**을 설치합니다.
 
 ```bash
@@ -25,7 +25,7 @@ fnm list
 fnm default $(fnm current)
 ```
 
-## TypeScript + React + Jest + Parcel 개발 환경 세팅
+## `TypeScript + React + Jest + Parcel` 개발 환경 세팅
 
 ### 1. 작업 폴더를 생성한 후 해당 폴더로 이동합니다
 
@@ -43,17 +43,16 @@ npm init -y
 
 ### 3. `.gitignore` 파일을 추가합니다
 
-**node_modules** 와 같은 파일들을 commit 하지 않도록 **.gitignore** 파일을 통해 방지할 수 있습니다.
+`node_modules` 와 같은 파일들을 commit 하지 않도록 `.gitignore` 파일을 통해 방지할 수 있습니다.
 
-```
+```bash
 /node_modules/
 /dist/
 /.parcel-cache/
 ```
 
-위 3개의 파일은 반드시 `.gitignore` 파일에 넣어줘야하고, github에서 기본으로 제공하는
-[.gitignore 파일](https://github.com/github/gitignore/blob/main/Node.gitignore)를
-주로 사용합니다.
+위 3개의 파일은 반드시 `.gitignore` 파일에 넣어줘야하고 \
+github에서 기본으로 제공하는 [.gitignore 파일](https://github.com/github/gitignore/blob/main/Node.gitignore)를 주로 사용합니다.
 
 ### 4. TypeScript를 세팅합니다
 
@@ -63,10 +62,10 @@ npx tsc --init
 ```
 
 `tsconfig.json` 파일에서 `"jsx": "preserve"` 주석을 해제하고,
-`"jsx": "react-jsx"` 설정을 변경했습니다.
-[여러 가지의 JSX 모드](https://www.typescriptlang.org/ko/docs/handbook/jsx.html)를 참고했습니다.
+`"jsx": "react-jsx"` 설정을 변경했습니다.\
+참고로 Typescript는 [여러 가지의 JSX 모드](https://www.typescriptlang.org/ko/docs/handbook/jsx.html)를 제공하고 있습니다.\
 `npm i -D`는 `npm install --save-dev`의 약어로서
-**개발 환경**에서 사용하는 도구를 설치할 때 사용하는 명령어 입니다.
+`개발 환경`에서 사용하는 도구를 설치할 때 사용하는 명령어 입니다.\
 서버 배포 시 `devDependencies`를 제외할 수 있어서 배포 크기를 줄일 수 있습니다.
 
 ```json
@@ -85,7 +84,7 @@ npx eslint --init
 
 `ESLint` 세팅 시 나오는 질문 및 답변은 다음과 같습니다.
 
-```
+```bash
 How would you like to use ESLint?
 ❯ To check syntax, find problems, and enforce code style
 What type of modules does your project use?
@@ -125,7 +124,7 @@ npm i -D eslint-config-airbnb \
 
 - `.eslintrc.js` 파일을 적절히 수정합니다.
 
-```
+```bash
 module.exports = {
   env: {
     browser: true,
@@ -248,7 +247,7 @@ npm i -D jest @types/jest @swc/core @swc/jest \
 npm i -D jest @types/jest @swc/core @swc/jest
 ```
 
-2. React Testing Library 세팅
+2.React Testing Library 세팅
 
 ```bash
 npm i -D jest-environment-jsdom @testing-library/react @testing-library/jest-dom
@@ -256,14 +255,14 @@ npm i -D jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 
 ### 10. `jest.config.js` 파일을 작성합니다
 
-[jest.config.js 파일](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js)을 작성해서 테스트 시 `SWC`를 사용할 수 있게 합니다.
+[jest.config.js 파일](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js)을 작성해서 테스트 시 `SWC`를 사용할 수 있게 합니다.\
 `setupFilesAfterEnv`의 내용 중 `./jest.setup`은 삭제합니다.
 
 - [SWC(Speedy Web Compiler)](https://swc.rs/)란?
 
   > SWC can be used for both compilation and bundling. For compilation, it takes JavaScript / TypeScript files using modern JavaScript features and outputs valid code that is supported by all major browsers.
 
-```
+```bash
 module.exports = {
   testEnvironment: 'jsdom',
 
@@ -311,7 +310,7 @@ npm i -D parcel
   "source" : "./index.html"
   ```
 
-  - [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후`.parcelrc` 파일을 작성합니다.
+  - [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후`.parcelrc` 파일을 작성합니다. \
     아래 설정을 통해서 static 폴더의 파일을 정적 파일로 Serving할 수 있습니다.(이미지 등 Assets)
 
 ```json
