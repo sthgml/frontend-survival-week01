@@ -3,7 +3,7 @@
 ## JavaScript 개발 환경 세팅
 
 기존 설치된 Node.js version을 확인한 후 \
-[FNM(Fast Node Manager)](https://github.com/Schniz/fnm#using-a-script)를 사용해서 \
+[FNM(Fast Node Manager)](https://github.com/Schniz/fnm#using-a-script)를 사용해서
 현재 기준으로 **Node.js LTS(Long Term Support) version**을 설치합니다.
 
 ```bash
@@ -51,8 +51,9 @@ npm init -y
 /.parcel-cache/
 ```
 
-위 3개의 파일은 반드시 `.gitignore` 파일에 넣어줘야하고 \
-github에서 기본으로 제공하는 [.gitignore 파일](https://github.com/github/gitignore/blob/main/Node.gitignore)를 주로 사용합니다.
+위 3개의 파일은 반드시 `.gitignore` 파일에 넣어줘야하고, \ github에서 기본으로 제공하는
+[.gitignore 파일](https://github.com/github/gitignore/blob/main/Node.gitignore)을
+주로 사용합니다.
 
 ### 4. TypeScript를 세팅합니다
 
@@ -63,7 +64,9 @@ npx tsc --init
 
 `tsconfig.json` 파일에서 `"jsx": "preserve"` 주석을 해제하고,
 `"jsx": "react-jsx"` 설정을 변경했습니다.\
-참고로 Typescript는 [여러 가지의 JSX 모드](https://www.typescriptlang.org/ko/docs/handbook/jsx.html)를 제공하고 있습니다.\
+참고로 Typescript는
+[여러 가지의 JSX 모드](https://www.typescriptlang.org/ko/docs/handbook/jsx.html)를
+제공하고 있습니다.\
 `npm i -D`는 `npm install --save-dev`의 약어로서
 `개발 환경`에서 사용하는 도구를 설치할 때 사용하는 명령어 입니다.\
 서버 배포 시 `devDependencies`를 제외할 수 있어서 배포 크기를 줄일 수 있습니다.
@@ -255,12 +258,10 @@ npm i -D jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 
 ### 10. `jest.config.js` 파일을 작성합니다
 
-[jest.config.js 파일](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js)을 작성해서 테스트 시 `SWC`를 사용할 수 있게 합니다.\
+`jest.config.js 파일`
+<https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js>
+을 작성해서 테스트 시 [SWC(Speedy Web Compiler)](https://swc.rs/)를 사용할 수 있게 합니다.\
 `setupFilesAfterEnv`의 내용 중 `./jest.setup`은 삭제합니다.
-
-- [SWC(Speedy Web Compiler)](https://swc.rs/)란?
-
-  > SWC can be used for both compilation and bundling. For compilation, it takes JavaScript / TypeScript files using modern JavaScript features and outputs valid code that is supported by all major browsers.
 
 ```bash
 module.exports = {
@@ -322,7 +323,8 @@ npm i -D parcel
 
 ### 12. `package.json` 파일의 scripts 내용을 수정합니다
 
-아래의 [scripts](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json) 내용을 참고하여 수정합니다.
+아래의 `scripts` 내용을 참고하여 수정합니다. /
+<https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json>
 
 ```json
 "scripts": {
