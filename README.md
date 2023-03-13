@@ -311,7 +311,8 @@ npm i -D parcel
   "source" : "./index.html"
   ```
 
-  - [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후`.parcelrc` 파일을 작성합니다. \
+  - `parcel-reporter-static-files-copy` 패키지를 설치 후 `.parcelrc` 파일을 작성합니다.
+    <https://github.com/elwin013/parcel-reporter-static-files-copy>
     아래 설정을 통해서 static 폴더의 파일을 정적 파일로 Serving할 수 있습니다.(이미지 등 Assets)
 
 ```json
@@ -323,7 +324,7 @@ npm i -D parcel
 
 ### 12. `package.json` 파일의 scripts 내용을 수정합니다
 
-아래의 `scripts` 내용을 참고하여 수정합니다. /
+아래의 `scripts` 내용을 참고하여 수정합니다.
 <https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json>
 
 ```json
