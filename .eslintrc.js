@@ -6,8 +6,8 @@ module.exports = {
 	},
 	extends: [
 		'plugin:react/recommended',
-		'plugin:react/jsx-runtime',
 		'xo',
+		'plugin:react/jsx-runtime',
 	],
 	overrides: [
 		{
@@ -30,4 +30,3 @@ module.exports = {
 	rules: {
 	},
 };
-
