@@ -198,13 +198,15 @@ module.exports = {
 /.parcel-cache/
 ```
 
-[eslint-.eslintignore](https://github.com/eslint/eslint/blob/main/.eslintignore)에 추가되어있는 항목도 추가하였다.
+[eslintignore](https://github.com/eslint/eslint/blob/main/.eslintignore)
+에 추가되어있는 항목도 추가하였다.
 
 ### gitignore 추가
 
 `.gitignore`파일을 생성해줍니다.
 
-[github-Node.gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)에서 파일안에 넣어야할 컨텐츠를 채워줍니다.
+[Node.gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
+에서 파일안에 넣어야할 컨텐츠를 채워줍니다.
 
 해당 파일이 필요한 이유는 리파지토리에 올라가지 말아야하는 파일을 미리 제외하는 작업입니다.
 
