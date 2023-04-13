@@ -1,21 +1,25 @@
 module.exports = {
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   env: {
     browser: true,
     es2021: true,
     jest: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:@typescript-eslint/recommended",
+  extends: ["plugin:react/recommended", "plugin:react/jsx-runtime", "xo"],
+  overrides: [
+    {
+      extends: ["xo-typescript"],
+      files: ["*.ts", "*.tsx"],
+    },
   ],
-  overrides: [],
-  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react"],
   rules: {},
 };
