@@ -8,8 +8,8 @@ module.exports = {
 		'plugin:react/recommended',
 		'xo',
 		'plugin:react/jsx-runtime',
-		'@typescript-eslint/parser',
 	],
+	parser: '@typescript-eslint/parser',
 	overrides: [
 		{
 			extends: [

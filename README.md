@@ -50,7 +50,7 @@ npm init -y
 
 최소 아래는 추가되야 한다.
 
-```
+```plaintext
 /node_modules/ 
 /dist/
 ```
@@ -117,7 +117,7 @@ npx eslint --init
 
 다음과 같이 상황에 맞게 질문에 대답한다.
 
-```
+```plaintext
 설치할까요? y
 Eslint 어떤 거에 사용할까요? 모두
 자바스크립트 모듈 어떤거 사용할까요? JavaScript (import/export)
