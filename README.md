@@ -216,7 +216,13 @@ touch index.html
 package.json에서 source로 수정한다.
 
 ```json
-  "sorce": "./index.html",
+  "source": "./index.html",
+```
+
+이걸 안한다면 터미널에서 아래와 같이 실행해야 한다.
+
+```shell
+npx parcel index.html --port 8080
 ```
 
 ### typeScript 파일 생성 및 index.html 수정
@@ -234,9 +240,61 @@ html 파일에 script를 추가한다.
 <script type="module" src="src/main.tsx"></script>
 ```
 
-### main.tsx
+bundle을 썼기 때문에 ESmodule를 직접 쓰지 않고
+Parcel이 변환해준다.
+
+### tsx 파일 생성
 
 ```typescript
+// src/main.tsx
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const element = document.getElementById('root');
+
+if (element) {
+  const root = ReactDOM.createRoot(element);
+
+  root.render(<App name='유소정' />);
+}
+```
+
+```typescript
+// src/main.test.tsx
+function add(x: number, y: number): number {
+  return x + y;
+}
+
+const context = describe;
+
+describe('add 함수', () => {
+  context('하나의 양수와 음수가 주어지면', () => {
+    it('항상 하나의 양수보다 작은 값을 돌려준다', () => {
+      expect(add(1, -2)).toBeLessThan(1);
+    });
+  });
+});
+```
+
+```typescript
+// src/App.tsx
+import Greeting from './components/Greeting';
+
+type AppProps = {
+  name: string;
+};
+
+export default function App({name}: AppProps) {
+  return (
+    <div>
+      <Greeting name={name} />
+    </div>
+  );
+}
+```
+
+```typescript
+// src/components/Greeting.tsx
 import ReactDOM from 'react-dom/client';
 
 function App(){
@@ -253,16 +311,34 @@ if (element) {
 }
 ```
 
+```typescript
+// src/components/Greeting.test.tsx
+import {render, screen} from '@testing-library/react';
+import Greeting from './Greeting';
+
+test('Greeting', () => {
+  render(<Greeting name='world' />);
+
+  screen.getByText('Hello, world');
+
+  screen.getByText(/Hello/);
+
+  expect(screen.queryByText(/Hi/)).toBeFalsy();
+
+  expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
+});
+```
+
 ### eslint 실행
 
 현재 폴더와 그 아래까지 고친다.
 
 ```shell
-npx eslint --fix .
+npm run lint
 
 or
 
-npx run lint
+npx eslint --fix .
 ```
 
 ### .eslintrc.js 에러 해결  
@@ -272,6 +348,16 @@ extends에 아래 내용을 추가한다.
 ```javascript
 'plugin:react/jsx-runtime',
 ```
+
+settings에 아래 내용을 추가한다.
+
+```javascript
+settings: {
+  react: {
+    version: '18.2.0',
+  },
+},
+````
 
 ### eslint 확장자 설치
 
@@ -297,3 +383,37 @@ touch settings.json
 ```
 
 80열에서 줄 긋기, save하면 끝에 있는 줄 삭제 등
+
+### .parcelrc 파일 생성 및 작성
+
+parcel-reporter-static-files-copy 를 설치한다.
+
+.parcelrc 파일을 생성한다.
+
+static 폴더를 생성한다.
+
+```shell
+npm install -D parcel-reporter-static-files-copy
+
+touch .parcelrc
+
+mkdir static
+```
+
+.parcelrc에 다음과 같이 추가한다. 이는 static 폴더의 파일을 사용하게 한다.
+
+```json
+{
+  "extends": ["@parcel/config-default"],
+  "reporters": ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+### 빌드 + 정적 서버 실행
+
+parcel 번들러를 이용하여 프로젝트를 빌드한다.
+
+```shell
+npx parcel build
+npx servor ./dist
+```
