@@ -28,6 +28,9 @@ module.exports = {
 	plugins: [
 		'react',
 	],
-	rules: {
+	settings: {
+		react: {
+			version: '18.2.0',
+		},
 	},
 };
