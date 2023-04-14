@@ -44,9 +44,12 @@ touch .gitignore
 
 생성 후 밑에 두 가지 방법에 따라 `.gitignore`을 작성합니다.
 
-**방법1:** <https://github.com/github/gitignore> 로 접속하여 개발 환경을 찾아 복사 후 붙여넣기 합니다.
+**방법1:** \
+<https://github.com/github/gitignore> 로 접속하여 개발 환경을 찾아 복사 후 붙여넣기 합니다.
 
-**방법2:** 위 처럼 파일을 생성한 후 <https://toptal.com/developers/gitignore> 로 접속하여 자신이 만들고자 하는 개발 환경을 검색하여 내용을 긁어옵니다. (예제에서는 `node`로 세팅을 진행)
+**방법2:** \
+위 처럼 파일을 생성한 후 <https://toptal.com/developers/gitignore> 로 접속하여
+자신이 만들고자 하는 개발 환경을 검색하여 내용을 긁어옵니다. (예제에서는 `node`로 세팅을 진행)
 
 ### TypeScript 설치 및 세팅
 
@@ -58,7 +61,8 @@ npm install --save-dev typescript
 npx tsc --init
 ```
 
-설치가 완료 후 `npx tsc --init`을 실행하면 `tsconfig.json` 파일이 생성 된 것을 확인할 수 있습니다.
+설치가 완료 후 `npx tsc --init`을 실행하면 `tsconfig.json` 파일이 생성 된 것을
+확인할 수 있습니다.
 
 `package.json` 파일에 의존성이 추가된 걸 확인할 수 있습니다.
 
@@ -82,7 +86,8 @@ JSX 사용을 위해 `tsconfig.json` 파일을 열어 옵션을 수정해 줍니
 }
 ```
 
-추가적으로 TypeScript 컴파일을 통해 문법 오류를 확인하는 `check` 명령을 `package.json` 파일에 추가합니다.
+추가적으로 TypeScript 컴파일을 통해 문법 오류를 확인하는 `check` 명령을 `package.json`
+파일에 추가합니다.
 
 ```json
 {
@@ -94,7 +99,8 @@ JSX 사용을 위해 `tsconfig.json` 파일을 열어 옵션을 수정해 줍니
 }
 ```
 
-다음 명령어를 입력해서 문법 오류가 있는지 체크할 수 있으며, 이 명령을 자주 실행하고, CI 등에 포함시킵니다.
+다음 명령어를 입력해서 문법 오류가 있는지 체크할 수 있으며, 이 명령을 자주 실행하고,
+CI 등에 포함시킵니다.
 
 ```bash
 npm run check
@@ -105,51 +111,56 @@ npm run check
 `ESLint` 패키지를 설치합니다.
 
 ```bash
-npm install --save-dev eslint  
+npm install --save-dev eslint
 npx eslint --init
 ```
 
-설치가 완료 후 `npx eslint --init`을 실행하면 아래와 같이 질문들이 뜹니다. 내용을 전체적으로 확인 후에 자신의 프로젝트에 맞춰서 설정을 완료합니다. (아래 내용은 현재 프로젝트에 세팅된 내용입니다.)
+설치가 완료 후 `npx eslint --init`을 실행하면 아래와 같이 질문들이 뜹니다.
+내용을 전체적으로 확인 후에 자신의 프로젝트에 맞춰서 설정을 완료합니다. (아래 내용은 현재 프로젝트에 세팅된 내용입니다.)
 
 ```bash
 You can also run this command directly using 'npm init @eslint/config'.
-✔ How would you like to use ESLint? 
+✔ How would you like to use ESLint?
 > style
 
-✔ What type of modules does your project use? 
+✔ What type of modules does your project use?
 > esm
 
-✔ Which framework does your project use? 
+✔ Which framework does your project use?
 > react
 
-✔ Does your project use TypeScript? 
+✔ Does your project use TypeScript?
 > Yes
 
 ✔ Where does your code run?
 > browser
 
-✔ How would you like to define a style for your project? 
+✔ How would you like to define a style for your project?
 > guide
 
-✔ Which style guide do you want to follow? 
+✔ Which style guide do you want to follow?
 > xo-typescript
 
-✔ What format do you want your config file to be in? 
+✔ What format do you want your config file to be in?
 > JavaScript
 
 Checking peerDependencies of eslint-config-xo-typescript@latest
 Checking peerDependencies of eslint-config-xo@latest
 The config that you've selected requires the following dependencies:
 
-eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.57.0 @typescript-eslint/parser@>=5.57.0 typescript@>=4.4
+eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 \
+eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.57.0 \
+@typescript-eslint/parser@>=5.57.0 typescript@>=4.4
 
-✔ Would you like to install them now? 
+✔ Would you like to install them now?
 > Yes
 
 ✔ Which package manager do you want to use?
 > npm
 
-Installing eslint-plugin-react@latest, eslint-config-xo@latest, eslint@>=8.0.0, eslint-config-xo-typescript@latest, @typescript-eslint/eslint-plugin@>=5.57.0, @typescript-eslint/parser@>=5.57.0, typescript@>=4.4
+Installing eslint-plugin-react@latest, eslint-config-xo@latest, eslint@>=8.0.0, \
+eslint-config-xo-typescript@latest, @typescript-eslint/eslint-plugin@>=5.57.0, \
+@typescript-eslint/parser@>=5.57.0, typescript@>=4.4
 
 added 105 packages, and audited 204 packages in 8s
 
