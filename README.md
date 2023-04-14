@@ -37,7 +37,9 @@
   * npm i -D @types/react @types/react-dom
 
 * 테스팅 도구 설치
-  * npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+  * npm i -D jest @types/jest @swc/core @swc/jest \
+  jest-environment-jsdom @testing-library/react \
+   @testing-library/jest-dom
     * jest.config.js 파일 생성해주기
 
 ```js
