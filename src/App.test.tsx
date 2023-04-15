@@ -6,6 +6,6 @@ describe('App', () => {
 	it('renders greeting message', () => {
 		const {container} = render(<App />);
 
-		expect(container).toHaveTextContent('Hello world!');
+		expect(container).toHaveTextContent('Hello World!');
 	});
 });
