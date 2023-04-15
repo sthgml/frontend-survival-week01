@@ -11,7 +11,53 @@ Node.js를 설치하고, 프로젝트를 진행할 수 있는 Node.js 패키지�
 코드 퀄리티를 일정 수준 이상으로 유지할 수 있도록 `lint`와 `test`를
 실행할 수 있는 상태를 만든다.
 
-## fnm (Fast Node Manager) 설치
+## Node 환경을 위한 사전 준비
+
+### Homebrew 설치(WSL)
+
+[Homebrew](https://brew.sh/)를 이용해
+`fnm`을 설치할 수 있다.
+
+WSL의 경우 [리눅스에서의 설치](https://docs.brew.sh/Homebrew-on-Linux) 를 참고한다.
+
+#### homebrew 설치 커맨드
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+```bash
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+```
+
+```bash
+# ~/.profile on Debian/Ubuntu
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
+
+# ~/.bash_profile on CentOS/Fedora/Red Hat.
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+```
+
+#### 설치 후 brew Package manager의 정상 동작 여부 확인
+
+```bash
+brew install hello
+```
+
+#### 개발도구 설치
+
+```bash
+# Debian or Ubuntu
+sudo apt-get install build-essential procps curl file git
+
+#Fedora, CentOS, or Red Hat
+sudo yum groupinstall 'Development Tools'
+sudo yum install procps-ng curl file git```
+```
+
+### fnm (Fast Node Manager) 설치
 
 계속 업그레이드되는 Node.js로 프로젝트를 진행하다 보면
 프로젝트마다 서로 다른 버전을 사용하는 경우가 있다.
@@ -19,10 +65,7 @@ Node.js를 설치하고, 프로젝트를 진행할 수 있는 Node.js 패키지�
 [`fnm`](https://github.com/Schniz/fnm)을
 사용하면 이게 가능하다.
 
-### Mac, Linux 사용자
-
-[Homebrew](https://brew.sh/)를 이용해
-`fnm`을 설치할 수 있다.
+brew를 설치한 후에 fnm을 설치한다.
 
 ```bash
 brew install fnm
@@ -36,23 +79,9 @@ eval "$(fnm env)"
 
 현재 터미널에서 바로 사용하고 싶다면 위 명령을 그대로 입력한다.
 
-### Windows 사용자
+### fnm - Node.js 설치
 
-Windows 사용자는
-[Scoop](https://scoop.sh/) 또는
-[Chocolatey](https://chocolatey.org/)를 사용해
-`fnm`을 설치할 수 있다.
-
-```bash
-scoop install fnm
-
-# 또는
-
-choco install fnm
-```
-
-## Node.js 설치
-
+fnm(fast node manager)을 통해 Node.js를 설치 한다. 프로젝트 별로 노드 버전이 다를 경우 관리하기 용이하다.
 설치 가능한 버전 확인.
 
 ```bash
@@ -67,7 +96,7 @@ fnm use lts-latest
 fnm default $(fnm current)
 ```
 
-설치된 상태 확인.
+#### 설치된 상태 확인
 
 ```bash
 fnm list
@@ -75,13 +104,13 @@ fnm list
 fnm current
 ```
 
-## NPM 업그레이드
+### NPM 업그레이드
 
 ```bash
 npm install -g npm
 ```
 
-## 프로젝트 폴더 생성
+### 프로젝트 폴더 생성
 
 프로젝트 이름을 `my-project`라고 했을 때 다음과 같이 폴더를 만들고
 사용할 Node.js 버전을 잡아준다.
@@ -108,14 +137,10 @@ cat .nvmrc
 다음 명령을 실행하고 질문에 답함으로써 `package.json` 파일을 자동으로 생성한다.
 
 ```bash
-npm init
-```
+mkdir <project-folder>
+cd <project-folder>
+npm init -y # 질문 없이 생성 
 
-귀찮으면 질문에 대해 그냥 엔터만 계속 눌러도 되는데,
-`-y` 플래그를 사용하면 질문 자체를 안 하게 할 수도 있다.
-
-```bash
-npm init -y
 ```
 
 ## ESLint 설치
