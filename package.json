@@ -2,9 +2,16 @@
   "name": "frontend-survival-week01",
   "version": "1.0.0",
   "description": "프론트엔드 생존코스 1주차 과제",
+  "source": "index.html",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Hello world!\" && exit 1"
+    "start": "parcel --port 8080",
+    "build": "parcel build",
+    "check": "tsc --noEmit",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "test": "jest",
+    "coverage": "jest --coverage --coverage-reporters html",
+    "watch:test": "jest --watchAll"
   },
   "keywords": [],
   "author": "kaiphojor",
@@ -25,6 +32,8 @@
     "eslint-plugin-react": "^7.32.2",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10",
     "typescript": "^5.0.4"
   },
   "dependencies": {

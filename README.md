@@ -474,13 +474,55 @@ npm i -D @types/react @types/react-dom
 
 Speedy Web Compiler - rust로 만들어진 js 빌드툴(번들링, 컴파일)
 
-jest, swc를 같이 쓰기위해 설치한다 
+jest, swc를 같이 쓰기위해 설치한다
 
 ```bash
 npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 ```
 
-\# 설치 후 jest.config.js 파일을 작성해서 테스트 상에서 SWC 사용하기
+설치 후 jest.config.js 파일을 작성해서 테스트 상에서 SWC 사용하기
+
+* [jest.config.js예시](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js)
+* lint 검사 후 바로 fix - `npx eslint --fix .`
+
+## Parcel 설치
+
+```bash
+npm i -D parcel
+```
+
+## scripts 추가
+
+`package.json` 의 `scripts` 부분 추가 예시 - [링크](https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json)
+
+```json
+  "scripts": {
+    "start": "parcel --port 8080",
+    "build": "parcel build",
+    "check": "tsc --noEmit",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "test": "jest",
+    "coverage": "jest --coverage --coverage-reporters html",
+    "watch:test": "jest --watchAll"
+  },
+```
+
+파일 없이 빌드 하고 스크립트 수행하면  Could not find entry 에러가 뜬다.
+
+index.html 을 만들어 준 다음 source 추가
+
+```bash
+vim index.html
+```
+
+```json
+"source": "index.html", # package.json main 위에 추가
+```
+
+이후 `npm start` 하면 test page 배포됨
+
+
+
 
 ## Jest 설치
 
