@@ -566,6 +566,14 @@ extends: [
 
 이후 `npm start` 하면 test page 배포됨
 
+## Typescript
+
+REPL을 위한 ts-node 설치
+
+```bash
+npx ts-node
+```
+
 ## Jest 설치
 
 자동화된 테스트 코드를 작성하고 활용하기 위해 Jest를 설치해서 쓸 수 있다.
