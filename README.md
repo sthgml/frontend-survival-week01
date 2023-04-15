@@ -283,16 +283,25 @@ Successfully created .eslintrc.js file in /home/~~~
 
 ```
 
-몇 가지 질문이 나오는데 프로젝트에 따라 다르게 선택한다.
-내가 사용하는 건 주로 다음과 같다.
-
-
 
 `.eslintrc.js` 파일을 열어 `rules`를 수정, 추가한다.
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) 같은
 널리 알려진 스타일 가이드를 사용하고 싶다면 간단히
 [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 확장을 설치해서 사용하면 된다.
+
+`.eslintrc.js` 파일에 `env : { jest : true }` 속성을 추가시켜 준다.
+
+### .eslintignore 추가하기
+
+상황에 따라 유동적으로 추가하지만 밑의 3은 기본
+
+```bash
+# vim .eslintignore
+/node_modules/
+/dist/
+/.parcel-cache/
+```
 
 ```javascript
     // 공백 4칸에서 공백 2칸으로 변경.
@@ -442,21 +451,42 @@ print(b.map(i => i + a));
 
 ## React 설치
 
+설치시에는 `package.json`을 건들지 않는다.
+
 ```bash
-npm i react
+npm i react react-dom
 ```
 
 ```json
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 ```
 
+위 react, react-dom에 대응하는 typescript 관련 도구 설치
 
+```bash
+npm i -D @types/react @types/react-dom
+```
+
+## Jest & testing 도구 설치
+
+Speedy Web Compiler - rust로 만들어진 js 빌드툴(번들링, 컴파일)
+
+jest, swc를 같이 쓰기위해 설치한다 
+
+```bash
+npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+```
+
+\# 설치 후 jest.config.js 파일을 작성해서 테스트 상에서 SWC 사용하기
 
 ## Jest 설치
 
 자동화된 테스트 코드를 작성하고 활용하기 위해 Jest를 설치해서 쓸 수 있다.
+
+
 
 ```bash
 npm install --save-dev jest
