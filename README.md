@@ -582,11 +582,13 @@ npx ts-node
 npm install --save-dev jest
 ```
 
-`sum.test.js` 파일을 만들어서 확인해 보자.
+`main.test.js` 파일을 만들어서 확인해 보자.
+
+TDD는 테스트 먼저 만들고 테스트에 맞는 내용을 구현하는 방식
 
 ```javascript
-test('sum', () => {
-  expect(sum(1, 2)).toBe(3);
+test('add', () => {
+  expect(add(1, 2)).toBe(3);
 });
 ```
 
@@ -595,6 +597,19 @@ test('sum', () => {
 ```bash
 npx jest
 ```
+
+`--watchAll` flag를 통해 수정 될 때마다 jest test
+
+```bash
+npx jest --watchAll # script 에서는 npm watch:test
+```
+
+`--verbose` flag로 더 자세한 정보를 볼 수 있음
+
+```bash
+npm jest --verbose
+```
+
 
 테스트를 간단히 통과시키자.
 
@@ -610,10 +625,6 @@ test('sum', () => {
 하려면 `watchAll` 플래그를 사용하면 된다.
 그 상태에서 테스트 전체를 다시 실행하려면 `a`나 `Enter` 키를 누르면 되고,
 중단하려면 `q`를 누르면 된다.
-
-```bash
-npx jest --watchAll
-```
 
 추가적인 설정이 필요하면 `jest.config.js` 파일을 작성하면 된다.
 <https://jestjs.io/docs/en/configuration> 문서 참고.

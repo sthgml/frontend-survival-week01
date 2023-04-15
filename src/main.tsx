@@ -3,10 +3,24 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
-const element = document.getElementById('root');
+function Demo(){
+	return (
+		<p>DEMO</p>
+	);
+}
+function main(){
+	const element = document.getElementById('root');
+	const elementDemo = document.getElementById('demo');
+	
+	if (!element || !elementDemo) {
+		return;
+	}
 
-if (element) {
 	const root = ReactDOM.createRoot(element);
+	const demo = ReactDOM.createRoot(elementDemo);
 
 	root.render(<App name='you' />);
+	demo.render(<Demo />);
 }
+
+main();
