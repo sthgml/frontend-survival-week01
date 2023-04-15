@@ -283,7 +283,6 @@ Successfully created .eslintrc.js file in /home/~~~
 
 ```
 
-
 `.eslintrc.js` 파일을 열어 `rules`를 수정, 추가한다.
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) 같은
 널리 알려진 스타일 가이드를 사용하고 싶다면 간단히
@@ -515,20 +514,61 @@ index.html 을 만들어 준 다음 source 추가
 vim index.html
 ```
 
+```html
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>React Test App</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="./src/main.tsx"></script>
+    </body>
+</html>
+```
+
 ```json
 "source": "index.html", # package.json main 위에 추가
 ```
 
+`./src/main.tsx` 추가
+
+```javascript
+
+import ReactDOM from 'react-dom/client';
+
+function App() {
+  return (
+    <p>Hello, World!</p>
+  );
+}
+
+const element = document.getElementById('root');
+
+if (element) {
+  const root = ReactDOM.createRoot(element);
+
+  root.render(<App/>);
+}
+
+```
+
+`.eslintrc` 에 `jsx-runtime` 추가
+
+```json
+extends: [
+  'plugin:react/recommended',
+  'plugin:react/jsx-runtime', // 이부분 추가
+  'xo',
+],
+```
+
 이후 `npm start` 하면 test page 배포됨
-
-
-
 
 ## Jest 설치
 
 자동화된 테스트 코드를 작성하고 활용하기 위해 Jest를 설치해서 쓸 수 있다.
-
-
 
 ```bash
 npm install --save-dev jest
