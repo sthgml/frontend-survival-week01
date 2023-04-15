@@ -143,12 +143,51 @@ npm init -y # 질문 없이 생성
 
 ```
 
+## .gitignore 생성
+
+`node_modules`의 경우 node js 모듈들을 모두 담고 있기 때문에 용량이 커서 git 용량 제한에 걸리고 올려서도 안된다. 프로젝트 생성 시에 미리미리 gitignore를 설정해둬야 commit시 어려움이 없다.
+
+[github gitignore node](https://github.com/github/gitignore/blob/main/Node.gitignore) 참고
+
+```bash
+vim .gitignore # 최소한 node_modules/ 추가
+```
+
+## TypeScript 설정
+
+### typescript 설치
+
+개발에서만 사용되는 TypeScript의 경우 -D 옵션을 붙여서 설치한다.
+
+```bash
+npm i -D typescript # npm install --save-dev typescript
+```
+
+설치하면 package.json의 개발 의존성 항목에 추가된다. 개발 도구로 보면 된다
+배포시 뺄 경우 프로젝트를 경량화 할 수 있다.
+
+```json
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+```
+
+typescript compiler 초기화
+
+```bash
+npx tsc --init
+```
+
+tsconfig.json 내용 변경
+
+`"jsx": "react-jsx",` 주석 해제
+
 ## ESLint 설치
 
 좋은 코딩 스타일을 위해 [ESLint](https://eslint.org/)를 설치해 사용한다.
 
 ```bash
-npm install --save-dev eslint
+npm i -D eslint # npm install --save-dev eslint
 ```
 
 다음 명령을 통해 ESLint 설정 파일(`.eslintrc.js`)을 자동으로 생성한다.
@@ -157,41 +196,97 @@ npm install --save-dev eslint
 npx eslint --init
 ```
 
+eslint project 설정
+
+```text
+You can also run this command directly using 'npm init @eslint/config'.
+? How would you like to use ESLint? … 
+  To check syntax only
+  To check syntax and find problems
+▸ To check syntax, find problems, and enforce code style
+
+✔ How would you like to use ESLint? · style
+
+? What type of modules does your project use? … 
+▸ JavaScript modules (import/export)
+  CommonJS (require/exports)
+  None of these
+
+✔ What type of modules does your project use? · esm
+
+? Which framework does your project use? … 
+▸ React
+  Vue.js
+  None of these
+
+✔ Which framework does your project use? · react
+
+? Does your project use TypeScript? ‣ No / Yes
+
+✔ Does your project use TypeScript? · No / Yes
+
+? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+✔ Browser
+✔ Node
+
+? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+✔ Browser
+✔ Node
+
+✔ Where does your code run? · browser
+
+? How would you like to define a style for your project? … 
+▸ Use a popular style guide
+  Answer questions about your style
+
+✔ How would you like to define a style for your project? · guide
+
+? Which style guide do you want to follow? … 
+  Standard: https://github.com/standard/eslint-config-standard-with-typescript
+▸ XO: https://github.com/xojs/eslint-config-xo-typescript
+
+✔ Which style guide do you want to follow? · xo-typescript
+
+? What format do you want your config file to be in? … 
+▸ JavaScript
+  YAML
+  JSON
+
+✔ What format do you want your config file to be in? · JavaScript
+
+Checking peerDependencies of eslint-config-xo-typescript@latest
+Checking peerDependencies of eslint-config-xo@latest
+The config that you've selected requires the following dependencies:
+
+eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.57.0 @typescript-eslint/parser@>=5.57.0 typescript@>=4.4
+
+? Would you like to install them now? ‣ No / Yes
+
+✔ Would you like to install them now? · Yes
+
+? Which package manager do you want to use? … 
+▸ npm
+  yarn
+  pnpm
+
+✔ Which package manager do you want to use? · npm
+
+Installing eslint-plugin-react@latest, eslint-config-xo@latest, eslint@>=8.0.0, eslint-config-xo-typescript@latest, @typescript-eslint/eslint-plugin@>=5.57.0, @typescript-eslint/parser@>=5.57.0, typescript@>=4.4
+
+added 103 packages, and audited 205 packages in 13s
+
+87 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Successfully created .eslintrc.js file in /home/~~~
+
+```
+
 몇 가지 질문이 나오는데 프로젝트에 따라 다르게 선택한다.
 내가 사용하는 건 주로 다음과 같다.
 
-```text
-? How would you like to configure ESLint?  (Use arrow keys)
-❯ Answer questions about your style
 
-? Which version of ECMAScript do you use?  (Use arrow keys)
-❯ ES2017
-
-? Are you using ES6 modules? (y/N)
-N
-
-? Where will your code run? (Press <space> to select, <a> to toggle all, <i> to invert selection)
- ◯ Browser
-❯◉ Node
-
-? Do you use JSX? (y/N)
-N
-
-? What style of indentation do you use? (Use arrow keys)
-❯ Spaces
-
-? What quotes do you use for strings? (Use arrow keys)
-❯ Single
-
-? What line endings do you use? (Use arrow keys)
-❯ Unix
-
-? Do you require semicolons? (Y/n)
-Y
-
-? What format do you want your config file to be in? (Use arrow keys)
-❯ JavaScript
-```
 
 `.eslintrc.js` 파일을 열어 `rules`를 수정, 추가한다.
 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) 같은
@@ -345,6 +440,20 @@ const b = [
 print(b.map(i => i + a));
 ```
 
+## React 설치
+
+```bash
+npm i react
+```
+
+```json
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+```
+
+
+
 ## Jest 설치
 
 자동화된 테스트 코드를 작성하고 활용하기 위해 Jest를 설치해서 쓸 수 있다.
@@ -425,9 +534,3 @@ npm test
 ## Sample Code
 
 [https://github.com/ahastudio/javascript-sample-project](http://j.mp/2AkJkfA)
-
----
-
-- [아듀 2018!](https://adieu2018.ahastudio.com/)
-- 이전 글:
-- 다음 글: [C++에서 어셈블리 공부하기](http://j.mp/2Q7SPUw)
