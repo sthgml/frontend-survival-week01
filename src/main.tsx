@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 
-function Demo(){
+function Demo({count}: {count: number}) {
 	return (
-		<p>DEMO</p>
+		<p>DEMO: {count}</p>
 	);
 }
-function main(){
+
+function main() {
 	const element = document.getElementById('root');
 	const elementDemo = document.getElementById('demo');
-	
+
 	if (!element || !elementDemo) {
 		return;
 	}
@@ -20,7 +21,14 @@ function main(){
 	const demo = ReactDOM.createRoot(elementDemo);
 
 	root.render(<App name='you' />);
-	demo.render(<Demo />);
+
+	let count = 0;
+
+	setInterval(() => {
+		count += 1;
+		demo.render(<Demo count={count} />);
+	}, 1_000);
+	demo.render(<Demo count={count}/>);
 }
 
 main();

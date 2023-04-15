@@ -610,7 +610,6 @@ npx jest --watchAll # script 에서는 npm watch:test
 npm jest --verbose
 ```
 
-
 테스트를 간단히 통과시키자.
 
 ```javascript
