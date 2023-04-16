@@ -9,10 +9,12 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
 1. node.js 설치
 
-- 최신 버전보다 안정된 버전 설치하기
-- 아래 링크에서 직접 다운로드하거나 fnm으로 설치 가능(fnm이 더 빠름)
+아래 링크에서 직접 다운로드하거나 fnm으로 설치 가능(fnm이 더 빠름)
+
+  1. 직접 다운로드: 최신 버전보다 안정된 버전 설치하기
   [node.js 다운로드](https://nodejs.org/ko)
-  fnm 설치 코드
+
+  1. fnm 설치 코드
 
     ```bash
       fnm install --lts
@@ -58,47 +60,47 @@ node_modules을 git에 올리지 않도록 gitignore 파일을 만들기
 설정은 아래와 같이 세팅
 
 ```bash
-  You can also run this command directly using 'npm init @eslint/config'.
+You can also run this command directly using 'npm init @eslint/config'.
 
-  ? How would you like to use ESLint? ...
-    To check syntax only
-    To check syntax and find problems
-  > To check syntax, find problems, and enforce code style
+? How would you like to use ESLint? ...
+  To check syntax only
+  To check syntax and find problems
+> To check syntax, find problems, and enforce code style
 
-  ? What type of modules does your project use? ... 
-  > JavaScript modules (import/export)
-    CommonJS (require/exports)
-    None of these
+? What type of modules does your project use? ... 
+> JavaScript modules (import/export)
+  CommonJS (require/exports)
+  None of these
 
-  ? Which framework does your project use? ...
-  > React
-    Vue.js
-    None of these
+? Which framework does your project use? ...
+> React
+  Vue.js
+  None of these
 
-  ? Does your project use TypeScript? yes
+? Does your project use TypeScript? yes
 
-  ? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
-  √ Browser
+? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+√ Browser
 
-  ? How would you like to define a style for your project? ...
-  > Use a popular style guide
-    Answer questions about your style
+? How would you like to define a style for your project? ...
+> Use a popular style guide
+  Answer questions about your style
 
-  ? Which style guide do you want to follow? ...
-    Standard: https://github.com/standard/eslint-config-standard-with-typescript
-  > XO: https://github.com/xojs/eslint-config-xo-typescript
+? Which style guide do you want to follow? ...
+  Standard: https://github.com/standard/eslint-config-standard-with-typescript
+> XO: https://github.com/xojs/eslint-config-xo-typescript
 
-  ? What format do you want your config file to be in? ...
-  > JavaScript
-    YAML
-    JSON
+? What format do you want your config file to be in? ...
+> JavaScript
+  YAML
+  JSON
 
-  ? Would you like to install them now? Yes
+? Would you like to install them now? Yes
 
-  ? Which package manager do you want to use? ... 
-  > npm
-    yarn
-    pnpm
+? Which package manager do you want to use? ... 
+> npm
+  yarn
+  pnpm
 ```
 
 1. .eslintrc.js 파일 수정
