@@ -24,6 +24,8 @@ function main() {
 
 	let count = 0;
 
+	demo.render(<Demo count={count} />);
+
 	setInterval(() => {
 		count += 1;
 		demo.render(<Demo count={count} />);
