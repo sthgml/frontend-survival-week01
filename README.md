@@ -185,7 +185,21 @@ npm i -D parcel
   },
 ```
 
-14. 프로젝트 코드 작성 시작!
+바로 npm start로 하면 빌드 실패할 수 있는데 index.html 생성하고, package.json 추가 수정하면 된다.
+
+```json
+// "main": "index.js",
+"source": "index.html"
+```
+
+14. 기본 코드 작성
+
+* `index.html`
+* `src/main.tsx`
+* `src/App.tsx`
+* `src/App.test.tsx`
+* `src/components/Greeting.test.tsx`
+* `src/components/Greeting.tsx`
 
 15. eslint 확인
 
