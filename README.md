@@ -588,11 +588,29 @@ npm install --save-dev jest
 
 TDD는 테스트 먼저 만들고 테스트에 맞는 내용을 구현하는 방식
 
+기본적인 테스트 코드이다
+
 ```javascript
 test('add', () => {
   expect(add(1, 2)).toBe(3);
 });
 ```
+
+BDD(behavior driven development) 스타일의 코드이다
+
+describe - context - it
+
+```javascript
+describe('describe - it - expect : add 함수는', () => {
+    context('두 개의 양수가 주어졌을 때',()=>{
+        it('두 숫자의 합을 돌려준다', () => {
+            expect(add(1, 2)).toBe(3);
+        });
+    });
+});
+
+```
+
 
 `jest`를 실행하면 `*.test.js` 파일을 모두 실행한다.
 
@@ -610,16 +628,6 @@ npx jest --watchAll # script 에서는 npm watch:test
 
 ```bash
 npm jest --verbose
-```
-
-테스트를 간단히 통과시키자.
-
-```javascript
-const sum = (a, b) => a + b;
-
-test('sum', () => {
-  expect(sum(1, 2)).toBe(3);
-});
 ```
 
 만약 파일을 계속 감시하고 있다가 수정될 때마다 자동으로 테스트가 실행되게
