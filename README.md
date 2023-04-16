@@ -611,7 +611,6 @@ describe('describe - it - expect : add 함수는', () => {
 
 ```
 
-
 `jest`를 실행하면 `*.test.js` 파일을 모두 실행한다.
 
 ```bash
@@ -630,13 +629,9 @@ npx jest --watchAll # script 에서는 npm watch:test
 npm jest --verbose
 ```
 
-만약 파일을 계속 감시하고 있다가 수정될 때마다 자동으로 테스트가 실행되게
-하려면 `watchAll` 플래그를 사용하면 된다.
-그 상태에서 테스트 전체를 다시 실행하려면 `a`나 `Enter` 키를 누르면 되고,
-중단하려면 `q`를 누르면 된다.
-
-추가적인 설정이 필요하면 `jest.config.js` 파일을 작성하면 된다.
+추가적인 설정시 `jest.config.js` 파일 수정
 <https://jestjs.io/docs/en/configuration> 문서 참고.
+
 
 ```javascript
 module.exports = {
@@ -671,6 +666,6 @@ ESLint를 실행하면 `test`나 `expect` 같은 게 정의되지 않았다는 �
 npm test
 ```
 
-## Sample Code
+## reference
 
 [https://github.com/ahastudio/javascript-sample-project](http://j.mp/2AkJkfA)
