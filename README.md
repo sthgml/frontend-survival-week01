@@ -1,6 +1,6 @@
 # 개발환경 세팅
 
-- TypeScript + React + Jest + ESLint + Parcel 세팅(windows)
+TypeScript + React + Jest + ESLint + Parcel 세팅(windows)
 
 ## 환경설정 전 준비
 
@@ -9,10 +9,12 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
 1. node.js 설치
 
-- 최신 버전보다 안정된 버전 설치하기
-- 아래 링크에서 직접 다운로드하거나 fnm으로 설치 가능(fnm이 더 빠름)
+아래 링크에서 직접 다운로드하거나 fnm으로 설치 가능(fnm이 더 빠름)
+
+  1. 최신 버전보다 안정된 버전 설치하기
   [node.js 다운로드](https://nodejs.org/ko)
-  fnm 설치 코드
+  
+  1. fnm 설치 코드
 
   ```bash
     fnm install --lts
@@ -24,8 +26,8 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
 1. vsCode에서 Terminal > new Terminal로 터미널창 열기
 
-- 기본 설정이 powerShell로 되어있으면, 이후 명령어가 작동하지 않음. git bash로 변경하기
-  - git bash는 git을 설치해야만 생김
+기본 설정이 powerShell로 되어있으면, 이후 명령어가 작동하지 않음. git bash로 변경하기
+  git bash는 git을 설치해야만 생김
   [git 다운로드](https://git-scm.com/downloads)
 
 ## 프로젝트 환경설정
@@ -34,28 +36,28 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
 1. npm으로 필요한 패키지 다운로드
 
-- `npm init -y`: npm 패키지 준비
-  - init: 시작 / -y: 옵션 전부 yes를 의미
+`npm init -y`: npm 패키지 준비
+  init: 시작 / -y: 옵션 전부 yes를 의미
   
-2. `.gitignore` 작성
+1. `.gitignore` 작성
 
-- node_modules을 git에 올리지 않도록 gitignore 파일을 만들기
-  - .gitignore 파일 생성(. 필수(숨겨진 파일이라는 의미)) : `touch .gitignore`
-  - 하단 사이트에서 node.js 검색 후 .gitignore 파일에 복사 붙여넣기
+node_modules을 git에 올리지 않도록 gitignore 파일을 만들기
+  .gitignore 파일 생성(. 필수(숨겨진 파일이라는 의미)) : `touch .gitignore`
+  하단 사이트에서 node.js 검색 후 .gitignore 파일에 복사 붙여넣기
   [gitignore 내용 자동으로 만들어주는 사이트](https://www.toptal.com/developers/gitignore)
 
 ### typescript 설정
 
 1. typescript 설치: `npm i -D typescript`
-2. typescript 설정 초기화: `npx tsc --init`
-3. 생성된 tsconfig.json 파일에서 jsx 주석을 해제하고, 내용을 변경: `"jsx": "react-jsx"`
+1. typescript 설정 초기화: `npx tsc --init`
+1. 생성된 tsconfig.json 파일에서 jsx 주석을 해제하고, 내용을 변경: `"jsx": "react-jsx"`
 
 ### eslint 설정
 
 1. eslint 설치: `npm i -D eslint`
-2. eslint 설정 초기화: `npx eslint --init`
+1. eslint 설정 초기화: `npx eslint --init`
 
-- 설정은 아래와 같이 세팅
+설정은 아래와 같이 세팅
 
 ```bash
   You can also run this command directly using 'npm init @eslint/config'.
@@ -101,7 +103,7 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
     pnpm
 ```
 
-3. .eslintrc.js 파일 수정
+1. .eslintrc.js 파일 수정
 
   ```javascript
     extends: [
@@ -111,8 +113,8 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
     ],
   ```
 
-4. .eslintignore 추가: `touch .eslintignore`
-5. .eslintignore 작성
+1. .eslintignore 추가: `touch .eslintignore`
+1. .eslintignore 작성
 
   ```text
     /node_modules/
@@ -134,59 +136,59 @@ react 설치: `npm i react react-dom` 후 `npm i -D @types/react @types/react-do
     @testing-library/react @testing-library/jest-dom
 ```
 
-2. jest.config.js 파일을 작성
+1. jest.config.js 파일을 작성
 
-- jest가 기본으로 swc와 typescript를 사용하지않기에 함께 사용하기 위해 작성
-- jest.config.js 파일 생성: `touch jest.config.js`
-- 파일에 아래 내용 넣고 저장
+jest가 기본으로 swc와 typescript를 사용하지않기에 함께 사용하기 위해 작성
+jest.config.js 파일 생성: `touch jest.config.js`
+파일에 아래 내용 넣고 저장
 
-```javascript
-  module.exports = {
-    testEnvironment: 'jsdom',
-    setupFilesAfterEnv: [
-      '@testing-library/jest-dom/extend-expect',
-    ],
-    transform: {
-      '^.+\\.(t|j)sx?$': ['@swc/jest', {
-        jsc: {
-          parser: {
-            syntax: 'typescript',
-            jsx: true,
-            decorators: true,
-          },
-          transform: {
-            react: {
-              runtime: 'automatic',
+  ```javascript
+    module.exports = {
+      testEnvironment: 'jsdom',
+      setupFilesAfterEnv: [
+        '@testing-library/jest-dom/extend-expect',
+      ],
+      transform: {
+        '^.+\\.(t|j)sx?$': ['@swc/jest', {
+          jsc: {
+            parser: {
+              syntax: 'typescript',
+              jsx: true,
+              decorators: true,
+            },
+            transform: {
+              react: {
+                runtime: 'automatic',
+              },
             },
           },
-        },
-      }],
-    },
-    testPathIgnorePatterns: [
-      '<rootDir>/node_modules/',
-      '<rootDir>/dist/',
-    ],
-  };
-```
+        }],
+      },
+      testPathIgnorePatterns: [
+        '<rootDir>/node_modules/',
+        '<rootDir>/dist/',
+      ],
+    };
+  ```
 
 ### parcel 설치
 
-- parcel 설치: `npm i -D parcel`
-- package.json에 scripts 명령어 넣기
+parcel 설치: `npm i -D parcel`
+package.json에 scripts 명령어 넣기
 
-```json
-  "scripts": {
-    "start": "parcel --port 8080",
-    "build": "parcel build",
-    "check": "tsc --noEmit",
-    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-    "test": "jest",
-    "coverage": "jest --coverage --coverage-reporters html",
-    "watch:test": "jest --watchAll"
-  },
-```
+  ```json
+    "scripts": {
+      "start": "parcel --port 8080",
+      "build": "parcel build",
+      "check": "tsc --noEmit",
+      "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+      "test": "jest",
+      "coverage": "jest --coverage --coverage-reporters html",
+      "watch:test": "jest --watchAll"
+    },
+  ```
 
-- package.json에 시작이 되는 파일 수정: `"main": "index.js",`를 `"source": "index.html",`로 수정 후 index.html 파일 생성
+package.json에 시작이 되는 파일 수정: `"main": "index.js",`를 `"source": "index.html",`로 수정 후 index.html 파일 생성
 
 ### 실행이 되도록 기본 파일 설정
 
@@ -197,7 +199,7 @@ react 설치: `npm i react react-dom` 후 `npm i -D @types/react @types/react-do
   touch src/main.tsx
 ```
 
-2. index.html 파일에 script 추가: `<script type="module" src="src/main.tsx"></script>`
+1. index.html 파일에 script 추가: `<script type="module" src="src/main.tsx"></script>`
 
 #### html, tsx 파일 생성 및 내용 추가
 
