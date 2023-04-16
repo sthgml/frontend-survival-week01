@@ -778,6 +778,8 @@ npx servor dist
 
 markdown lint 통한 스타일, 문제 확인
 
+[링크](https://github.com/igorshubovych/markdownlint-cli)
+
 ```bash
 npm install -g markdownlint-cli
 npx markdownlint -f ./README.md
