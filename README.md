@@ -9,17 +9,15 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
 1. node.js 설치
 
-아래 링크에서 직접 다운로드하거나 fnm으로 설치 가능(fnm이 더 빠름)
-
-  1. 최신 버전보다 안정된 버전 설치하기
+- 최신 버전보다 안정된 버전 설치하기
+- 아래 링크에서 직접 다운로드하거나 fnm으로 설치 가능(fnm이 더 빠름)
   [node.js 다운로드](https://nodejs.org/ko)
-  
-  1. fnm 설치 코드
+  fnm 설치 코드
 
-  ```bash
-    fnm install --lts
-    fnm list  
-  ```
+    ```bash
+      fnm install --lts
+      fnm list  
+    ```
 
 1. vsCode 설치 후 vsCode에서 프로젝트 폴더 열기
 [vsCode 다운로드](https://code.visualstudio.com/download)
