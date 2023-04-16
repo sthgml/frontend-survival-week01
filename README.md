@@ -139,7 +139,7 @@ cat .nvmrc
 ```bash
 mkdir <project-folder>
 cd <project-folder>
-npm init -y # 질문 없이 생성 
+npm init -y # 질문 없이 생성
 
 ```
 
@@ -200,21 +200,21 @@ eslint project 설정
 
 ```text
 You can also run this command directly using 'npm init @eslint/config'.
-? How would you like to use ESLint? … 
+? How would you like to use ESLint? …
   To check syntax only
   To check syntax and find problems
 ▸ To check syntax, find problems, and enforce code style
 
 ✔ How would you like to use ESLint? · style
 
-? What type of modules does your project use? … 
+? What type of modules does your project use? …
 ▸ JavaScript modules (import/export)
   CommonJS (require/exports)
   None of these
 
 ✔ What type of modules does your project use? · esm
 
-? Which framework does your project use? … 
+? Which framework does your project use? …
 ▸ React
   Vue.js
   None of these
@@ -235,19 +235,19 @@ You can also run this command directly using 'npm init @eslint/config'.
 
 ✔ Where does your code run? · browser
 
-? How would you like to define a style for your project? … 
+? How would you like to define a style for your project? …
 ▸ Use a popular style guide
   Answer questions about your style
 
 ✔ How would you like to define a style for your project? · guide
 
-? Which style guide do you want to follow? … 
+? Which style guide do you want to follow? …
   Standard: https://github.com/standard/eslint-config-standard-with-typescript
 ▸ XO: https://github.com/xojs/eslint-config-xo-typescript
 
 ✔ Which style guide do you want to follow? · xo-typescript
 
-? What format do you want your config file to be in? … 
+? What format do you want your config file to be in? …
 ▸ JavaScript
   YAML
   JSON
@@ -264,7 +264,7 @@ eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-
 
 ✔ Would you like to install them now? · Yes
 
-? Which package manager do you want to use? … 
+? Which package manager do you want to use? …
 ▸ npm
   yarn
   pnpm
@@ -427,6 +427,8 @@ npm run lint
 
 [eslint vscode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
+settings.json 만들기
+
 ```bash
 mkdir .vscode/
 vim ./.vscode/settings.json
@@ -454,6 +456,24 @@ vim ./.vscode/settings.json
 
 * [VS Code 기본 세팅](https://github.com/ahastudio/CodingLife/blob/main/20211008/react/.vscode/settings.json)
 * [끝에 붙는 공백 지우기](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)
+
+나의 설정
+
+```json
+{
+//     "editor.codeActionsOnSave": {
+//         "source.fixAll.eslint": true
+//     }
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "editor.rulers": [
+        80
+    ],
+    "trailing-spaces.trimOnSave": true
+}
+
+```
 
 ## React 설치
 
