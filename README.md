@@ -233,11 +233,13 @@ You can also run this command directly using 'npm init @eslint/config'.
 
 ✔ Does your project use TypeScript? · No / Yes
 
-? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Where does your code run? … \\
+(Press <space> to select, <a> to toggle all, <i> to invert selection)
 ✔ Browser
 ✔ Node
 
-? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Where does your code run? \\
+(Press <space> to select, <a> to toggle all, <i> to invert selection)
 ✔ Browser
 ✔ Node
 
@@ -266,7 +268,9 @@ Checking peerDependencies of eslint-config-xo-typescript@latest
 Checking peerDependencies of eslint-config-xo@latest
 The config that you've selected requires the following dependencies:
 
-eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.57.0 @typescript-eslint/parser@>=5.57.0 typescript@>=4.4
+eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 \\
+eslint-config-xo-typescript@latest @typescript-eslint/eslint-plugin@>=5.57.0 \\
+@typescript-eslint/parser@>=5.57.0 typescript@>=4.4
 
 ? Would you like to install them now? ‣ No / Yes
 
@@ -279,7 +283,10 @@ eslint-plugin-react@latest eslint-config-xo@latest eslint@>=8.0.0 eslint-config-
 
 ✔ Which package manager do you want to use? · npm
 
-Installing eslint-plugin-react@latest, eslint-config-xo@latest, eslint@>=8.0.0, eslint-config-xo-typescript@latest, @typescript-eslint/eslint-plugin@>=5.57.0, @typescript-eslint/parser@>=5.57.0, typescript@>=4.4
+Installing eslint-plugin-react@latest, eslint-config-xo@latest, \\
+eslint@>=8.0.0, eslint-config-xo-typescript@latest, \\
+@typescript-eslint/eslint-plugin@>=5.57.0, @typescript-eslint/parser@>=5.57.0, \\
+typescript@>=4.4
 
 added 103 packages, and audited 205 packages in 13s
 
