@@ -28,8 +28,10 @@ WSL의 경우 [리눅스에서의 설치](https://docs.brew.sh/Homebrew-on-Linux
 
 ```bash
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+test -d /home/linuxbrew/.linuxbrew \\
+&& eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+test -r ~/.bash_profile \\
+&& echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
 ```
 
 ```bash
@@ -145,9 +147,15 @@ npm init -y # 질문 없이 생성
 
 ## .gitignore 생성
 
-`node_modules`의 경우 node js 모듈들을 모두 담고 있기 때문에 용량이 커서 git 용량 제한에 걸리고 올려서도 안된다. 프로젝트 생성 시에 미리미리 gitignore를 설정해둬야 commit시 어려움이 없다.
+`node_modules`의 경우 node js 모듈들을 모두 담고 있다.
 
-[github gitignore node](https://github.com/github/gitignore/blob/main/Node.gitignore) 참고
+모듈들은 용량이 커서 git 용량 제한에 걸리고 올려서도 안된다.
+
+프로젝트 생성 시에 미리미리 gitignore를 설정해둬야 commit시 어려움이 없다.
+
+참고
+
+[github gitignore node](https://github.com/github/gitignore/blob/main/Node.gitignore)
 
 ```bash
 vim .gitignore # 최소한 node_modules/ 추가
@@ -503,7 +511,8 @@ Speedy Web Compiler - rust로 만들어진 js 빌드툴(번들링, 컴파일)
 jest, swc를 같이 쓰기위해 설치한다
 
 ```bash
-npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom \\
+@testing-library/react @testing-library/jest-dom
 ```
 
 설치 후 jest.config.js 파일을 작성해서 테스트 상에서 SWC 사용하기
@@ -764,6 +773,15 @@ npx servor dist
 `npm run lint` : 스타일 확인
 
 `npm run lint && npm run check` : 동시에 확인
+
+### markdownlint-cli 로 markdown check
+
+markdown lint 통한 스타일, 문제 확인
+
+```bash
+npm install -g markdownlint-cli
+npx markdownlint -f ./README.md
+```
 
 ## reference
 
