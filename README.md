@@ -302,6 +302,8 @@ Successfully created .eslintrc.js file in /home/~~~
 /.parcel-cache/
 ```
 
+#### .eslintrc rules 강의 예시
+
 ```javascript
     // 공백 4칸에서 공백 2칸으로 변경.
     // https://eslint.org/docs/rules/indent

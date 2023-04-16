@@ -20,7 +20,7 @@ function main() {
 	const root = ReactDOM.createRoot(element);
 	const demo = ReactDOM.createRoot(elementDemo);
 
-	root.render(<App name='you' />);
+	root.render(<App/>);
 
 	let count = 0;
 
