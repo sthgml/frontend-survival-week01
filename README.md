@@ -16,10 +16,10 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
   1. fnm 설치 코드
 
-    ```bash
-      fnm install --lts
-      fnm list  
-    ```
+  ```bash
+    fnm install --lts
+    fnm list  
+  ```
 
 1. vsCode 설치 후 vsCode에서 프로젝트 폴더 열기
 [vsCode 다운로드](https://code.visualstudio.com/download)
