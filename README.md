@@ -757,6 +757,14 @@ npx parcel build # 빌드 아직 안했다면
 npx servor dist
 ```
 
+## 추가
+
+`npm run check` : 컴파일 하면서 문제 있는지 확인
+
+`npm run lint` : 스타일 확인
+
+`npm run lint && npm run check` : 동시에 확인
+
 ## reference
 
 [https://github.com/ahastudio/javascript-sample-project](http://j.mp/2AkJkfA)
