@@ -395,17 +395,6 @@ npx eslint --fix --no-ignore .eslintrc.js
 이 설정 파일은 [Visual Studio Code](https://code.visualstudio.com/)나
 [WebStorm](https://www.jetbrains.com/webstorm/) 등에서 사용할 수 있다.
 
-간단하게 테스트를 하기 위해 `index.js` 파일을 작성한다.
-
-```javascript
-var a=1
-b  =  [
- 1
-  ,2
-]
-console . log( b.map(i=>i+a) )
-```
-
 고쳐야 할 부분을 찾는다.
 
 ```bash
@@ -434,21 +423,37 @@ npx eslint --fix .
 npm run lint
 ```
 
-아까 테스트하기 위해 만든 `index.js` 파일의 문제가 모두 해결되지 않아서
-`npm ERR! code ELIFECYCLE` 에러 메시지가 나오는 걸 볼 수 있다.
-간단히 고쳐보자.
+### eslint extension 추가 설정
 
-```javascript
-const { log: print } = console;
+[eslint vscode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-var a = 1;
-const b = [
-  1,
-  2,
-];
-
-print(b.map(i => i + a));
+```bash
+mkdir .vscode/
+vim ./.vscode/settings.json
 ```
+
+```json
+# settings.json - eslint 포함 모든 것에 대해 저장 시 수정
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    }
+}
+```
+
+```json
+# settings.json - eslint에 대해서만 저장 시 수정
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
+```
+
+추가 참고 설정
+
+* [VS Code 기본 세팅](https://github.com/ahastudio/CodingLife/blob/main/20211008/react/.vscode/settings.json)
+* [끝에 붙는 공백 지우기](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)
 
 ## React 설치
 
@@ -632,7 +637,6 @@ npm jest --verbose
 추가적인 설정시 `jest.config.js` 파일 수정
 <https://jestjs.io/docs/en/configuration> 문서 참고.
 
-
 ```javascript
 module.exports = {
   verbose: true,
@@ -664,6 +668,73 @@ ESLint를 실행하면 `test`나 `expect` 같은 게 정의되지 않았다는 �
 
 ```bash
 npm test
+```
+
+## Parcel 사용
+
+package.json에 source 추가 없이 사용
+
+```bash
+npx parcel index.html --port 8080
+```
+
+package.json에 source 추가 및 사용
+
+```bash
+npx parcel --port 8080
+```
+
+### 이미지 포함 빌드
+
+image 삽입 html
+
+```html
+<img src='/images/test.jpg' alt='Test Image'/>
+```
+
+정적 파일 처리해주는 parcel plugin [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy)설치
+
+```bash
+npm i -D parcel-reporter-static-files-copy
+```
+
+plugin `.parcelrc`에 추가
+
+```json
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+static 폴더를 만들고 해당 파일 경로에 옮기기
+
+```text
+경로는 /static/ 이 기준이다
+/static/images/test.jpg => src='/images/test.jpg'
+```
+
+## 빌드
+
+package.json 속 main : index.js 부분은 지워주고 `npm run build`를 수행한다
+
+dist 비우고 다시 재수행
+
+```bash
+rm -rf dist
+npm run build # 혹은 npx parcel build
+```
+
+## servor 실행
+
+servor는 configuration 없이(zero configuration) 편하게 배포 하기 위한 도구이다
+
+dist에 빌드된 결과물 돌리기
+
+```bash
+rm -rf dist # 이전 결과물 지우기
+npx parcel build # 빌드 아직 안했다면
+npx servor dist
 ```
 
 ## reference
