@@ -9,8 +9,7 @@ function main() {
 	}
 
 	const root = ReactDOM.createRoot(element);
-
-	root.render(<App />);
+	root.render(<App name='jiwoo'/>);
 }
 
 main();
