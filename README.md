@@ -105,22 +105,22 @@ You can also run this command directly using 'npm init @eslint/config'.
 
 1. .eslintrc.js 파일 수정
 
-  ```javascript
-    extends: [
-      'plugin:react/recommended',
-      'plugin:react/jsx-runtime', //추가
-      'xo',
-    ],
-  ```
+```javascript
+extends: [
+  'plugin:react/recommended',
+  'plugin:react/jsx-runtime', //추가
+  'xo',
+],
+```
 
 1. .eslintignore 추가: `touch .eslintignore`
 1. .eslintignore 작성
 
-  ```text
-    /node_modules/
-    /dist/
-    /.parcel-cache/
-  ```
+```text
+/node_modules/
+/dist/
+/.parcel-cache/
+```
 
 ### React 설치
 
@@ -131,9 +131,9 @@ react 설치: `npm i react react-dom` 후 `npm i -D @types/react @types/react-do
 1. jest 설치
 
 ```bash
-  npm i -D jest @types/jest @swc/core @swc/jest \
-    jest-environment-jsdom \
-    @testing-library/react @testing-library/jest-dom
+npm i -D jest @types/jest @swc/core @swc/jest \
+  jest-environment-jsdom \
+  @testing-library/react @testing-library/jest-dom
 ```
 
 1. jest.config.js 파일을 작성
@@ -142,51 +142,51 @@ jest가 기본으로 swc와 typescript를 사용하지않기에 함께 사용하
 jest.config.js 파일 생성: `touch jest.config.js`
 파일에 아래 내용 넣고 저장
 
-  ```javascript
-    module.exports = {
-      testEnvironment: 'jsdom',
-      setupFilesAfterEnv: [
-        '@testing-library/jest-dom/extend-expect',
-      ],
-      transform: {
-        '^.+\\.(t|j)sx?$': ['@swc/jest', {
-          jsc: {
-            parser: {
-              syntax: 'typescript',
-              jsx: true,
-              decorators: true,
-            },
-            transform: {
-              react: {
-                runtime: 'automatic',
-              },
-            },
+```javascript
+module.exports = {
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: [
+    '@testing-library/jest-dom/extend-expect',
+  ],
+  transform: {
+    '^.+\\.(t|j)sx?$': ['@swc/jest', {
+      jsc: {
+        parser: {
+          syntax: 'typescript',
+          jsx: true,
+          decorators: true,
+        },
+        transform: {
+          react: {
+            runtime: 'automatic',
           },
-        }],
+        },
       },
-      testPathIgnorePatterns: [
-        '<rootDir>/node_modules/',
-        '<rootDir>/dist/',
-      ],
-    };
-  ```
+    }],
+  },
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/dist/',
+  ],
+};
+```
 
 ### parcel 설치
 
 parcel 설치: `npm i -D parcel`
 package.json에 scripts 명령어 넣기
 
-  ```json
-    "scripts": {
-      "start": "parcel --port 8080",
-      "build": "parcel build",
-      "check": "tsc --noEmit",
-      "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-      "test": "jest",
-      "coverage": "jest --coverage --coverage-reporters html",
-      "watch:test": "jest --watchAll"
-    },
-  ```
+```json
+"scripts": {
+  "start": "parcel --port 8080",
+  "build": "parcel build",
+  "check": "tsc --noEmit",
+  "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+  "test": "jest",
+  "coverage": "jest --coverage --coverage-reporters html",
+  "watch:test": "jest --watchAll"
+},
+```
 
 package.json에 시작이 되는 파일 수정: `"main": "index.js",`를 `"source": "index.html",`로 수정 후 index.html 파일 생성
 
@@ -195,38 +195,22 @@ package.json에 시작이 되는 파일 수정: `"main": "index.js",`를 `"sourc
 1. src 폴더와 tsx 파일 생성
 
 ```bash
-  mkdir src
-  touch src/main.tsx
+mkdir src
+touch src/main.tsx
 ```
 
 1. index.html 파일에 script 추가: `<script type="module" src="src/main.tsx"></script>`
 
-#### html, tsx 파일 생성 및 내용 추가
-
-```html
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-  </head>
-  <body>
-      <p id="root"></p>
-      <script type="module" src="src/main.tsx"></script>
-  </body>
-  </html>
-```
+1. main.tsx 파일 내용 추가
 
 ```typescript
-  import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 
-  const element = document.getElementById('root');
+const element = document.getElementById('root');
 
-  if (element) {
-    const root = ReactDOM.createRoot(element);
+if (element) {
+  const root = ReactDOM.createRoot(element);
 
-    root.render(<p>hello world!</p>);
-  }
+  root.render(<p>hello world!</p>);
+}
 ```
