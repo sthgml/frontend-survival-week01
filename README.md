@@ -201,7 +201,18 @@ npm i -D parcel
 * `src/components/Greeting.test.tsx`
 * `src/components/Greeting.tsx`
 
-15. eslint 확인
+15. 리소스 확인
+
+[parcel plugin](https://github.com/elwin013/parcel-reporter-static-files-copy) 설치하고 .parcelrc 생성
+
+```json
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+16. eslint 확인
 
 ```shell
 npx eslint .
