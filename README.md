@@ -75,7 +75,7 @@ npx eslint --init
 
 ? Does your project use TypeScript? » Yes 
 
-? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Where does your code run? ...  
 √ Browser
   Node
 
@@ -132,7 +132,9 @@ npm i -D @types/react @types/react-dom
 1. 테스팅 도구 설치
 
 ```bash
-npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+npm i -D jest @types/jest @swc/core @swc/jest \
+jest-environment-jsdom \
+@testing-library/react @testing-library/jest-dom
 ```
 
 1. jest.config.js 파일 작성
