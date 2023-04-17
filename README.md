@@ -178,3 +178,41 @@ npm i -D parcel
     "watch:test": "jest --watchAll"
   },
 ```
+
+
+## 웹 서버 띄우기
+1. `index.html` 파일을 생성합니다.
+```
+touch index.html
+```
+
+2. `package.json` 파일을 수정합니다.  
+"main": "index.js", 를 "source": "index.html", 로 수정합니다.
+```
+"name": "my-app",
+"version": "1.0.0",
+"description": "",
+"source": "index.html", //변경
+```
+
+3. `index.html` 파일에 코드를 입력합니다.
+```
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <meta charset = "UTF-8">
+        <title>react demo app</title>
+    </head>
+    <body>
+        <p>hello world</p>
+    </body>
+</html>
+```
+
+4. 실행합니다.
+```
+npm start
+```
+
+5.
+http://localhost:8080
