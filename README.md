@@ -9,7 +9,8 @@ Node.js 환경 설정을 해야 한다.
 * [Node.js](https://nodejs.org/ko) 에서 최신 버전 확인하기
 * [fnm (Fast Node Manager)](https://github.com/Schniz/fnm)
   * 프로젝트마다의 Node.js 버전 관리하기에 유용한 도구
-  * Windows는 [Scoop](https://scoop.sh/) 또는 [Chocolatey](https://chocolatey.org/)를 먼저 설치하고 fnm을 설치할 수 있다.
+  * Windows: [Chocolatey](https://chocolatey.org/) 활용하여 설치할 것
+    * [Scoop](https://scoop.sh/)도 가능
 
 ## TypeScript
 
@@ -20,22 +21,22 @@ mkdir app-pjt
 cd app-pjt
 ```
 
-2. npm 패키지 준비
+1. 프로젝트에 npm 패키지 준비
 
 ``` bash
 npm init -y
 ```
 
-3. .gitignore 파일 작성 👉 [github 샘플 참고](https://github.com/github/gitignore)
+1. [github 샘플](https://github.com/github/gitignore) 참고하여 .gitignore 작성
 
-4. 타입스크립트 설정
+1. 타입스크립트 설정
 
 ``` bash
 npm i -D typescript
 npx tsc --init
 ```
 
-5. tsconfig.json 파일의 jsx 속성 변경 👉 주석 변경
+1. tsconfig.json 파일의 jsx 속성 변경 👉 주석 변경
 
 ```json
 {
@@ -47,7 +48,7 @@ npx tsc --init
 }
 ```
 
-6. ESLint 설정
+1. ESLint 설정
 
 ``` bash
 npm i -D eslint
@@ -56,7 +57,7 @@ npx eslint --init
 
 👇 eslint 설정 참고 👇
 
-```
+```shell
 ? How would you like to use ESLint? ...
   To check syntax only
   To check syntax and find problems
@@ -99,28 +100,28 @@ npx eslint --init
   pnpm
 ```
 
-7. .eslintrc.js 파일 수정
+1. .eslintrc.js 파일 수정
 
 jest: true 잡아주면 좋고 rules에 본인 취향 코드 룰 추가하면 좋다
 
 ```json
- env: {
+env: {
   jest: true,
- },
+},
   rules: {
     indent: ['error', 2],
   },
 ```
 
-8. .eslintignore 파일 작성
+1. .eslintignore 파일 작성
 
-```
+```json
 /node_modules/
 /dist/
 /.parcel-cache/
 ```
 
-9. 리액트 설치
+1. 리액트 설치
 
 ```bash
 npm i react react-dom
@@ -128,13 +129,13 @@ npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
-10. 테스팅 도구 설치
+1. 테스팅 도구 설치
 
 ```bash
 npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 ```
 
-11. jest.config.js 파일 작성
+1. jest.config.js 파일 작성
 
 ```js
 module.exports = {
@@ -165,13 +166,13 @@ module.exports = {
   };
 ```
 
-12. Parcel 설치
+1. Parcel 설치
 
 ```bash
 npm i -D parcel
 ```
 
-13. package.json 파일의 scripts 수정
+1. package.json 파일의 scripts 수정
 
 ```json
   "scripts": {
@@ -185,14 +186,14 @@ npm i -D parcel
   },
 ```
 
-바로 npm start로 하면 빌드 실패할 수 있는데 index.html 생성하고, package.json 추가 수정하면 된다.
+바로 npm start로 하면 빌드 실패 시 package.json 추가 수정하면 된다.
 
 ```json
 // "main": "index.js",
 "source": "index.html"
 ```
 
-14. 기본 코드 작성
+1. 기본 코드 작성
 
 * `index.html`
 * `src/main.tsx`
@@ -201,9 +202,11 @@ npm i -D parcel
 * `src/components/Greeting.test.tsx`
 * `src/components/Greeting.tsx`
 
-15. 리소스 확인
+1. res 확인
 
-[parcel plugin](https://github.com/elwin013/parcel-reporter-static-files-copy) 설치하고 .parcelrc 생성
+[parcel plugin](https://github.com/elwin013/parcel-reporter-static-files-copy)
+
+위 플러그인 설치하고 .parcelrc 생성
 
 ```json
 {
@@ -212,7 +215,7 @@ npm i -D parcel
 }
 ```
 
-16. eslint 확인
+1. eslint 확인
 
 ```shell
 npx eslint .
