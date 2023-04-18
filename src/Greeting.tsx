@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import {useState} from 'react';
 
-export default function App({ name }: {
-  name: string;
-}){
-  //throw Error("!!!");
-  return(
-    <p>Hello, {name}</p>
-  );
+export default function App({name}: {
+	name: string;
+}) {
+	// Throw Error("!!!");
+	return (
+		<p>Hello, {name}</p>
+	);
 }
