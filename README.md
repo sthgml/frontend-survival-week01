@@ -149,7 +149,14 @@ package.json에 scripts 명령어 넣기
 },
 ```
 
-package.json에 시작이 되는 파일 수정: `"main": "index.js",`를 `"source": "index.html",`로 수정 후 index.html 파일 생성
+package.json에 시작이 되는 파일 수정
+
+```json
+"name": "my-app",
+"version": "1.0.0",
+"description": "",
+"source": "index.html", //변경
+```
 
 ### 실행이 되도록 기본 파일 설정
 
