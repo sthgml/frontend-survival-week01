@@ -131,36 +131,6 @@ npm i -D jest @types/jest @swc/core @swc/jest \
 
 jest가 기본으로 swc와 typescript를 사용하지않기에 함께 사용하기 위해 작성
 jest.config.js 파일 생성: `touch jest.config.js`
-파일에 아래 내용 넣고 저장
-
-  ```javascript
-  module.exports = {
-    testEnvironment: 'jsdom',
-    setupFilesAfterEnv: [
-      '@testing-library/jest-dom/extend-expect',
-    ],
-    transform: {
-      '^.+\\.(t|j)sx?$': ['@swc/jest', {
-        jsc: {
-          parser: {
-            syntax: 'typescript',
-            jsx: true,
-            decorators: true,
-          },
-          transform: {
-            react: {
-              runtime: 'automatic',
-            },
-          },
-        },
-      }],
-    },
-    testPathIgnorePatterns: [
-      '<rootDir>/node_modules/',
-      '<rootDir>/dist/',
-    ],
-  };
-  ```
 
 ### parcel 설치
 
