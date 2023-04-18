@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import Greeting from './Greeting';
+import Greeting from './components/Greeting';
 
 export default function App() {
 	const [count, setCount] = useState(0);
