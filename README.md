@@ -80,7 +80,9 @@ node_modules을 git에 올리지 않도록 gitignore 파일을 만들기
 
   ? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
   √ Browser
+  ```
 
+  ```text
   ? How would you like to define a style for your project? ...
   > Use a popular style guide
     Answer questions about your style
