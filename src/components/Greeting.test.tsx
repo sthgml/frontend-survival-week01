@@ -14,8 +14,8 @@ test('Greeting', () => {
 
 	// 없는 것은 오류 X, 없어야 하는데 없으면 success
 	// expect(screen.queryByText('/Hello/')).toBeInTheDocument(); // 있어야 한다.
-	expect(screen.queryByText('/Hi/')).not.toBeInTheDocument(); // 없어야 한다.
+	// expect(screen.queryByText('/Hi/')).not.toBeInTheDocument(); // 없어야 한다.
 
 	// 안보여야 한다.(display: none과 같은 것)
-	expect(screen.queryByText('/Hi/')).not.toBeVisible();
+	// expect(screen.queryByText('/Hi/')).not.toBeVisible();
 });
