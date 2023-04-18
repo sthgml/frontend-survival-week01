@@ -1,251 +1,215 @@
-# Development Environment
+# 개발환경 세팅
 
-## Visual Studio Code 설치하기
+TypeScript + React + Jest + ESLint + Parcel 세팅(windows)
 
-Visual Studio Code를 설치합니다.
+## 환경설정 전 준비
+
+1. 프로젝트용 폴더 생성: `mkdir <프로젝트명>`
+
+1. node.js 설치
+
+아래 링크에서 직접 다운로드하거나 fnm으로 설치 가능(fnm이 더 빠름)
+
+  1. 직접 다운로드: 최신 버전보다 안정된 버전 설치하기
+  [node.js 다운로드](https://nodejs.org/ko)
+
+  1. fnm 설치 코드
+
+  ```bash
+    fnm install --lts
+    fnm list
+  ```
+
+1. vsCode 설치 후 vsCode에서 프로젝트 폴더 열기
+[vsCode 다운로드](https://code.visualstudio.com/download)
+
+1. vsCode에서 Terminal > new Terminal로 터미널창 열기
+
+기본 설정이 powerShell로 되어있으면, 이후 명령어가 작동하지 않음. git bash로 변경하기
+  git bash는 git을 설치해야만 생김
+  [git 다운로드](https://git-scm.com/downloads)
+
+## 프로젝트 환경설정
+
+### 초기 설정
+
+1. npm으로 필요한 패키지 다운로드
+
+`npm init -y`: npm 패키지 준비
+  init: 시작 / -y: 옵션 전부 yes를 의미
+
+1. `.gitignore` 작성
+
+node_modules을 git에 올리지 않도록 gitignore 파일을 만들기
+  .gitignore 파일 생성(. 필수(숨겨진 파일이라는 의미)) : `touch .gitignore`
+  하단 사이트에서 node.js 검색 후 .gitignore 파일에 복사 붙여넣기
+  [gitignore 내용 자동으로 만들어주는 사이트](https://www.toptal.com/developers/gitignore)
+
+### typescript 설정
+
+1. typescript 설치: `npm i -D typescript`
+1. typescript 설정 초기화: `npx tsc --init`
+1. 생성된 tsconfig.json 파일에서 jsx 주석을 해제하고, 내용을 변경: `"jsx": "react-jsx"`
+
+### eslint 설정
+
+1. eslint 설치: `npm i -D eslint`
+1. eslint 설정 초기화: `npx eslint --init`
+
+설정은 아래와 같이 세팅
+
+  ```text
+  You can also run this command directly using 'npm init @eslint/config'.
+
+  ? How would you like to use ESLint? ...
+    To check syntax only
+    To check syntax and find problems
+  > To check syntax, find problems, and enforce code style
+
+  ? What type of modules does your project use? ...
+  > JavaScript modules (import/export)
+    CommonJS (require/exports)
+    None of these
+
+  ? Which framework does your project use? ...
+  > React
+    Vue.js
+    None of these
+
+  ? Does your project use TypeScript? yes
+
+  ? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+  √ Browser
+
+  ? How would you like to define a style for your project? ...
+  > Use a popular style guide
+    Answer questions about your style
+
+  ? Which style guide do you want to follow? ...
+    Standard: https://github.com/standard/eslint-config-standard-with-typescript
+  > XO: https://github.com/xojs/eslint-config-xo-typescript
+
+  ? What format do you want your config file to be in? ...
+  > JavaScript
+    YAML
+    JSON
+
+  ? Would you like to install them now? Yes
+
+  ? Which package manager do you want to use? ...
+  > npm
+    yarn
+    pnpm
+  ```
+
+1. .eslintrc.js 파일 수정
+
+```javascript
+extends: [
+  'plugin:react/recommended',
+  'plugin:react/jsx-runtime', //추가
+  'xo',
+],
+```
+
+1. .eslintignore 추가: `touch .eslintignore`
+1. .eslintignore 작성
 
 ```text
-brew install visual-studio-code
+/node_modules/
+/dist/
+/.parcel-cache/
 ```
 
-## JavaScript
+### React 설치
 
-## Node.js 설치하기
+react 설치: `npm i react react-dom` 후 `npm i -D @types/react @types/react-dom`
 
-Node.js를 설치합니다.
+### jest 테스트 도구 설치
 
-```text
-brew install node.js
+1. jest 설치
+
+```bash
+npm i -D jest @types/jest @swc/core @swc/jest \
+  jest-environment-jsdom \
+  @testing-library/react @testing-library/jest-dom
 ```
 
-버전 확인하기
+1. jest.config.js 파일을 작성
 
-```text
-node -v
-```
+jest가 기본으로 swc와 typescript를 사용하지않기에 함께 사용하기 위해 작성
+jest.config.js 파일 생성: `touch jest.config.js`
+파일에 아래 내용 넣고 저장
 
-## TypeScript + React + ESLint + Jest + Parcel
+  ```javascript
+  module.exports = {
+    testEnvironment: 'jsdom',
+    setupFilesAfterEnv: [
+      '@testing-library/jest-dom/extend-expect',
+    ],
+    transform: {
+      '^.+\\.(t|j)sx?$': ['@swc/jest', {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            jsx: true,
+            decorators: true,
+          },
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
+          },
+        },
+      }],
+    },
+    testPathIgnorePatterns: [
+      '<rootDir>/node_modules/',
+      '<rootDir>/dist/',
+    ],
+  };
+  ```
 
-## 작업 폴더 생성하기
+### parcel 설치
 
-작업 폴더를 생성합니다.
+parcel 설치: `npm i -D parcel`
+package.json에 scripts 명령어 넣기
 
-```text
-mkdir my-app
-cd my-app
-```
-
-## npm 패키지 준비하기  
-
-npm 패키지를 설치하는 두 가지의 명령어가 있습니다.
-
-* 기본 명령어입니다. 세부 설정을 해야 합니다.
-
-```text
-npm init
-```
-
-* 세부 설정 없이 default값으로 바로 생성합니다.
-
-```text
-npm init -y //-y는 yes의 의미
-```
-
-설치가 완료 되면 `package.json` 파일이 생성 됩니다.
-
-## .gitignore 파일 생성하기
-
-git에 업로드 되지 않아야 하는 파일입니다.  
-최소한 /node_modules/, /dist/ 는 포함해야 합니다.  
-
-`.gitignore` 파일을 생성합니다.
-
-```text
-touch .gitignore
-```
-
-## TypeScript 설정하기
-
-1. TypeScript를 설치합니다.
-
-    ```text
-    npm i -D typescript
-    ```
-
-2. `tsconfig.json` 파일을 생성합니다.
-
-    ```text
-    npx tsc --init
-    ```
-
-3. JSX를 사용하기 위해 `tsconfig.json` 파일을 수정합니다.  
-⌘+F로 jsx를 찾아서 주석을 삭제합니다.
-
-    ```tsconfig.json
-    // "lib": [],
-    "jsx": "preserve",
-    // "experimentalDecorators": true,
-    ```
-
-## ESLint 설정하기
-
-1. ESLint를 설치합니다.
-
-    ```text
-    npm i -D eslint
-    ```
-
-2. 세부 설정을 합니다.
-
-    ```text
-    npx eslint --init
-    ```
-
-    ```text
-    Ok to proceed? (y)
-    ```
-
-    ```text
-    ? How would you like to use ESLint? …
-    ❯ To check syntax, find problems, and enforce code style
-
-    ? What type of modules does your project use? …
-    ❯ JavaScript modules (import/export)
-
-    ? Which framework does your project use? …
-    ❯ React
-
-    ? Does your project use TypeScript?
-    › Yes
-
-    ? Where does your code run? …
-    ✔ Browser
-
-    ? How would you like to define a style for your project? …
-    ❯ Use a popular style guide
-
-    ? Which style guide do you want to follow? …
-    ❯ XO
-
-    ? What format do you want your config file to be in? …
-    ❯ JavaScript
-
-    ? Would you like to install them now?
-    › Yes
-
-    ? Which package manager do you want to use? …
-    ❯ npm
-    ```
-
-3. `.eslintrc.js` 파일을 수정합니다.  
-아직 Jest를 설치하지 않았지만, 미리 설정합니다.
-
-    ```.eslintrc.js
-    browser: true,
-    es2021: true,
-    jest: true //추가
-    ```
-
-4. `.eslintignore` 파일을 생성합니다.  
-`.gitignore` 파일과 같은 내용을 입력합니다.
-
-## React 설치하기
-
-React를 설치합니다.  
-설치하는 동안 `package.json` 파일을 수정하면 안 됩니다.
-
-```text
-npm i react react-dom
-npm i -D @types/react @types/react-dom
-```
-
-설치가 완료 되면 `package.json` 파일에서 확인할 수 있습니다.
-
-```package.json
-"dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
-```
-
-## Jest 설치하기
-
-1. Jest를 설치합니다.
-
-    ```text
-    npm i -D jest @types/jest @swc/core @swc/jest
-    jest-environment-jsdom
-    @testing-library/react @testing-library/jest-dom
-    ```
-
-2. SWC로 빌드하기 위해 `jest.config.js` 파일을 생성합니다.
-
-    ```text
-    touch jest.config.js
-    ```
-
-## Parcel 설치하기
-
-Parcel을 설치합니다.
-
-```text
-npm i -D parcel
-```
-
-## package.json 파일 수정하기
-
-`package.json` 파일을 수정합니다.
-
-```package.json
+```json
 "scripts": {
-    "start": "parcel --port 8080",
-    "build": "parcel build",
-    "check": "tsc --noEmit",
-    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-    "test": "jest",
-    "coverage": "jest --coverage --coverage-reporters html",
-    "watch:test": "jest --watchAll"
-  },
+  "start": "parcel --port 8080",
+  "build": "parcel build",
+  "check": "tsc --noEmit",
+  "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+  "test": "jest",
+  "coverage": "jest --coverage --coverage-reporters html",
+  "watch:test": "jest --watchAll"
+},
 ```
 
-## 웹 서버 띄우기
+package.json에 시작이 되는 파일 수정: `"main": "index.js",`를 `"source": "index.html",`로 수정 후 index.html 파일 생성
 
-1. `index.html` 파일을 생성합니다.
+### 실행이 되도록 기본 파일 설정
 
-    ```text
-    touch index.html
-    ```
+1. src 폴더와 tsx 파일 생성
 
-2. `package.json` 파일을 수정합니다.  
-"main": "index.js", 를 "source": "index.html", 로 수정합니다.
+```bash
+mkdir src
+touch src/main.tsx
+```
 
-    ```package.json
-    "name": "my-app",
-    "version": "1.0.0",
-    "description": "",
-    "source": "index.html", //변경
-    ```
+1. index.html 파일에 script 추가: `<script type="module" src="src/main.tsx"></script>`
 
-3. `index.html` 파일에 코드를 입력합니다.
+1. main.tsx 파일 내용 추가
 
-    ```index.html
-    <!DOCTYPE html>
-    <html lang = "ko">
-        <head>
-            <meta charset = "UTF-8">
-            <title>react demo app</title>
-        </head>
-        <body>
-            <p>hello world</p>
-        </body>
-    </html>
-    ```
+```typescript
+import ReactDOM from 'react-dom/client';
 
-4. 실행합니다.
+const element = document.getElementById('root');
 
-    ```text
-    npm start
-    ```
+if (element) {
+  const root = ReactDOM.createRoot(element);
 
-5.
-    <http://localhost:8080>
+  root.render(<p>hello world!</p>);
+}
+```
