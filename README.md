@@ -18,7 +18,7 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
   ```bash
     fnm install --lts
-    fnm list  
+    fnm list
   ```
 
 1. vsCode 설치 후 vsCode에서 프로젝트 폴더 열기
@@ -38,7 +38,7 @@ mkdir로 프로젝트 폴더 생성: `mkdir <프로젝트명>`
 
 `npm init -y`: npm 패키지 준비
   init: 시작 / -y: 옵션 전부 yes를 의미
-  
+
 1. `.gitignore` 작성
 
 node_modules을 git에 올리지 않도록 gitignore 파일을 만들기
@@ -56,53 +56,6 @@ node_modules을 git에 올리지 않도록 gitignore 파일을 만들기
 
 1. eslint 설치: `npm i -D eslint`
 1. eslint 설정 초기화: `npx eslint --init`
-
-설정은 아래와 같이 세팅
-
-```bash
-You can also run this command directly using 'npm init @eslint/config'.
-
-? How would you like to use ESLint? ...
-  To check syntax only
-  To check syntax and find problems
-> To check syntax, find problems, and enforce code style
-
-? What type of modules does your project use? ... 
-> JavaScript modules (import/export)
-  CommonJS (require/exports)
-  None of these
-
-? Which framework does your project use? ...
-> React
-  Vue.js
-  None of these
-
-? Does your project use TypeScript? yes
-
-? Where does your code run? ...  (Press <space> to select, <a> to toggle all, <i> to invert selection)
-√ Browser
-
-? How would you like to define a style for your project? ...
-> Use a popular style guide
-  Answer questions about your style
-
-? Which style guide do you want to follow? ...
-  Standard: https://github.com/standard/eslint-config-standard-with-typescript
-> XO: https://github.com/xojs/eslint-config-xo-typescript
-
-? What format do you want your config file to be in? ...
-> JavaScript
-  YAML
-  JSON
-
-? Would you like to install them now? Yes
-
-? Which package manager do you want to use? ... 
-> npm
-  yarn
-  pnpm
-```
-
 1. .eslintrc.js 파일 수정
 
 ```javascript
