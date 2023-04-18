@@ -1,3 +1,4 @@
+import React from 'react';
 import {useState} from 'react';
 
 export default function App({name}: {
@@ -8,3 +9,4 @@ export default function App({name}: {
 		<p>Hello, {name}</p>
 	);
 }
+
