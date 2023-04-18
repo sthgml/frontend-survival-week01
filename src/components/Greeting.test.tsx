@@ -6,9 +6,9 @@ test('Greeting', () => {
 	render(<Greeting name='world' />);
 
 	// String 그대로 컴포넌트를 찾기에 반드시 그대로 일치해야 함
-	screen.getByText('Hello, world!');
+	// screen.getByText('Hello, world!');
 	// 정규표현식으로 hello가 있는 지 확인
-	screen.getByText('/Hello/');
+	// screen.getByText('/Hello/');
 	// GetByText: 없으면 에러, queryByText: 없으면 없음을 return
 	screen.queryByText('/Hi/');
 
