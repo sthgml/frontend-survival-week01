@@ -8,7 +8,8 @@
 
 ```bash
 WslRegisterDistribution failed with error: 0x80370102
-Please enable the Virtual Machine Platform Windows feature and ensure virtualization is enabled in the BIOS.
+Please enable the Virtual Machine Platform Windows feature and
+ ensure virtualization is enabled in the BIOS.
 ```
 
 링크(<https://gallery-k.tistory.com/311>)
@@ -21,7 +22,9 @@ fnm env --use-on-cd | Out-String | Invoke-Expression
 
 ## chocolate
 
-### Chocolatey 는 Mac OS X 의 Homebrew 나 Linux 의 yum, apt-get 같은 역할을 수행하는 NuGet 기반의 윈도우용 패키지 관리자이다
+### Chocolatey 는 Mac OS X 의 Homebrew 나 Linux 의 yum, apt-get 같은 역할을
+
+### 수행하는 NuGet 기반의 윈도우용 패키지 관리자이다
 
 scoop 에 비해 실행시 관리자 권한이 필요하다는 단점이 있지만 더 체계적으로 패키지를 관리하고 있다.
 작업 폴더를 준비한다
