@@ -1,0 +1,12 @@
+{
+//     "editor.codeActionsOnSave": {
+//         "source.fixAll.eslint": true
+//     }
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "editor.rulers": [
+        80
+    ],
+    "trailing-spaces.trimOnSave": true
+}
