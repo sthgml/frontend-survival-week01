@@ -191,3 +191,18 @@ main();
 ```
 
 **`npm start로 개발 서버 실행`**
+
+#### 정적 파일 사용을 위한 패키지설치
+
+```bash
+npm i -D parcel-reporter-static-files-copy
+```
+
+#### .parcelrc 파일에 옵션 추가
+
+```bash
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
