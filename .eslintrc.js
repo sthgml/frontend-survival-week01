@@ -4,7 +4,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["plugin:react/recommended", "xo", "plugin:react/jsx-runtime"],
+  extends: [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+  ],
   overrides: [
     {
       extends: ["xo-typescript"],

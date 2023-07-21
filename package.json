@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "source": "./index.html",
-  "type": "module",
   "scripts": {
     "start": "parcel --port 8080",
     "build": "parcel build",
