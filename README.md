@@ -18,7 +18,7 @@ npx tsc --init
 
 ### 설정
 
-```json
+```bash
 // ./tsconfig.json
 
 {
