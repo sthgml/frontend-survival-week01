@@ -134,7 +134,7 @@ npx tsc --init
 
 ## Eslint
 
-### 설치
+### Eslint 설치
 
 ```bash
 npm i -D eslint
@@ -142,7 +142,7 @@ npm i -D eslint
 npx eslint --init
 ```
 
-### 설정
+### Eslint 설정
 
 ```bash
 Ok to proceed? (y)
@@ -344,7 +344,7 @@ dist
 
 ## Gitignore
 
-### 설정
+### Gitignore 설정
 
 ```bash
 // ./.gitignore
@@ -359,7 +359,7 @@ dist
 
 ## React
 
-### 설치
+### React 설치
 
 ```bash
 npm i react react-dom 
@@ -367,7 +367,7 @@ npm i react react-dom 
 npm i -D @types/react @types/react-dom
 ```
 
-### 설정
+### React 설정
 
 ```jsx
 // ./src/index.tsx
@@ -403,13 +403,13 @@ test("render app", () => {
 
 ## J**est**
 
-### 설치
+### Jest 설치
 
 ```bash
 npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 ```
 
-### 설정
+### Jest 설정
 
 ```jsx
 // ./jest.config.js
@@ -442,13 +442,13 @@ module.exports = {
 
 ## Parcel
 
-### 설치
+### Parcel 설치
 
 ```bash
 npm i -D parcel
 ```
 
-### 설정
+### Parcel 설정
 
 ```json
 // ./.parcelrc
@@ -510,7 +510,7 @@ npm i -D parcel
 
 ### **기본 파일**
 
-### 설정
+### 기본 파일 설정
 
 ```html
 // ./index.html
@@ -531,7 +531,7 @@ npm i -D parcel
 
 ### Vscode
 
-### 설정
+### Vscode 설정
 
 ```jsx
 // ./.vscode/settings.json
