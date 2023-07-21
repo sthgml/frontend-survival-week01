@@ -54,7 +54,8 @@ npm i -D eslint
 npx eslint --init
 ```
 
-npx eslint --init의 세부 설정 작업 진행 후 .eslintrc.js 파일이 생성되는데 jest도 linting하기 위해 env: { jest: true } 추가
+npx eslint --init의 세부 설정 작업 진행 후 .eslintrc.js 파일이 생성되는데
+jest도 linting하기 위해 env: { jest: true } 추가
 
 ### .eslintignore
 
@@ -116,7 +117,8 @@ module.exports = {
 };
 ```
 
-transform속성은 Jest가 JS에 대해서만 테스팅이 가능하므로 ts, tsx 확장자의 경우 JS로 컴파일하고 JS의 ES6+ 문법을 ES5로 트랜스파일하는 코드 전처리기로 swc를 사용하겠다는 의미다.
+transform속성은 Jest가 JS에 대해서만 테스팅이 가능하므로 ts, tsx 확장자의 경우 JS로 컴파일하고
+JS의 ES6+ 문법을 ES5로 트랜스파일하는 코드 전처리기로 swc를 사용하겠다는 의미다.
 
 ### Parcel 설치
 
@@ -139,11 +141,14 @@ npm i -D parcel
 }
 ```
 
-Parcel로 개발 서버를 실행할 때 `"source": "./index.html",` 속성이 index.html을 진입점(entry point)으로 설정한다.
+Parcel로 개발 서버를 실행할 때 `"source": "./index.html",` 속성이
+index.html을 진입점(entry point)으로 설정한다.
 
-`tsc --noEmit`의 `--noEmit` 옵션은 오류를 검사하고 컴파일 결과만을 확인하고, 변환된 JavaScript 파일은 생성하지 않는다.
+`tsc --noEmit`의 `--noEmit` 옵션은 오류를 검사하고 컴파일 결과만을 확인하고,
+변환된 JavaScript 파일은 생성하지 않는다.
 
-`jest --watchAll`의 `--watchAll` 옵션은 jest 테스팅시 모든 파일을 감시하고, 변경이 감지되면 자동으로 다시 테스트한다.
+`jest --watchAll`의 `--watchAll` 옵션은 jest 테스팅시 모든 파일을 감시하고,
+변경이 감지되면 자동으로 다시 테스트한다.
 
 ### index.html
 
