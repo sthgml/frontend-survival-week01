@@ -406,7 +406,15 @@ test("render app", () => {
 ### Jest 설치
 
 ```bash
-npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+npm i -D jest @types/jest  jest-environment-jsdom
+```
+
+```bash
+npm i -D @swc/core @swc/jest
+```
+
+```bash
+npm i -D @testing-library/react @testing-library/jest-dom
 ```
 
 ### Jest 설정
