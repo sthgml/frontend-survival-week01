@@ -1,13 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-function App() {
-	return (
-		<div>
-   hello world!
-		</div>
-	);
-}
+import App from './App';
 
 function main() {
 	const element = document.getElementById('root');
