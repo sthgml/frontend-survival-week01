@@ -186,7 +186,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["plugin:react/recommended", "xo", "plugin:react/jsx-runtime"],
+  extends: [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+  ],
   overrides: [
     {
       extends: ["xo-typescript"],
@@ -348,6 +352,7 @@ dist
 /node_modules/
 /dist/
 /.parcel-cache/
+/coverage/
 ```
 
 [gitignore.io](https://www.toptal.com/developers/gitignore)
@@ -384,18 +389,15 @@ export default function App() {
 ```
 
 ```jsx
-// ./src/App.test.tsx
+// ./src/main.test.tsx
 
 import { render } from "@testing-library/react";
-
 import App from "./App";
 
-describe("App", () => {
-  it("renders greeting message", () => {
-    const { container } = render(<App />);
-
-    expect(container).toHaveTextContent("Hello, world!");
-  });
+test("render app", () => {
+  const { getByText } = render(<App />);
+  const titleElement = getByText(/Hello/i);
+  expect(titleElement).toBeInTheDocument();
 });
 ```
 
@@ -410,7 +412,7 @@ npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom @testing-li
 ### 설정
 
 ```jsx
-// ./jest.config.cjs
+// ./jest.config.js
 
 module.exports = {
   testEnvironment: "jsdom",
@@ -522,7 +524,7 @@ npm i -D parcel
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/index.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
 ```
