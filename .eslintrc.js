@@ -2,10 +2,11 @@ module.exports = {
 	env: {
 		browser: true,
 		es2021: true,
+		jest: true,
 	},
 	extends: [
-		'xo',
 		'plugin:react/recommended',
+		'xo',
 		'plugin:react/jsx-runtime',
 	],
 	overrides: [
