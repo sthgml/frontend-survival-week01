@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = async () => ({
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   transform: {
@@ -21,4 +21,4 @@ module.exports = {
     ],
   },
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
-};
+});
