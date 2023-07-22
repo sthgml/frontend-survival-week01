@@ -2,9 +2,16 @@
   "name": "my-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "test": "jest"
+    "start": "parcel --port 8080",
+    "build": "parcel build",
+    "serve": "servor dist index.html 8080 --reload",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "check": "tsc --noEmit",
+    "test": "jest --detectOpenHandles",
+    "coverage": "npm test -- --coverage --coverage-reporters html",
+    "watch:test": "npm test -- --watchAll"
   },
   "keywords": [],
   "author": "",

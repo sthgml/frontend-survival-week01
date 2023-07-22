@@ -238,3 +238,7 @@ describe("App", () => {
 // npm scripts 실행
 $ npm run test
 ```
+
+```console
+Q2. 강의에 나온 의존성들(Dependencies)을 설치하고, 설정파일들을 빠짐 없이 생성하고, 동일하게 작성해주세요.
+```
