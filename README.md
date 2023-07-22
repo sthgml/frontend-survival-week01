@@ -4,6 +4,8 @@
 
 ## Into
 
+[데모 페이지 구경하기](https://frontend-survival-week01.vercel.app/)
+
 개발환경 설정 방법을 모아둔 문서입니다.
 기본적으로 아래 기술 스택을 사용하고 나열 순서대로 설치 및 설정을 진행합니다.
 
@@ -12,6 +14,7 @@
 - React
 - Jest, React Testing Library
 - Parcel
+
 
 ## Node가 설치되어 있지 않은 경우
 
