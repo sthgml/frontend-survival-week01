@@ -227,6 +227,7 @@ package.json에 scripts, source를 추가해줍니다.
 ```json
 {
   // ...
+  // "main": "index.js", -> 삭제
   "source": "index.html",
   // ...
   "scripts": {
@@ -279,7 +280,7 @@ index.html
 │   │   └── Greeting.test.tsx
 ├── static
 │   └── images
-│       └── list.png
+│       └── dummy.jpeg
 
 ```
 
@@ -346,7 +347,7 @@ export default function App() {
  return (
   <div>
    <Greeting name='world' />
-   <img src='/images/list.png' alt='listImage' width='200' height='200' />
+   <img src='/images/dummy.jpeg' alt='listImage' width='200' height='200' />
    <p>Count: {count}</p>
    <button type='button' onClick={handleClick}>
         Increment
@@ -383,10 +384,14 @@ test('Greeting', () => {
 ```
 
 더미 이미지 파일을 아래 경로에 넣어줍니다.
-static/images/list.png
+static/images/dummy.jpeg
+
+```shell
+mkdir -p static/images
+```
 
 더미 이미지 파일입니다.
-![list](./static/images/list.png)
+![dummy](./static/images/dummy.jpeg)
 
 vscode 설정 파일을 생성해줍니다.
 
