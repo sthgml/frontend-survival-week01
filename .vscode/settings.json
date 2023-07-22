@@ -1,0 +1,13 @@
+{
+  "editor.rulers": [
+		80
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"trailing-spaces.trimOnSave": true,
+	"editor.formatOnSave": false,
+  "cSpell.words": [
+    "parcelrc"
+  ]
+}
