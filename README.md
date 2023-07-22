@@ -15,7 +15,6 @@
 - Jest, React Testing Library
 - Parcel
 
-
 ## Node가 설치되어 있지 않은 경우
 
 만약 node가 설치되어 있다면 1번부터 진행하시면 됩니다.
