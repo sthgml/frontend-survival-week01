@@ -8,6 +8,8 @@
   "trailing-spaces.trimOnSave": true,
   "editor.formatOnSave": false,
   "cSpell.words": [
-    "parcelrc"
+    "codepaths",
+    "parcelrc",
+    "tsbuildinfo"
   ]
 }
