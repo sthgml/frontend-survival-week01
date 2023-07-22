@@ -6,7 +6,7 @@
 
 [데모 페이지 구경하기](https://frontend-survival-week01.vercel.app/)
 
-개발환경 설정 방법을 모아둔 문서입니다.  
+개발환경 설정 방법을 모아둔 문서입니다.
 기본적으로 아래 기술 스택을 사용하고 나열 순서대로 설치 및 설정을 진행합니다.
 
 - TypeScript
@@ -17,9 +17,11 @@
 
 ## Node가 설치되어 있지 않은 경우
 
-만약 node가 설치되어 있다면 1번부터 진행하시면 됩니다.  
-node가 설치되어 있지 않다면 아래와 같이 설치해줍니다.  
-[fnm](https://github.com/Schniz/fnm)은 Fast Node Manager로 node 버전을 관리해주는 도구입니다. 여러 버전을 사용할 수 있는 장점이 있습니다.
+만약 node가 설치되어 있다면 1번부터 진행하시면 됩니다.
+node가 설치되어 있지 않다면 아래와 같이 설치해줍니다.
+[fnm](https://github.com/Schniz/fnm)은 Fast Node Manager로 node 버전을
+관리해주는 도구입니다.
+여러 버전을 사용할 수 있는 장점이 있습니다.
 
 ```shell
 # fnm 설치
@@ -49,8 +51,10 @@ npm init -y
 
 ## 2. 의존성 설치 전 gitignore 생성
 
-의존성 설치 전에 gitignore를 생성해줍니다.  
-ignore안 작성내용은 [github_gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore) 내용을 넣어줍니다.
+의존성 설치 전에 gitignore를 생성해줍니다.
+ignore안 작성내용은
+[github_gitignore](https://github.com/github/gitignore/blob/main/Node.gitignore)
+내용을 넣어줍니다.
 
 ```shell
 touch .gitignore
