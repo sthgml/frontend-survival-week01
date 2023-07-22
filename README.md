@@ -46,7 +46,8 @@ mkdir frontend-survival-week01 // 폴더 생성
 cd frontend-survival-week01 // 폴더 이동
 fnm use default // node 버전 설정
 echo "${fnm current}" > .nvmrc 
-// .nvmrc 파일 생성 후 현재 node 버전 입력. 이후 설치된 node 버전과 프로젝트 node 버전이 달라도 프로젝트 폴더로 이동하면 자동으로 node 버전이 변경된다.
+// .nvmrc 파일 생성 후 현재 node 버전 입력. 
+// 이후 설치된 node 버전과 프로젝트 node 버전이 달라도 자동으로 node 버전이 변경된다.
 ```
 
 ### 프로젝트 세팅
