@@ -254,14 +254,22 @@ npm i -D @types/react @types/react-dom
 ### React 설정
 
 ```jsx
-// ./src/index.tsx
+// ./src/main.tsx
 
-import ReactDOM from "react-dom";
-
+import ReactDOM from "react-dom/client";
 import App from "./App";
 
-const container = document.getElementById("root");
-ReactDOM.render(<App />, container);
+function main() {
+  const container = document.getElementById("root");
+  if (!container) {
+    return;
+  }
+
+  const root = ReactDOM.createRoot(container);
+  root.render(<App />);
+}
+
+main();
 ```
 
 ```jsx
