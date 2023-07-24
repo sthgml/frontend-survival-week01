@@ -1,0 +1,11 @@
+# Node Packages
+node_modules
+
+# Parcel
+.parcel-cache
+
+# Test
+coverage
+
+# Build
+dist
