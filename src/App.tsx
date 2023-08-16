@@ -1,5 +1,7 @@
 import {useState} from 'react';
 
+import Greeting from './components/Greeting';
+
 export default function App() {
 	const [count, setCount] = useState(0);
 
@@ -9,7 +11,7 @@ export default function App() {
 
 	return (
 		<div>
-			<p>Hello, world!</p>
+			<Greeting name='world'/>
 			<p>Count: {count}</p>
 			<button type='button' onClick={handleClick}>
         클릭!
