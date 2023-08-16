@@ -12,6 +12,7 @@ export default function App() {
 	return (
 		<div>
 			<Greeting name='world'/>
+			<img src='/images/developer.png' alt='developer image' width='200'/>
 			<p>Count: {count}</p>
 			<button type='button' onClick={handleClick}>
         클릭!
