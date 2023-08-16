@@ -75,7 +75,8 @@ npx eslint --init
 ✔ Does your project use TypeScript? · No / Yes // 예스
 ✔ Where does your code run? · browser // 스페이스 누를 때마다 온오프 가능, 브라우저 선택
 ✔ How would you like to define a style for your project? · guide // 위에 것, 가이드
-✔ Which style guide do you want to follow? · xo-typescript // 에어비앤비 스타일이 최근에 빠져서 XO
+✔ Which style guide do you want to follow? · xo-typescript 
+// 에어비앤비 스타일이 최근에 빠져서 XO
 ✔ What format do you want your config file to be in? · JavaScript // 자바스크립트
 ✔ Would you like to install them now? · No / Yes // 예스
 ✔ Which package manager do you want to use? · npm // npm
@@ -246,7 +247,9 @@ touch src/components/Greeting.test.tsx
 "source": "./index.html",
 ```
 
-[parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후 `.parcelrc` 파일 작성.
+`https://github.com/elwin013/parcel-reporter-static-files-copy`
+
+패키지 설치 후 `.parcelrc` 파일 작성.
 이렇게 하면 static 폴더의 파일을 정적 파일로 Serving할 수 있다(이미지 등 Assets).
 
 ```bash
@@ -268,7 +271,8 @@ touch .parcelrc
 mkdir static
 ```
 
-static 폴더 안에 images 폴더 만들고 삽입할 이미지 넣어주기! 가져다 쓸 때는 아래와 같이 가져다 쓰면 됨.
+static 폴더 안에 images 폴더 만들고 삽입할 이미지 넣어주기!
+가져다 쓸 때는 아래와 같이 가져다 쓰면 됨.
 
 ```html
 <img src='/images/developer.png' alt='developer image' width='200'/>
