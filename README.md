@@ -96,7 +96,7 @@ touch .eslintignore
 ```
 npm i react react-dom
 
-npm i -D @types/react @types/reac-dom
+npm i -D @types/react @types/react-dom
 ```
 
 
