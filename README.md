@@ -88,6 +88,23 @@ touch .eslintignore
 .gitignore와 작성방법 동일함.
 파일 내 필요한 것들 작성
 
+3. 저장할 때 마다 설정된 값에 알아서 변경 되도록 설정하기
+** [ESlint](https://eslint.org/) extention 설치
+** .vecode 폴더 생성
+** 폴더 내 setting.json 생성 및 내용 작성
+```
+{   
+    "editor.rulers": [
+        80
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true 
+    },
+    "trailing-spaces.trimOnSave": true
+}
+```
+
+
 
 ------------
 ### React
@@ -98,6 +115,7 @@ npm i react react-dom
 
 npm i -D @types/react @types/react-dom
 ```
+이걸 한다해서 전부 수정해주진 않음
 
 
 ------------
@@ -162,6 +180,30 @@ eslint 문제이므로 위 명령어를 터미널에 입력하여 수정되도�
 ```
 npm i -D parcel 
 ```
+
+2. parcel 설정 파일 만들기
+** .parcelrc 생성
+```
+touch .parcelrc
+```
+** .parcelrc 내용 작성
+```
+{
+  "extends": ["@parcel/config-default"],
+  "reporters":  ["...", "parcel-reporter-static-files-copy"]
+}
+```
+
+3. 이미지 파일 처리를 위한 npm 패키지 설치
+```
+npm i -D parcel-reporter-static-files-copy
+```
+** 기본으로 설정된 폴더가 static이므로 static 폴더 생성
+```
+mkdir static
+```
+** 이미지 파일을 사용해야 한다면 static 폴더에 넣으면 됨.
+
 
 
 ------------
