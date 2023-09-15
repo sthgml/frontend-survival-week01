@@ -124,9 +124,7 @@ touch jest.config.js
 ```
 module.exports = {
 	testEnvironment: 'jsdom',
-	setupFilesAfterEnv: [
-		'@testing-library/jest-dom/extend-expect',
-	],
+	setupFilesAfterEnv: ['@testing-library/jest-dom'],
 	transform: {
 		'^.+\\.(t|j)sx?$': ['@swc/jest', {
 			jsc: {
