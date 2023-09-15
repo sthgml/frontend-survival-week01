@@ -166,7 +166,15 @@ npm i -D parcel
 
 ------------
 ### package.json 내용 수정
-1. scripts 안에 작성해주기
+1. "main"에서 "source"로 변경
+```
+  "main": "index.js",
+```
+```
+  "source": "index.html",
+```
+
+2. scripts 안에 작성해주기
 ```
   "scripts": {
     "start": "parcel --port 8080",
