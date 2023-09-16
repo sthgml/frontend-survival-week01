@@ -328,14 +328,15 @@ npm i -D parcel
 
 zero-configuration이지만, 2가지 정도 작업은 하는게 좋다.
 
-1. `package.json` 파일에 source 속성 추가.
+1 . `package.json` 파일에 source 속성 추가.
 
 ```json
 "source": "./index.html",
 ```
 
-1. [parcel-reporter-static-files-copy](https://github.com/elwin013/parcel-reporter-static-files-copy) 패키지 설치 후 `.parcelrc` 파일 작성.  
-   이렇게 하면 static 폴더의 파일을 정적 파일로 Serving할 수 있다(이미지 등 Assets).
+2 . parcel-reporter-static-files-copy
+패키지 설치 후 `.parcelrc` 파일 작성.  
+이렇게 하면 static 폴더의 파일을 정적 파일로 Serving할 수 있다(이미지 등 Assets).
 
 ```json
 npm i -D parcel-reporter-static-files-copy
