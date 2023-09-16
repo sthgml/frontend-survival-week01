@@ -13,7 +13,7 @@ $ fnm use lts-latest
 $ eval "$(fnm env --use-on-cd)"
 ```
 
-참고 : https://github.com/Schniz/fnm
+참고 : <https://github.com/Schniz/fnm>
 
 설치된 상태 확인.
 
@@ -35,7 +35,7 @@ mkdir 프로젝트명
 cd 프로젝트명
 ```
 
-**프로젝트 열기**
+프로젝트 열기
 
 여기서 바로 Visual Studio Code를 열면 편하다.
 
@@ -59,6 +59,7 @@ touch .gitignore
   Node 검색 후 내용 .gitignore에 추가
   [gitignore.io](https://www.toptal.com/developers/gitignore)
   아래 내용이 꼭 포함되어 있는지가 중요!
+
   ```bash
   /node_modules/
   /dist/
@@ -190,6 +191,7 @@ settings: {
 
 - .gitignore 있는것 복사 붙혀넣기
 - 아래 내용이 꼭 포함되어 있는지가 중요!
+
   ```bash
   /node_modules/
   /dist/
@@ -296,7 +298,7 @@ module.exports = {
 {
   "scripts": {
     // ...(전략)...
-		"test": "jest",
+  "test": "jest",
     "coverage": "jest --coverage --coverage-reporters html",
     "watch:test": "jest --watchAll"
   }
@@ -316,7 +318,7 @@ npm i -D parcel
 ```bash
 {
   "scripts": {
-		"start": "parcel --port 8080",
+    "start": "parcel --port 8080",
     "build": "parcel build",
     "check": "tsc --noEmit",
     // ...(후략)...
