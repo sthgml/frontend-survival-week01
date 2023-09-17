@@ -1,9 +1,9 @@
 
-# frontend-survival-week01
-
 프론트엔드 생존코스 1주차 과제
 
-## 개발 환경 설정하기
+# 개발 환경 설정하기
+
+## 개발 환경
 
 ### 1. 시작하기
 
@@ -19,6 +19,7 @@ https://www.toptal.com/developers/gitignore/
 ### 2. 타입스크립트
 
 타입스크립트는 자바스크립트에 타입을 부여한 언어
+
 ```sh
 npm i -D typescript
 ```
@@ -129,14 +130,15 @@ parcel로 웹 서버를 띄워주기 때문에 source 추가
 ```html
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>React Demo App</title>
-</head>
-<body>
-  <div id="root"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
 </html>
 ```
 
