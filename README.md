@@ -1,3 +1,4 @@
+# frontend-survival-week01
 
 프론트엔드 생존코스 1주차 과제
 
@@ -14,7 +15,7 @@ npm init -y
 
 #### .gitignore 쉽게 만들기
 
-https://www.toptal.com/developers/gitignore/
+<https://www.toptal.com/developers/gitignore/>
 
 ### 2. 타입스크립트
 
@@ -54,7 +55,8 @@ npm i -D @types/react @types/react-dom
 ### 5. 테스팅 라이브러리
 
 ```sh
-npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom  @testing-library/react @testing-library/jest-dom
+npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom
+npm i -D @testing-library/react @testing-library/jest-dom
 ```
 
 - jest.config.js 파일 설정
@@ -124,7 +126,6 @@ parcel로 웹 서버를 띄워주기 때문에 source 추가
 
 #### 기본 작성
 
-
 #### 1. index.html
 
 ```html
@@ -146,18 +147,13 @@ parcel로 웹 서버를 띄워주기 때문에 source 추가
 
 ```javascript
 import ReactDOM from 'react-dom/client';
-
 function App() {
-	return <p>Hello, World!</p>;
+  return <p>Hello, World!</p>;
 }
-
 const element = document.getElementById('root');
-
 if (element) {
-	const root = ReactDOM.createRoot(element);
+  const root = ReactDOM.createRoot(element);
 
-	root.render(<App />);
+  root.render(<App />);
 }
 ```
-
-끝
