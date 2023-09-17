@@ -11,9 +11,7 @@ npm init -y
 #### .gitignore 쉽게 만들기
 https://www.toptal.com/developers/gitignore/
 ### 2. 타입스크립트
-
 타입스크립트는 자바스크립트에 타입을 부여한 언어
-
 ```sh
 npm i -D typescript
 ```
@@ -25,7 +23,6 @@ npx tsc --init
 ### 3.lint
 린트는 소스코드를 분석하여 문법적인 오류나 스타일적인 오류, 적절하지 않은 구조 등에 표시를 달아주는 행위
 다른 사람과 협업을 할 때 코드의 형식을 맞추는데 도움을 준다.
-
 ```sh
 npm i -D eslint
 ```
@@ -40,10 +37,8 @@ npm i -D @types/react @types/react-dom
 ```sh
 npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom  @testing-library/react @testing-library/jest-dom
 ```
-
 - jest.config.js 파일 설정
   - 테스트에서 SWC 사용
-
 ```javascript
 module.exports = {
   testEnvironment: 'jsdom',
@@ -78,9 +73,7 @@ module.exports = {
 npm i -D parcel
 ```
 ### 7. package.json
-
 parcel로 웹 서버를 띄워주기 때문에 source 추가
-
 ```json
 "source": "index.html",
 "scripts": {
