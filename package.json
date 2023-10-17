@@ -5,7 +5,7 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel --port 8080",
-    "build" : "parcel build",
+    "build": "parcel build",
     "check": "tsc --noEemit",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "test": "jest",
