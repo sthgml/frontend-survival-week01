@@ -1,4 +1,5 @@
 import {render, screen} from '@testing-library/react';
+
 import Greeting from './Greeting';
 
 test('Greeting', () => {
@@ -6,7 +7,6 @@ test('Greeting', () => {
 
 	screen.getByText('Hello, world!');
 
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 	expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
-
-	// Expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
 });
