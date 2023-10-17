@@ -26,6 +26,7 @@ npx tsc --init
   "jsx": "react-jsx", /* Specify what JSX code is generated. */
   // ...(후략)...
 ```
+
 주석되어있던 jsx 라인을 주석을 해제
 
 ```json
