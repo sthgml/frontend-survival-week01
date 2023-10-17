@@ -17,7 +17,8 @@ npm i -D typescript
 npx tsc --init
 ```
 
-> npx(node pack) : 모듈을 로컬에 저장하지 않고, 매번 최신 버전의 파일만을 임시로 불러와 실행 시킨 후에, 다시 그 파일은 없어지는 방식
+> npx(node pack) : 모듈을 로컬에 저장하지 않고, 매번 최신 버전의 파일만을
+임시로 불러와 실행 시킨 후에, 다시 그 파일은 없어지는 방식
 
 ```json
   //tsconfig.json
@@ -188,7 +189,8 @@ if (element) {
 ## Jest(테스팅 도구) 설치
 
 ```bash
-npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom  @testing-library/react @testing-library/jest-dom
+npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom
+    / @testing-library/react @testing-library/jest-dom
 ```
 
 ```javascript
@@ -257,7 +259,8 @@ npm test를 통해 jest 실행
 
 ## Parcel 설치
 
-모듈 번들러 : 자바스크립트 파일들을 최적화, 압축하여 하나 혹은 여러개의 static 파일로 빌드해 주는 컴파일러
+모듈 번들러 : 자바스크립트 파일들을 최적화, 압축하여 하나 혹은 여러개의 static 파일로
+빌드해 주는 컴파일러
 
 ```bash
 npm i -D parcel
