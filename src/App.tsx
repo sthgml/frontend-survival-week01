@@ -1,9 +1,10 @@
 import React from 'react';
+import Greeting from './components/Greeting';
 
 function App() {
   return (
     <div>
-      <p>React Typescript Jest Parcel</p>
+      <Greeting name="world" />
     </div>
   );
 }

@@ -10,7 +10,8 @@
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "test": "jest",
     "coverage": "jest --coverage --coverage-reporters html",
-    "watch:test": "jest --watchAll"
+    "watch:test": "jest --watchAll",
+    "watch:detail": "jest --verbose"
   },
   "keywords": [],
   "author": "Ju Ji Hong",
