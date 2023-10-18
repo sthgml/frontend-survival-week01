@@ -1,12 +1,12 @@
-import React from 'react';
 import Greeting from './components/Greeting';
 
 function App() {
-  return (
-    <div>
-      <Greeting name="world" />
-    </div>
-  );
+	return (
+		<div>
+			<Greeting name='world' />
+			<p></p>
+		</div>
+	);
 }
 
 export default App;
