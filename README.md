@@ -9,7 +9,9 @@
 3. npx tsc --init 로 tscofig.json 생성
 4. tsconfig.json 의 jsx : "react-jsx" 를 열어준다.
 5. npm i -D eslint
-6. npx eslint --init (To check syntax, find problems, and enforce code style => JavaScript modules (import/export) => ... => XO => format javasctrit => npm )
+6. npx eslint --init (To check syntax, find problems, and enforce code style
+   => JavaScript modules (import/export) => ... => XO => format javasctrit
+   => npm )
 7. eslint.rc에 jest를 사용할꺼다라고 env에 jest: true를 넣어준다.
 8. .eslintignore => eslint 실행할때 제외할 곳을 작성한다.
 
@@ -75,7 +77,8 @@ prettier와 eslint가 충돌하고 있음.
 npm install --save-dev eslint-config-prettier
 ```
 
-extends: [... 'prettier/@typescript-eslint'] 를 넣어줘 prettier와 충돌하는 eslint를 꺼준다.
+extends: [... 'prettier/@typescript-eslint'] 를 넣어줘 prettier와 충돌하는
+eslint를 꺼준다.
 
 16.parcel 과 관련된 설정
 제로 config이지만 설정해주면
