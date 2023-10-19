@@ -4,26 +4,31 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'xo', 'prettier/@typescript-eslint'],
+  extends: [
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "xo",
+    "plugin:prettier/recommended",
+  ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: 'script',
+        sourceType: "script",
       },
     },
     {
-      extends: ['xo-typescript'],
-      files: ['*.ts', '*.tsx'],
+      extends: ["xo-typescript"],
+      files: ["*.ts", "*.tsx"],
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: ['react'],
+  plugins: ["react"],
   rules: {},
 };

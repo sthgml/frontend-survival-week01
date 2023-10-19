@@ -1,8 +1,6 @@
 type Props = {
-    name?: string;
+  name?: string;
 };
-const Greeting = ({ name = "uhui" }: Props) => (
-    <p>Hello!~~! {name}</p>
-);
+const Greeting = ({ name = 'uhui' }: Props) => <p>Hello!~~! {name}</p>;
 
 export default Greeting;

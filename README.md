@@ -74,10 +74,10 @@ node에서는 실행하는게 main으로 잡아준다.
 prettier와 eslint가 충돌하고 있음.
 
 ```bash
-npm install --save-dev eslint-config-prettier
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier@latest
 ```
 
-extends: [... 'prettier/@typescript-eslint'] 를 넣어줘 prettier와 충돌하는
+extends: [..."plugin:prettier/recommended"] 를 넣어줘 prettier와 충돌하는
 eslint를 꺼준다.
 
 16.parcel 과 관련된 설정
