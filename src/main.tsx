@@ -23,7 +23,7 @@ function main() {
 	let count = 0;
 	setInterval(() => {
 		count += 1;
-      	root2.render(<Demo count={count} />);
+		root2.render(<Demo count={count} />);
 	}, 1000);
 }
 
