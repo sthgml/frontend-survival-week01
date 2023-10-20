@@ -74,7 +74,7 @@ node에서는 실행하는게 main으로 잡아준다.
 prettier와 eslint가 충돌하고 있음.
 
 ```bash
-npm install --save-dev eslint-config-prettier eslint-plugin-prettier@latest
+npm install --save-dev eslint-config-prettier
 ```
 
 extends: [..."plugin:prettier/recommended"] 를 넣어줘 prettier와 충돌하는
