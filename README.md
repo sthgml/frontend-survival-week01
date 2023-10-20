@@ -8,35 +8,35 @@
 
 ### TypeScript + React + Jest + ESLint + Parcel 개발환경 셋팅
 
-```
+```bash
 npm init -y
 ```
 해당 명령어로 package.json파일 생성
 
 ✅.gitignore 파일에 node_modules를 비롯하여 커밋할 필요가 없는 디렉토리 명시
 
-```
+```bash
 npm i -D typescript
 
 npx tsc --init
 ```
 타입스크립트 설정(tsconfig.json에서 jsx속성을 `react-jsx`로 변경)
 
-```
+```bash
 npm i -D eslint
 
 npx eslint --init
 ```
 생성되는 .eslintrc.js파일에서 env 속성에 `jest: true`를 추가해준다. +`.eslintignore`파일도 작성
 
-```
+```bash
 npm i react react-dom
 
 npm i @types/react @types/react-dom
 ```
 리액트 설치
 
-```
+```bash
 npm i -D jest @types/jest @swc/core @swc/jest
     jest-environment-jsdom
 @testing-library/react @testing-library/jest-dom@5.16.4
@@ -47,7 +47,7 @@ jest.config.js 파일을 작성해야한다.
 
 마지막으로
 
-```
+```bash
 npm i -D parcel
 ```
 
