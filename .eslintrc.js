@@ -4,39 +4,33 @@ module.exports = {
 		es2021: true,
 		jest: true,
 	},
-	extends: [
-		'xo',
-		'plugin:react/recommended',
-	],
+	extends: ['xo', 'plugin:react/recommended', 'plugin:react/jsx-runtime'],
+	settings: {
+		'import/resolver': {
+			node: {
+				extensions: ['.js', '.jsx', '.ts', '.tsx'],
+			},
+		},
+	},
 	overrides: [
 		{
 			env: {
 				node: true,
 			},
-			files: [
-				'.eslintrc.{js,cjs}',
-			],
+			files: ['.eslintrc.{js,cjs}'],
 			parserOptions: {
 				sourceType: 'script',
 			},
 		},
 		{
-			extends: [
-				'xo-typescript',
-			],
-			files: [
-				'*.ts',
-				'*.tsx',
-			],
+			extends: ['xo-typescript'],
+			files: ['*.ts', '*.tsx'],
 		},
 	],
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: [
-		'react',
-	],
-	rules: {
-	},
+	plugins: ['react'],
+	rules: {},
 };
