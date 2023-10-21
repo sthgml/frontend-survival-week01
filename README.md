@@ -31,7 +31,9 @@
 6. ESLint 설정
     - npm i -D eslint
     - npx eslint --init
-        선택 참고 : style / javaScript / React / Typescript / Browser / Popular style guide / XO / JavaScript / npm
+        선택 참고
+        : style / javaScript / React / Typescript / Browser
+        / Popular style guide / XO / JavaScript / npm
 
 7. .eslintrc.js 파일을 적절히 수정한다.
     - 아직 Jest를 설치하지 않았지만, 여기서 미리 env속성 안에 jest: true를 잡아주면 좋다.
@@ -46,7 +48,8 @@
     - npm i -D @types/react @types/react-dom
 
 10. 테스팅 도구 설치
-    - npm i -D jest @types/jest @swc/core @swc/jest \jest-environment-jsdom \@testing-library/react @testing-libraryjest-dom@5.16.4
+    - npm i -D jest @types/jest @swc/core @swc/jest \jest-environment-jsdom
+    \@testing-library/react @testing-libraryjest-dom@5.16.4
 
 11. jest.config.js 파일을 작성해 테스트에서 SWC를 사용하자.
 
@@ -58,7 +61,9 @@
 14. package.json의 main 속성을 "source": "index.html"으로 변경
 
 15. parcel 설정
-    - parcel-reporter-static-files-copy 패키지 설치 후 `.parcelrc` 파일 작성.(npm install -D parcel-reporter-static-files-copy)
+    - parcel-reporter-static-files-copy 패키지 설치 후 `.parcelrc` 파일 작성.
+    - npm install -D parcel-reporter-static-files-copy
     - 이렇게 하면 static 폴더의 파일을 정적 파일로 Serving할 수 있다(이미지 등 Assets).
 
-16. .vscode/settings.json파일을 추가해 JS/TS 파일을 저장할 때마다 ESLint를 실행하고 문제점을 고치게 설정할 수 있다.
+16. .vscode/settings.json파일을 추가해 JS/TS 파일을 저장할 때마다
+    ESLint를 실행하고 문제점을 고치게 설정할 수 있다.
