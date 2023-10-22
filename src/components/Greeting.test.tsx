@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Gretting from './Gretting';
+import Gretting from './Greeting';
 
 describe('Gretting Component Test', () => {
   it('should render Gretting', () => {

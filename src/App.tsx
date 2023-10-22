@@ -1,4 +1,4 @@
-import Gretting from './components/Gretting';
+import Gretting from './components/Greeting';
 
 const App = () => (
   <div>
