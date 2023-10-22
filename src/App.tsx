@@ -1,7 +1,10 @@
+import Gretting from './components/Gretting';
+
 const App = () => (
-	<div>
-      Hello!
-	</div>
+  <div>
+    <Gretting />
+    React World
+  </div>
 );
 
 export default App;
