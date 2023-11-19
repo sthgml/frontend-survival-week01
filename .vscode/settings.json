@@ -1,0 +1,48 @@
+{
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "redhat.telemetry.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "vetur.validation.template": false,
+    "vetur.validation.script": false,
+    "vetur.validation.style": false,
+    "[java]": {
+      "editor.defaultFormatter": "mwpb.java-prettier-formatter"
+    },
+    "workbench.editor.wrapTabs": true,
+    "java.import.generatesMetadataFilesAtProjectRoot": true,
+    "editor.renderWhitespace": "all",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.minimumContrastRatio": 1,
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "none",
+    "prettier.singleQuote": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.pruneOnFetch": true,
+    "editor.minimap.size": "fill",
+    "boot-java.rewrite.reconcile": true,
+    "terminal.integrated.scrollback": 100000,
+    "editor.accessibilitySupport": "on",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.fontFamily": "Jetbrains Mono, Consolas, 'Courier New', monospace",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.fontSize": 15,
+    "workbench.list.openMode": "doubleClick",
+    "gitlens.views.tags.branches.layout": "list",
+    "explorer.confirmDelete": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.advanced.messages": {
+      "suppressCreatePullRequestPrompt": true
+    },
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.activityBar.location": "top",
+    "window.zoomLevel": 1
+  }
+  
