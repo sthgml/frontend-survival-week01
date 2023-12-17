@@ -4,13 +4,13 @@
 
 ## TypeScript + React + Jest + Parcel 셋팅
 
-**1. npm 패키지 준비하기**
+### 1. npm 패키지 준비하기
 
 ```tsx
 npm init -y
 ```
 
-**2. `.gitignore`파일 작성**
+### 2. `.gitignore`파일 작성
 
 ```tsx
 touch .gitignore
@@ -21,14 +21,14 @@ touch .gitignore
 /.parcel-cache/
 ```
 
-**3. 타입스크립트 설치 및 설정**
+### 3. 타입스크립트 설치 및 설정
 
 ```bash
 npm i -D typescript
 npx tsc --init
 ```
 
-**4. `tsconfig.json` 파일의 jsx 속성 변경**
+### 4. `tsconfig.json` 파일의 jsx 속성 변경
 
 ```bash
 {
@@ -40,7 +40,7 @@ npx tsc --init
 }
 ```
 
-**5. ESLint 설치 및 설정**
+### 5. ESLint 설치 및 설정
 
 ```tsx
 npm i -D eslint
@@ -49,7 +49,7 @@ npx eslint --init
 
 ![설정.PNG](/setting.png)
 
-**6. `.eslintrc.js` 파일 수정**
+### 6. `.eslintrc.js` 파일 수정
 
 ```tsx
 module.exports = {
@@ -73,14 +73,14 @@ touch .eslintignore
 /.parcel-cache/
 ```
 
-**8. 리액트 설치**
+### 8. 리액트 설치
 
 ```tsx
 npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
-**9. 테스팅 도구 설치**
+### 9. 테스팅 도구 설치
 
 ```tsx
 npm i -D jest @types/jest @swc/core @swc/jest \
@@ -88,7 +88,7 @@ npm i -D jest @types/jest @swc/core @swc/jest \
     @testing-library/react @testing-library/jest-dom@5.16.4
 ```
 
-**10. jest.config.js 파일 작성**
+### 10. jest.config.js 파일 작성
 
 SWC를 이용하여 타입스크립트 코드를 변환 해주어야한다.
 
@@ -122,7 +122,7 @@ module.exports = {
 };
 ```
 
-**오류 대비**
+### 오류 대비
 
 ```tsx
 npx eslint --fix .
@@ -141,13 +141,13 @@ settings: {
 	},
 ```
 
-**11. Parcel 설치**
+### 11. Parcel 설치
 
 ```tsx
 npm i -D parcel
 ```
 
-**12. `package.json` - Scripts 설정**
+### 12. `package.json` - Scripts 설정
 
 ```tsx
 "source": "./index.html",
@@ -162,7 +162,7 @@ npm i -D parcel
   },
 ```
 
-**13. `index.html`**
+### 13. `index.html`
 
 ```tsx
 <!DOCTYPE html>
@@ -247,13 +247,13 @@ const Greeting = ({ name }: { name: string }) => <div>Hellow,{name}</div>;
 export default Greeting;
 ```
 
-**14. Parcel 정적빌드 도구 설치**
+### 14. Parcel 정적빌드 도구 설치
 
 ```tsx
 npm install -D parcel-reporter-static-files-copy
 ```
 
-**15. Parcel 설정**
+### 15. Parcel 설정
 
 ```tsx
 touch .parcelrc
@@ -261,7 +261,7 @@ touch .parcelrc
 mkdir static/images
 ```
 
-**16. ESLint플러그 인 설정**
+### 16. ESLint플러그 인 설정
 
 ```tsx
 mkdir .vscode
