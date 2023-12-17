@@ -135,10 +135,10 @@ eslint-plugin-react 설정에서 React버전이 지정되지 않았음을 나타
 
 ```tsx
 settings: {
-		react: {
-			version: 'detect', // 사용자가 설치한 버전을 자동으로 선택
-		},
-	},
+    react: {
+    version: 'detect', // 사용자가 설치한 버전을 자동으로 선택
+    },
+  },
 ```
 
 ### 11. Parcel 설치
