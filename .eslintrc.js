@@ -2,10 +2,12 @@ module.exports = {
 	env: {
 		browser: true,
 		es2021: true,
+		jest: true,
 	},
 	extends: [
 		'xo',
 		'plugin:react/recommended',
+		'plugin:react/jsx-runtime',
 	],
 	overrides: [
 		{
@@ -37,5 +39,10 @@ module.exports = {
 		'react',
 	],
 	rules: {
+	},
+	settings: {
+		react: {
+			version: 'detect', // 사용자가 설치한 버전을 자동으로 선택
+		},
 	},
 };

@@ -1,8 +1,9 @@
 import React from 'react';
+import Greeting from './components/Greeting';
 
 const App = () => (
 	<div>
-		<p>Hellow</p>
+		<Greeting name={'Hi'}></Greeting>
 	</div>
 );
 
