@@ -2,15 +2,15 @@
 
 프론트엔드 생존코스 1주차 과제
 
-## TypeScript + React + Jest + Parcel 셋팅  
+## TypeScript + React + Jest + Parcel 셋팅
 
-1. **npm 패키지 준비하기** 
+**1. npm 패키지 준비하기**
 
 ```tsx
-npm init -y 
+npm init -y
 ```
 
-2. `.gitignore` **파일 작성**
+**2. `.gitignore`파일 작성**
 
 ```tsx
 touch .gitignore
@@ -21,14 +21,14 @@ touch .gitignore
 /.parcel-cache/
 ```
 
-3. **타입스크립트 설치 및 설정**
+**3. 타입스크립트 설치 및 설정**
 
 ```bash
 npm i -D typescript
 npx tsc --init
 ```
 
-4. **`tsconfig.json` 파일의 jsx 속성 변경**
+**4. `tsconfig.json` 파일의 jsx 속성 변경**
 
 ```bash
 {
@@ -40,7 +40,7 @@ npx tsc --init
 }
 ```
 
-5. **ESLint 설치 및 설정**
+**5. ESLint 설치 및 설정**
 
 ```tsx
 npm i -D eslint
@@ -49,19 +49,20 @@ npx eslint --init
 
 ![설정.PNG](/setting.png)
 
-6. `.eslintrc.js` **파일 수정**
+**6. `.eslintrc.js` 파일 수정**
 
 ```tsx
 module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
-		jest: true,
-	},
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
+  },
 // ...(후략)...
+}
 ```
 
-7. `.eslintignore` **파일 작성**
+**7. `.eslintignore` 파일 작성**
 
 ```tsx
 touch .eslintignore
@@ -72,14 +73,14 @@ touch .eslintignore
 /.parcel-cache/
 ```
 
-8. **리액트 설치**
+**8. 리액트 설치**
 
 ```tsx
 npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
-9. **테스팅 도구 설치**
+**9. 테스팅 도구 설치**
 
 ```tsx
 npm i -D jest @types/jest @swc/core @swc/jest \
@@ -87,37 +88,37 @@ npm i -D jest @types/jest @swc/core @swc/jest \
     @testing-library/react @testing-library/jest-dom@5.16.4
 ```
 
-10. **jest.config.js 파일 작성**
+**10. jest.config.js 파일 작성**
 
 SWC를 이용하여 타입스크립트 코드를 변환 해주어야한다.
 
 ```tsx
 module.exports = {
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
   setupFilesAfterEnv: [
-    '@testing-library/jest-dom/extend-expect',
-    './jest.setup',
+    "@testing-library/jest-dom/extend-expect",
+    "./jest.setup",
   ],
   transform: {
-    '^.+\\.(t|j)sx?$': ['@swc/jest', {
-      jsc: {
-        parser: {
-          syntax: 'typescript',
-          jsx: true,
-          decorators: true,
-        },
-        transform: {
-          react: {
-            runtime: 'automatic',
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        jsc: {
+          parser: {
+            syntax: "typescript",
+            jsx: true,
+            decorators: true,
+          },
+          transform: {
+            react: {
+              runtime: "automatic",
+            },
           },
         },
       },
-    }],
+    ],
   },
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules/',
-    '<rootDir>/dist/',
-  ],
+  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
 };
 ```
 
@@ -125,11 +126,11 @@ module.exports = {
 
 ```tsx
 npx eslint --fix .
-Warning: React version not specified in eslint-plugin-react settings. 
+Warning: React version not specified in eslint-plugin-react settings.
 See https://github.com/jsx-eslint/eslint-plugin-react#configuration .
 ```
 
-eslint-plugin-react 설정에서 React버전이 지정되지 않았음을 나타낸다.   
+eslint-plugin-react 설정에서 React버전이 지정되지 않았음을 나타낸다.
 간단하다. `eslintrc.js`버전을 설정해주면 해결된다.
 
 ```tsx
@@ -140,13 +141,13 @@ settings: {
 	},
 ```
 
-11. **Parcel 설치** 
+**11. Parcel 설치**
 
 ```tsx
 npm i -D parcel
 ```
 
-12. `package.json` - **Scripts 설정**
+**12. `package.json` - Scripts 설정**
 
 ```tsx
 "source": "./index.html",
@@ -161,7 +162,7 @@ npm i -D parcel
   },
 ```
 
-13. `index.html`
+**13. `index.html`**
 
 ```tsx
 <!DOCTYPE html>
@@ -180,18 +181,18 @@ npm i -D parcel
 - `src/main.tsx`
 
 ```tsx
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
 function main() {
-	const element = document.getElementById('root');
+  const element = document.getElementById("root");
 
-	if (!element) {
-		return;
-	}
+  if (!element) {
+    return;
+  }
 
-	const root = ReactDOM.createRoot(element);
-	root.render(<App />);
+  const root = ReactDOM.createRoot(element);
+  root.render(<App />);
 }
 
 main();
@@ -200,13 +201,13 @@ main();
 - `src/App.tsx`
 
 ```tsx
-import React from 'react';
-import Greeting from './components/Greeting';
+import React from "react";
+import Greeting from "./components/Greeting";
 
 const App = () => (
-	<div>
-		<Greeting name={'Hi'}></Greeting>
-	</div>
+  <div>
+    <Greeting name={"Hi"}></Greeting>
+  </div>
 );
 
 export default App;
@@ -216,43 +217,43 @@ export default App;
 
 ```tsx
 function add(x: number, y: number): number {
-	return 1 + 2;
+  return 1 + 2;
 }
 
-test('숫자더하기', () => {
-	expect(add(1, 3)).toBe(3);
+test("숫자더하기", () => {
+  expect(add(1, 3)).toBe(3);
 });
 ```
 
 - `src/components/Greeting.test.tsx`
 
 ```tsx
-import {render, screen} from '@testing-library/react';
-import Greeting from './Greeting';
+import { render, screen } from "@testing-library/react";
+import Greeting from "./Greeting";
 
-test('Greeting', () => {
-	render(<Greeting name='world'></Greeting>);
-	screen.getByText(/world/);
+test("Greeting", () => {
+  render(<Greeting name="world"></Greeting>);
+  screen.getByText(/world/);
 });
 ```
 
 - `src/components/Greeting.tsx`
 
 ```tsx
-import React from 'react';
+import React from "react";
 
-const Greeting = ({name}: {name: string}) => <div>Hellow,{name}</div>;
+const Greeting = ({ name }: { name: string }) => <div>Hellow,{name}</div>;
 
 export default Greeting;
 ```
 
-14.  **Parcel 정적빌드 도구 설치** 
+**14. Parcel 정적빌드 도구 설치**
 
 ```tsx
 npm install -D parcel-reporter-static-files-copy
 ```
 
-15. **Parcel 설정** 
+**15. Parcel 설정**
 
 ```tsx
 touch .parcelrc
@@ -260,7 +261,7 @@ touch .parcelrc
 mkdir static/images
 ```
 
-16. **ESLint플러그 인 설정** 
+**16. ESLint플러그 인 설정**
 
 ```tsx
 mkdir .vscode
