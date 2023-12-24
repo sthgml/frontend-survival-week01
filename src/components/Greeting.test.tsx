@@ -1,10 +1,13 @@
-import Greeting from "./Greeting";
-import { render } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
+import Greeting from './Greeting';
 
-describe('Greeting', () => {
-  it('renders greeting message', () => {
-    const { container } = render(<Greeting name={"sohee"}/>);
+test('Greeting', () => {
+	render(<Greeting name={'world'} />);
 
-    expect(container).toHaveTextContent('Hello, world!');
-  });
+	screen.getByText('Hello, world!'); // 정확한 문자열을 찾아야함
+	screen.getByText(/Hello/);
+	expect(screen.queryByText(/Hi/)).toBeFalsy();
+	expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
+	expect(screen.queryByText(/Hello/)).toBeInTheDocument();
+	// Expect(screen.queryByText(/Hi/)).not.toBeVisible();
 });
