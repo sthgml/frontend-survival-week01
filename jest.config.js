@@ -1,12 +1,7 @@
 // In jest.config.js add (if you haven't already)
-
 module.exports = {
 	testEnvironment: 'jsdom',
-	setupFilesAfterEnv: [
-		'@testing-library/jest-dom/extend-expect',
-		'./jest.setup',
-		'<rootDir>/jest-setup.js',
-	],
+	setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 	transform: {
 		'^.+\\.(t|j)sx?$': ['@swc/jest', {
 			jsc: {
