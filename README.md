@@ -24,7 +24,8 @@
 
 1. .gitignore파일을 만든다.  
   `touch .gitignore`
-2. [.gitignore Gernerator](https://www.toptal.com/developers/gitignore/api/node,react,macos)의 도움을 받아 내용물을 채운다.
+2. [.gitignore Gernerator](https://url.kr/8q2pao)
+의 도움을 받아 내용물을 채운다.
 3. 최소한 `node_modules` 와 `dist`는 넣자.
 
 #### 1. TypeScript
