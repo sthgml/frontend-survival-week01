@@ -5,9 +5,11 @@ module.exports = {
         "jest": true,
     },
     extends: [
-        'airbnb',
-        'plugin:react/recommended',
-        'plugin:react/jsx-runtime',
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        'xo',
     ],
     "overrides": [
         {
