@@ -85,17 +85,14 @@
 1. index.tsx 내용채우기
 
     ```tsx
-    import ReactDOM from 'react-dom/client';
-    import App from './App';
-
-    function index() {
-      const element = document.getElementById('root');
-      if (!element) {
-        return;
-      }
-
+    import ReactDOM from "react-dom/client";
+    import App from "./App";
+    
+    const element = document.getElementById('root');
+    
+    if (element) {
       const root = ReactDOM.createRoot(element);
-      root.render(<App />);
+      root.render(<App/>)
     }
     ```
 
