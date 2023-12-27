@@ -305,9 +305,7 @@
       <title>Sample</title>
     </head>
     <body>
-      <div id="app">
-        Loading...
-      </div>
+      <div id="root"></div>
       <script type="module" src="./src/index.tsx"></script>
     </body>
     </html>
