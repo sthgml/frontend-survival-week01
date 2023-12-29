@@ -290,11 +290,6 @@
 
 1. `.gitignore`, `.eslintignore` 에 `.parcel-cache` 폴더 추가
 
-    ```json
-    "start": "parcel --port 8080",
-    "build": "parcel build",
-    ```
-
 1. `index.html` 파일 작성
 
     ```html
