@@ -50,7 +50,7 @@
 
     ```json
     //  `sciprts` 파트에 추가
-    "chek": "tsc --noEmit"
+    "check": "tsc --noEmit"
     ```
 
 #### 2. React
