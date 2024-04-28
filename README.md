@@ -224,27 +224,12 @@
     "eslint-plugin-react": "^7.33.2",
     ```
 
-1. `.eslintrc.js` 파일에 다음 세 줄을 추가
-
-    ```js
-      env: {
-        ...,
-        jest: true,
-      },
-      extends: [
-        ...,
-        'plugin:react/jsx-runtime',
-      ],
-      rules: {
-        ...,
-        'react/react-in-jsx-scope': 'off',
-        },
-    ```
+1. `eslint.config.mjs` 파일이 생성됨
 
 1. `package.json`에 `"scripts"` 명령어 추가
 
     ```json
-    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "lint": "eslint --fix 'src/**/*.{ts,tsx,js,jsx}'",
     ```
 
 1. `.eslintignore` 파일을 작성한다. `.gitignore` 파일과 똑같이 작성해도 ok
