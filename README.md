@@ -252,7 +252,7 @@
           80
       ],
       "editor.codeActionsOnSave": {
-          "source.fixAll.eslint": true
+          "source.fixAll.eslint": "always"
       },
       "trailing-spaces.trimOnSave": true
     }
